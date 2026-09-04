@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 4,
+    "version": 5,
     "updated": "2026-09-04",
     "note": "Coordinates marked confidence=approximate are rounded to the site area, not an exact address. Many sites are private property, structurally unsafe or actively patrolled. This dataset documents them; it is not an invitation to enter.",
     "categories": {
@@ -28,7 +28,8 @@
       "patrolled": "Security patrols likely"
     },
     "accessNote": "Access ratings are an assessment from each site’s ownership, status and press coverage — they are not verified on the ground and they change. \"No known security\" is not permission: entering private property without it is trespass, and many of these buildings are structurally unsafe regardless of who is watching.",
-    "scope": "Only places that are actually abandoned. Buildings still in everyday use are not listed, even when they have been damaged, and neither are sites that have been demolished away to nothing. Where part of a site has been converted and is lived in, the entry says so."
+    "scope": "Only places that are actually abandoned. Buildings still in everyday use are not listed, even when they have been damaged, and neither are sites that have been demolished away to nothing. Where part of a site has been converted and is lived in, the entry says so.",
+    "imageNote": "Photographs come from Wikimedia Commons and are reproduced under the licence shown with each one. Credit links go to the file page, which carries the full licence terms. Some are of a surviving detail rather than the main building, and a few predate the damage described."
   },
   "sites": [
     {
@@ -46,7 +47,13 @@
       "sourceName": "Wikipedia — Ayr Station Hotel fire",
       "type": "civic",
       "access": "patrolled",
-      "accessNote": "Council-controlled demolition site with a standing cordon around the shell."
+      "accessNote": "Council-controlled demolition site with a standing cordon around the shell.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Ayr_Station_Hotel_fire%2C_September_2023.jpg/500px-Ayr_Station_Hotel_fire%2C_September_2023.jpg",
+        "credit": "Goodreg3",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ayr_Station_Hotel_fire,_September_2023.jpg"
+      }
     },
     {
       "id": "sauchiehall-street-2026",
@@ -114,7 +121,13 @@
       "sourceName": "Scottish Fire and Rescue Service",
       "type": "hospital",
       "access": "patrolled",
-      "accessNote": "Known arson hotspot, so the site is watched and reported on."
+      "accessNote": "Known arson hotspot, so the site is watched and reported on.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Strathmartine_Hospital_-_geograph.org.uk_-_16248.jpg/500px-Strathmartine_Hospital_-_geograph.org.uk_-_16248.jpg",
+        "credit": "Val Vannet",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Strathmartine_Hospital_-_geograph.org.uk_-_16248.jpg"
+      }
     },
     {
       "id": "bangour-village",
@@ -131,7 +144,13 @@
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
       "access": "patrolled",
-      "accessNote": "Site security during redevelopment; the best-known urbex target in Scotland, so it is actively watched."
+      "accessNote": "Site security during redevelopment; the best-known urbex target in Scotland, so it is actively watched.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Main_blocks%2C_former_Bangour_Village_Hospital_-_geograph.org.uk_-_3832227.jpg/500px-Main_blocks%2C_former_Bangour_Village_Hospital_-_geograph.org.uk_-_3832227.jpg",
+        "credit": "kim traynor",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Main_blocks,_former_Bangour_Village_Hospital_-_geograph.org.uk_-_3832227.jpg"
+      }
     },
     {
       "id": "hartwood-hospital",
@@ -148,7 +167,13 @@
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
       "access": "secured",
-      "accessNote": "Fenced. Collapsed floors and open shafts make it one of the most dangerous ruins in the country."
+      "accessNote": "Fenced. Collapsed floors and open shafts make it one of the most dangerous ruins in the country.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Hartwood_Asylum_Towers_-_geograph.org.uk_-_372199.jpg/500px-Hartwood_Asylum_Towers_-_geograph.org.uk_-_372199.jpg",
+        "credit": "Raymond Okonski",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Hartwood_Asylum_Towers_-_geograph.org.uk_-_372199.jpg"
+      }
     },
     {
       "id": "st-peters-seminary",
@@ -165,7 +190,13 @@
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "religious",
       "access": "secured",
-      "accessNote": "The Kilmahew woodland around it is walkable, but the building itself is fenced off."
+      "accessNote": "The Kilmahew woodland around it is walkable, but the building itself is fenced off.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/St_Peter%27s_Seminary%2C_Kilmahew_-_geograph.org.uk_-_261397.jpg/500px-St_Peter%27s_Seminary%2C_Kilmahew_-_geograph.org.uk_-_261397.jpg",
+        "credit": "GaryReggae",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Seminary,_Kilmahew_-_geograph.org.uk_-_261397.jpg"
+      }
     },
     {
       "id": "gartloch-hospital",
@@ -182,7 +213,13 @@
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
       "access": "secured",
-      "partlyOccupied": "The former estate around it is a lived-in housing development."
+      "partlyOccupied": "The former estate around it is a lived-in housing development.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Gartloch_Hospital%2C_Asylum.jpg/500px-Gartloch_Hospital%2C_Asylum.jpg",
+        "credit": "Waldemar Luczak",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Gartloch_Hospital,_Asylum.jpg"
+      }
     },
     {
       "id": "lennox-castle",
@@ -198,7 +235,13 @@
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
-      "access": "secured"
+      "access": "secured",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Lennox_Castle_-_geograph.org.uk_-_1564402.jpg",
+        "credit": "Ron Shephard",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Lennox_Castle_-_geograph.org.uk_-_1564402.jpg"
+      }
     },
     {
       "id": "woodilee-hospital",
@@ -215,7 +258,13 @@
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
       "access": "secured",
-      "partlyOccupied": "Most of the site is an occupied housing estate."
+      "partlyOccupied": "Most of the site is an occupied housing estate.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Woodilee_Asylum_Admin_Building_-_geograph.org.uk_-_441341.jpg/500px-Woodilee_Asylum_Admin_Building_-_geograph.org.uk_-_441341.jpg",
+        "credit": "Raymond Okonski",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Woodilee_Asylum_Admin_Building_-_geograph.org.uk_-_441341.jpg"
+      }
     },
     {
       "id": "sunnyside-royal",
@@ -231,7 +280,13 @@
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
-      "access": "secured"
+      "access": "secured",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Hospital_Road_Hillside%2C_Montrose_at_its_junction_with_the_south_entrance_to_Sunnyside_Royal_Hospital_-_geograph.org.uk_-_1160953.jpg/500px-Hospital_Road_Hillside%2C_Montrose_at_its_junction_with_the_south_entrance_to_Sunnyside_Royal_Hospital_-_geograph.org.uk_-_1160953.jpg",
+        "credit": "Alan Morrison",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Hospital_Road_Hillside,_Montrose_at_its_junction_with_the_south_entrance_to_Sunnyside_Royal_Hospital_-_geograph.org.uk_-_1160953.jpg"
+      }
     },
     {
       "id": "craig-dunain",
@@ -248,7 +303,13 @@
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
       "access": "secured",
-      "partlyOccupied": "The converted blocks are occupied flats."
+      "partlyOccupied": "The converted blocks are occupied flats.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Craig_Dunain_Hospital_-_geograph.org.uk_-_2016937.jpg/500px-Craig_Dunain_Hospital_-_geograph.org.uk_-_2016937.jpg",
+        "credit": "Steven Brown",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Craig_Dunain_Hospital_-_geograph.org.uk_-_2016937.jpg"
+      }
     },
     {
       "id": "argyll-morningfield",
@@ -264,7 +325,13 @@
       "source": "https://carte-urbex.com/en/blogs/information-1/top-10-urbex-locations-in-scotland",
       "sourceName": "Carte Urbex",
       "type": "hospital",
-      "access": "secured"
+      "access": "secured",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Argyll_and_Bute_Hospital_-_geograph.org.uk_-_2062243.jpg/500px-Argyll_and_Bute_Hospital_-_geograph.org.uk_-_2062243.jpg",
+        "credit": "Patrick Mackie",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Argyll_and_Bute_Hospital_-_geograph.org.uk_-_2062243.jpg"
+      }
     },
     {
       "id": "mavisbank-house",
@@ -281,7 +348,13 @@
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "mansion",
       "access": "secured",
-      "accessNote": "Active conservation project — scaffolded working site."
+      "accessNote": "Active conservation project — scaffolded working site.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Mavisbank_House_-_principal_elevation.jpg/500px-Mavisbank_House_-_principal_elevation.jpg",
+        "credit": "Tom Parnell",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Mavisbank_House_-_principal_elevation.jpg"
+      }
     },
     {
       "id": "cambusnethan-priory",
@@ -297,7 +370,13 @@
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "mansion",
-      "access": "private"
+      "access": "private",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cambusnethan_Priory_-_geograph.org.uk_-_392333.jpg/500px-Cambusnethan_Priory_-_geograph.org.uk_-_392333.jpg",
+        "credit": "Roy Tait",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Cambusnethan_Priory_-_geograph.org.uk_-_392333.jpg"
+      }
     },
     {
       "id": "crawford-priory",
@@ -314,7 +393,13 @@
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "mansion",
       "access": "private",
-      "accessNote": "Private estate. Masonry has come down in recent storms."
+      "accessNote": "Private estate. Masonry has come down in recent storms.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Crawford_Priory_-_geograph.org.uk_-_718247.jpg/500px-Crawford_Priory_-_geograph.org.uk_-_718247.jpg",
+        "credit": "Hilary Green",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Crawford_Priory_-_geograph.org.uk_-_718247.jpg"
+      }
     },
     {
       "id": "buchanan-castle",
@@ -330,7 +415,13 @@
       "source": "https://www.travelswithakilt.com/abandoned-derelict-places/",
       "sourceName": "Travels with a Kilt",
       "type": "mansion",
-      "access": "private"
+      "access": "private",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Buchanan_Castle%2C_Drymen_-_geograph.org.uk_-_1875831.jpg",
+        "credit": "Elliott Simpson",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Buchanan_Castle,_Drymen_-_geograph.org.uk_-_1875831.jpg"
+      }
     },
     {
       "id": "dunmore-park",
@@ -346,7 +437,13 @@
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "mansion",
-      "access": "private"
+      "access": "private",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Dunmore_Park_abandoned_house_%2819589675931%29.jpg/500px-Dunmore_Park_abandoned_house_%2819589675931%29.jpg",
+        "credit": "Jane Gospel",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Dunmore_Park_abandoned_house_(19589675931).jpg"
+      }
     },
     {
       "id": "dunalastair-house",
@@ -363,7 +460,13 @@
       "sourceName": "Travels with a Kilt",
       "type": "mansion",
       "access": "private",
-      "accessNote": "Private land, and genuinely dangerous — floors have gone."
+      "accessNote": "Private land, and genuinely dangerous — floors have gone.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ruins_of_Dunalastair_House_-_geograph.org.uk_-_3774495.jpg/500px-Ruins_of_Dunalastair_House_-_geograph.org.uk_-_3774495.jpg",
+        "credit": "Trevor Littlewood",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_Dunalastair_House_-_geograph.org.uk_-_3774495.jpg"
+      }
     },
     {
       "id": "broadford-works",
@@ -379,7 +482,13 @@
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "industrial",
-      "access": "secured"
+      "access": "secured",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Broadford_Works%2C_Chimney_-_geograph.org.uk_-_213795.jpg",
+        "credit": "George Wilson",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Broadford_Works,_Chimney_-_geograph.org.uk_-_213795.jpg"
+      }
     },
     {
       "id": "glenmavis-distillery",
@@ -411,7 +520,13 @@
       "source": "https://www.travelswithakilt.com/abandoned-derelict-places/",
       "sourceName": "Travels with a Kilt",
       "type": "village",
-      "access": "open"
+      "access": "open",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Arichonan_Township.jpg/500px-Arichonan_Township.jpg",
+        "credit": "Patrick Mackie",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Arichonan_Township.jpg"
+      }
     },
     {
       "id": "badbea",
@@ -427,7 +542,13 @@
       "source": "https://travelness.com/abandoned-places-in-scotland",
       "sourceName": "Travelness",
       "type": "village",
-      "access": "open"
+      "access": "open",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Badbea_Clearance_Village_-_geograph.org.uk_-_1550053.jpg/500px-Badbea_Clearance_Village_-_geograph.org.uk_-_1550053.jpg",
+        "credit": "Peter Robertson",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Badbea_Clearance_Village_-_geograph.org.uk_-_1550053.jpg"
+      }
     },
     {
       "id": "kilchurn-castle",
@@ -444,7 +565,13 @@
       "sourceName": "Historic Environment Scotland",
       "type": "castle",
       "access": "open",
-      "accessNote": "In state care. Open seasonally — the one site here you can simply walk into."
+      "accessNote": "In state care. Open seasonally — the one site here you can simply walk into.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Kilchurn_Castle_%282%29_-_geograph.org.uk_-_967084.jpg/500px-Kilchurn_Castle_%282%29_-_geograph.org.uk_-_967084.jpg",
+        "credit": "Mike Searle",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Kilchurn_Castle_(2)_-_geograph.org.uk_-_967084.jpg"
+      }
     },
     {
       "id": "fearn-airfield",
@@ -461,7 +588,13 @@
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "private",
-      "accessNote": "Working farmland over most of the 386 ha."
+      "accessNote": "Working farmland over most of the 386 ha.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Abandoned_WW2_tower_at_Fearn_Airfield_-_geograph.org.uk_-_501586.jpg/500px-Abandoned_WW2_tower_at_Fearn_Airfield_-_geograph.org.uk_-_501586.jpg",
+        "credit": "Steven Brown",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Abandoned_WW2_tower_at_Fearn_Airfield_-_geograph.org.uk_-_501586.jpg"
+      }
     },
     {
       "id": "fendom-airfield",
@@ -495,7 +628,13 @@
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "private",
-      "accessNote": "Farmland; the surviving structures are on private ground."
+      "accessNote": "Farmland; the surviving structures are on private ground.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Baldoon_Airfield_-_geograph.org.uk_-_1878375.jpg/500px-Baldoon_Airfield_-_geograph.org.uk_-_1878375.jpg",
+        "credit": "Andy Farrington",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Baldoon_Airfield_-_geograph.org.uk_-_1878375.jpg"
+      }
     },
     {
       "id": "edzell-airbase",
@@ -513,7 +652,13 @@
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "secured",
       "accessNote": "Part of the site is now a working industrial estate.",
-      "partlyOccupied": "Part of the site is a working industrial estate."
+      "partlyOccupied": "Part of the site is a working industrial estate.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Church_building_on_former_Edzell_Airbase_-_geograph.org.uk_-_1614963.jpg/500px-Church_building_on_former_Edzell_Airbase_-_geograph.org.uk_-_1614963.jpg",
+        "credit": "Stanley Howe",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Church_building_on_former_Edzell_Airbase_-_geograph.org.uk_-_1614963.jpg"
+      }
     },
     {
       "id": "raf-machrihanish",
@@ -531,7 +676,13 @@
       "sourceName": "Wikipedia",
       "access": "patrolled",
       "accessNote": "The airfield is still operational and MOD land adjoins it.",
-      "partlyOccupied": "The runway and a business park are in use; MOD land adjoins."
+      "partlyOccupied": "The runway and a business park are in use; MOD land adjoins.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Control_Tower%2C_Campbeltown_Airport.jpg/500px-Control_Tower%2C_Campbeltown_Airport.jpg",
+        "credit": "Patrick Mackie",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Control_Tower,_Campbeltown_Airport.jpg"
+      }
     },
     {
       "id": "raf-gallan-head",
@@ -564,7 +715,13 @@
       "summary": "Airfield north-east of Elgin on the Moray Firth. Flying stopped in 1977 and it carried on as a communications station before winding down; runways, dispersals and antenna bases remain across the flat coastal ground.",
       "source": "https://en.wikipedia.org/wiki/RAF_Milltown",
       "sourceName": "Wikipedia",
-      "access": "private"
+      "access": "private",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hangar_at_RAF_Milltown._-_geograph.org.uk_-_121280.jpg/500px-Hangar_at_RAF_Milltown._-_geograph.org.uk_-_121280.jpg",
+        "credit": "Christopher Gillan",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Hangar_at_RAF_Milltown._-_geograph.org.uk_-_121280.jpg"
+      }
     },
     {
       "id": "ardeer",
@@ -598,7 +755,13 @@
       "summary": "The other half of the Nobel Industries empire on the Ayrshire coast, plus a former racecourse. Derelict since 2005 and, at 221 hectares, the sixth-largest abandoned site in Scotland.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
-      "access": "secured"
+      "access": "secured",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Bogside%2C_Irvine_-_geograph.org.uk_-_621054.jpg/500px-Bogside%2C_Irvine_-_geograph.org.uk_-_621054.jpg",
+        "credit": "wfmillar",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Bogside,_Irvine_-_geograph.org.uk_-_621054.jpg"
+      }
     },
     {
       "id": "ardersier",
@@ -616,7 +779,13 @@
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "patrolled",
       "accessNote": "Being redeveloped as an operational port; manned security.",
-      "partlyOccupied": "An active port redevelopment with staff on site."
+      "partlyOccupied": "An active port redevelopment with staff on site.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Private_road_to_Port_of_Ardersier_-_geograph.org.uk_-_6905225.jpg/500px-Private_road_to_Port_of_Ardersier_-_geograph.org.uk_-_6905225.jpg",
+        "credit": "Douglas Nelson",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Private_road_to_Port_of_Ardersier_-_geograph.org.uk_-_6905225.jpg"
+      }
     },
     {
       "id": "powharnel",
@@ -666,7 +835,13 @@
       "summary": "The old main line through Strathmore, closed to passengers in 1967 under the Beeching cuts and to freight in the early 1980s. 165 hectares of abandoned trackbed, cuttings, bridges and shuttered station buildings.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
-      "access": "private"
+      "access": "private",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Former_Strathmore_main_line_east_of_Alyth_Junction_-_geograph.org.uk_-_928256.jpg/500px-Former_Strathmore_main_line_east_of_Alyth_Junction_-_geograph.org.uk_-_928256.jpg",
+        "credit": "A-M-Jervis",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Former_Strathmore_main_line_east_of_Alyth_Junction_-_geograph.org.uk_-_928256.jpg"
+      }
     },
     {
       "id": "st-kilda",
@@ -683,7 +858,13 @@
       "source": "https://en.wikipedia.org/wiki/Hirta",
       "sourceName": "Wikipedia — Hirta",
       "access": "open",
-      "accessNote": "National Trust for Scotland. Landing is possible by boat in summer, subject to their rules."
+      "accessNote": "National Trust for Scotland. Landing is possible by boat in summer, subject to their rules.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/St_Kilda_Village_Bay.jpg/500px-St_Kilda_Village_Bay.jpg",
+        "credit": "Ian Mitchell",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:St_Kilda_Village_Bay.jpg"
+      }
     },
     {
       "id": "mingulay",
@@ -700,7 +881,13 @@
       "source": "https://en.wikipedia.org/wiki/Mingulay",
       "sourceName": "Wikipedia — Mingulay",
       "access": "open",
-      "accessNote": "National Trust for Scotland; landing by boat, weather permitting."
+      "accessNote": "National Trust for Scotland; landing by boat, weather permitting.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Old_School_house_Mingulay.jpg/500px-Old_School_house_Mingulay.jpg",
+        "credit": "Paul Store",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Old_School_house_Mingulay.jpg"
+      }
     },
     {
       "id": "swona",
@@ -717,7 +904,13 @@
       "source": "https://en.wikipedia.org/wiki/Swona",
       "sourceName": "Wikipedia — Swona",
       "access": "private",
-      "accessNote": "Privately owned island with a feral cattle herd. No landing without permission."
+      "accessNote": "Privately owned island with a feral cattle herd. No landing without permission.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Beacon_on_The_Tarf%2C_Swona_-_geograph.org.uk_-_1234096.jpg/500px-Beacon_on_The_Tarf%2C_Swona_-_geograph.org.uk_-_1234096.jpg",
+        "credit": "Ian Balcombe",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Beacon_on_The_Tarf,_Swona_-_geograph.org.uk_-_1234096.jpg"
+      }
     },
     {
       "id": "stroma",
@@ -751,7 +944,13 @@
       "source": "https://www.sundaypost.com/fp/scotlands-abandoned-islands-the-story-of-st-kildas-evacuation-the-mystery-of-the-flannan-isles-and-the-fortress-in-the-forth/",
       "sourceName": "The Sunday Post",
       "access": "private",
-      "accessNote": "Privately owned island. Tunnels and gun emplacements are unlit and unmaintained."
+      "accessNote": "Privately owned island. Tunnels and gun emplacements are unlit and unmaintained.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Inchkeith_Island_-_geograph.org.uk_-_14271.jpg/500px-Inchkeith_Island_-_geograph.org.uk_-_14271.jpg",
+        "credit": "J M Briscoe",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Inchkeith_Island_-_geograph.org.uk_-_14271.jpg"
+      }
     },
     {
       "id": "hallaig",
@@ -767,7 +966,13 @@
       "summary": "Township on the east side of Raasay cleared in the 1850s, its people shipped to Australia. Immortalised in Sorley MacLean’s poem \"Hallaig\", probably the best-known Gaelic poem of the 20th century. Only stone footings and a memorial cairn remain.",
       "source": "https://travelness.com/abandoned-places-in-scotland",
       "sourceName": "Travelness",
-      "access": "open"
+      "access": "open",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Scotland%2C_Raasay%2C_Hallaig_and_D%C3%B9n_Caan_%281%29.jpg/500px-Scotland%2C_Raasay%2C_Hallaig_and_D%C3%B9n_Caan_%281%29.jpg",
+        "credit": "Vincent van Zeijst",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Scotland,_Raasay,_Hallaig_and_D%C3%B9n_Caan_(1).jpg"
+      }
     },
     {
       "id": "rosal",
@@ -801,7 +1006,13 @@
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "access": "secured",
-      "accessNote": "Boarded and monitored while conversion schemes are considered."
+      "accessNote": "Boarded and monitored while conversion schemes are considered.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Tureen_Street_Public_School_%28geograph_7420779%29.jpg/500px-Tureen_Street_Public_School_%28geograph_7420779%29.jpg",
+        "credit": "Colin Kinnear",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Tureen_Street_Public_School_(geograph_7420779).jpg"
+      }
     },
     {
       "id": "holmlea-primary",
@@ -817,7 +1028,13 @@
       "summary": "Edwardian red sandstone board school in Cathcart, closed in the 2000s and left empty. Repeatedly broken into and vandalised while housing conversion plans stalled.",
       "source": "https://en.wikipedia.org/wiki/Holmlea_Primary_School",
       "sourceName": "Wikipedia",
-      "access": "secured"
+      "access": "secured",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Holmlea_Primary_School_01.JPG/500px-Holmlea_Primary_School_01.JPG",
+        "credit": "Edwardx",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Holmlea_Primary_School_01.JPG"
+      }
     },
     {
       "id": "fern-school",
@@ -850,7 +1067,13 @@
       "summary": "The town’s old primary school stood empty after pupils moved to a new building, and was gutted by a large fire that brought Scottish Fire and Rescue crews out in force — the classic fate of a vacant Scottish school.",
       "source": "https://www.firescotland.gov.uk/news/",
       "sourceName": "Scottish Fire and Rescue Service",
-      "access": "secured"
+      "access": "secured",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Former_Inverkeithing_Primary_School_-_geograph.org.uk_-_1002406.jpg/500px-Former_Inverkeithing_Primary_School_-_geograph.org.uk_-_1002406.jpg",
+        "credit": "Simon Johnston",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Former_Inverkeithing_Primary_School_-_geograph.org.uk_-_1002406.jpg"
+      }
     },
     {
       "id": "tirfergus-house",
@@ -882,7 +1105,13 @@
       "summary": "Midlothian District Asylum of 1874, latterly a psychiatric hospital, closed around 2011. The listed main block with its tower has stood empty and open to the weather since, with periodic vandalism and small fires.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "access": "secured"
+      "access": "secured",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Rosslynlee_Hospital_%28geograph_5756756%29.jpg/500px-Rosslynlee_Hospital_%28geograph_5756756%29.jpg",
+        "credit": "M J Richardson",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Rosslynlee_Hospital_(geograph_5756756).jpg"
+      }
     },
     {
       "id": "kingseat-hospital",
@@ -899,7 +1128,13 @@
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "access": "secured",
-      "partlyOccupied": "Several villas are now private homes."
+      "partlyOccupied": "Several villas are now private homes.",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Former_Hospital_Administration_Building%2C_Kingseat_%28geograph_2920493%29.jpg/500px-Former_Hospital_Administration_Building%2C_Kingseat_%28geograph_2920493%29.jpg",
+        "credit": "Bill Harrison",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Former_Hospital_Administration_Building,_Kingseat_(geograph_2920493).jpg"
+      }
     }
   ]
 }

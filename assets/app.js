@@ -99,9 +99,35 @@
     });
   }
 
+  // photo + the credit line its licence requires
+  function figureHtml(s, cls) {
+    if (!s.image || !s.image.url) return '';
+    var credit = [s.image.credit, s.image.license].filter(Boolean).join(' · ');
+    return '<figure class="' + cls + '">' +
+      '<img src="' + esc(s.image.url) + '" alt="' + esc(s.name) + '" loading="lazy" decoding="async">' +
+      (credit
+        ? '<figcaption>' +
+            (s.image.page
+              ? '<a href="' + esc(s.image.page) + '" target="_blank" rel="noopener noreferrer">' + esc(credit) + '</a>'
+              : esc(credit)) +
+          '</figcaption>'
+        : '') +
+    '</figure>';
+  }
+
+  // what you get for hovering a pin: the photo if there is one, else just the name
+  function tooltipHtml(s) {
+    var cat = CAT[s.category] || { label: s.category, color: '#999' };
+    return figureHtml(s, 'tip-photo') +
+      '<p class="tip-name">' + esc(s.name) + '</p>' +
+      '<p class="tip-meta"><span style="color:' + cat.color + '">' + esc(cat.label) + '</span>' +
+        ' · ' + esc(s.region) + '</p>';
+  }
+
   function popupHtml(s) {
     var cat = CAT[s.category] || { label: s.category, color: '#999' };
     var html =
+      figureHtml(s, 'pop-photo') +
       '<h3 class="pop-title">' + esc(s.name) + '</h3>' +
       '<p class="pop-meta">' +
         '<span class="tag" style="color:' + cat.color + '">' + esc(cat.label) + '</span>' +
@@ -131,8 +157,17 @@
 
   function buildMarkers() {
     state.sites.forEach(function (s) {
-      var m = L.marker([s.lat, s.lng], { icon: pinIcon(s.category, false), title: s.name });
+      var m = L.marker([s.lat, s.lng], { icon: pinIcon(s.category, false) });
       m.bindPopup(popupHtml(s));
+
+      // hover preview. Leaflet builds tooltip content on open, so the photo is
+      // only fetched when someone actually points at the pin.
+      m.bindTooltip(tooltipHtml(s), {
+        direction: 'top',
+        offset: [0, -12],
+        opacity: 1,
+        className: 'site-tip' + (s.image ? ' has-photo' : '')
+      });
       m.on('click', function () { select(s.id, false); });
       markers[s.id] = m;
     });
