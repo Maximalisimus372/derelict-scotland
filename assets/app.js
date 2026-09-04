@@ -35,6 +35,9 @@
   var markers = {};   // id -> L.Marker
   var map, layer;
 
+  // second, uncurated layer: the government's own derelict-site register
+  var registerLayer, registerMeta = null, registerCount = 0, registerOn = true;
+
   var els = {
     list: document.getElementById('list'),
     search: document.getElementById('search'),
@@ -43,6 +46,7 @@
     type: document.getElementById('type'),
     access: document.getElementById('access'),
     accessNote: document.getElementById('access-note'),
+    registerNote: document.getElementById('register-note'),
     scopeNote: document.getElementById('scope-note'),
     count: document.getElementById('count'),
     updated: document.getElementById('updated'),
@@ -87,7 +91,53 @@
       maxZoom: 18,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+    registerLayer = L.layerGroup().addTo(map);   // under the curated pins
     layer = L.layerGroup().addTo(map);
+  }
+
+  // Rows straight from the Scottish Vacant and Derelict Land Survey. No
+  // write-up and no photo: what the government publishes is all there is.
+  function loadRegister() {
+    return fetch('data/register.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !data.sites) return;
+        registerMeta = data.meta;
+        registerCount = data.sites.length;
+
+        data.sites.forEach(function (s) {
+          var m = L.circleMarker([s.lat, s.lng], {
+            radius: 3.5, weight: 1,
+            color: '#8d7f70', fillColor: '#8d7f70',
+            opacity: .65, fillOpacity: .35
+          });
+          m.bindTooltip(esc(s.n), { direction: 'top', offset: [0, -4], className: 'site-tip' });
+          m.bindPopup(
+            '<h3 class="pop-title">' + esc(s.n) + '</h3>' +
+            '<p class="pop-meta">' + esc(s.a || '') + (s.a ? ' &middot; ' : '') + esc(s.r) + '</p>' +
+            '<p class="pop-meta">' +
+              (s.p ? '<strong>Was:</strong> ' + esc(s.p) + '<br>' : '') +
+              (s.t ? '<strong>Derelict since:</strong> ' + esc(s.t) + '<br>' : '') +
+              (s.ha ? '<strong>Size:</strong> ' + esc(s.ha) + ' ha<br>' : '') +
+              (s.o ? '<strong>Owner:</strong> ' + esc(s.o) : '') +
+            '</p>' +
+            '<p class="pop-flag">From the official register — no description or photo, and the pin marks the site area rather than a building. ' +
+              '<a href="' + esc(registerMeta.url) + '" target="_blank" rel="noopener noreferrer">Source</a></p>'
+          );
+          registerLayer.addLayer(m);
+        });
+      })
+      .catch(function () { /* the curated map works without it */ });
+  }
+
+  function setRegister(on) {
+    registerOn = on;
+    if (on) map.addLayer(registerLayer); else map.removeLayer(registerLayer);
+    var row = els.legend.querySelector('.lg-row[data-layer="register"]');
+    if (row) {
+      row.classList.toggle('off', !on);
+      row.setAttribute('aria-pressed', String(on));
+    }
   }
 
   function pinIcon(cat, selected) {
@@ -308,6 +358,15 @@
       '</button>' +
       '<div id="legend-body">' +
         '<p class="lg-head">Pin colour — what happened <em>(tap to filter)</em></p>' + cats +
+        (registerCount
+          ? '<p class="lg-head">Second layer</p>' +
+            '<button class="lg-row" data-layer="register" aria-pressed="true" ' +
+              'title="Show or hide the official register">' +
+              '<span class="lg-dot lg-dot-sm" style="background:#8d7f70"></span>' +
+              '<span class="lg-label">Official register</span>' +
+              '<span class="lg-n">' + registerCount + '</span>' +
+            '</button>'
+          : '') +
         '<p class="lg-head">Badge colour — access</p>' + acc +
       '</div>';
 
@@ -318,6 +377,9 @@
         els.legend.querySelector('.lg-chevron').textContent = open ? '–' : '+';
         return;
       }
+      var lay = e.target.closest('.lg-row[data-layer="register"]');
+      if (lay) { setRegister(!registerOn); return; }
+
       var row = e.target.closest('.lg-row[data-cat]');
       if (row) toggleCategory(row.dataset.cat);
     });
@@ -438,6 +500,15 @@
       }
       if (data.meta && data.meta.updated) {
         els.updated.textContent = 'Dataset updated ' + data.meta.updated + ' · ' + state.sites.length + ' entries.';
+      }
+      // the legend needs the register count, so wait for it before building
+      return loadRegister();
+    })
+    .then(function () {
+      if (registerMeta) {
+        els.registerNote.innerHTML = '<strong>Second layer:</strong> ' + esc(registerMeta.note) +
+          ' Source: <a href="' + esc(registerMeta.url) + '" target="_blank" rel="noopener noreferrer">' +
+          esc(registerMeta.source) + '</a>, ' + esc(registerMeta.licence) + '.';
       }
       buildMarkers();
       buildFilters();
