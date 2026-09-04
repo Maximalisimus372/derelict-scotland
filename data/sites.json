@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 5,
+    "version": 6,
     "updated": "2026-09-04",
     "note": "Coordinates marked confidence=approximate are rounded to the site area, not an exact address. Many sites are private property, structurally unsafe or actively patrolled. This dataset documents them; it is not an invitation to enter.",
     "categories": {
@@ -19,7 +19,10 @@
       "island": "Island",
       "religious": "Church / religious",
       "civic": "Civic / commercial",
-      "castle": "Castle"
+      "cinema": "Cinema / theatre",
+      "retail": "Shop / shopping centre",
+      "housing": "Housing",
+      "leisure": "Baths / leisure"
     },
     "access": {
       "open": "Publicly accessible",
@@ -551,29 +554,6 @@
       }
     },
     {
-      "id": "kilchurn-castle",
-      "name": "Kilchurn Castle",
-      "region": "Argyll and Bute",
-      "lat": 56.4033,
-      "lng": -5.0281,
-      "category": "ruin",
-      "status": "Consolidated ruin, open seasonally",
-      "year": 1760,
-      "confidence": "verified",
-      "summary": "15th-century Campbell stronghold on Loch Awe, damaged by lightning in the 1760s and abandoned. Now in state care — the one entry here you can visit legally and safely.",
-      "source": "https://www.historicenvironment.scot/",
-      "sourceName": "Historic Environment Scotland",
-      "type": "castle",
-      "access": "open",
-      "accessNote": "In state care. Open seasonally — the one site here you can simply walk into.",
-      "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Kilchurn_Castle_%282%29_-_geograph.org.uk_-_967084.jpg/500px-Kilchurn_Castle_%282%29_-_geograph.org.uk_-_967084.jpg",
-        "credit": "Mike Searle",
-        "license": "CC BY-SA 2.0",
-        "page": "https://commons.wikimedia.org/wiki/File:Kilchurn_Castle_(2)_-_geograph.org.uk_-_967084.jpg"
-      }
-    },
-    {
       "id": "fearn-airfield",
       "name": "Fearn Airfield",
       "region": "Highland",
@@ -864,7 +844,8 @@
         "credit": "Ian Mitchell",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:St_Kilda_Village_Bay.jpg"
-      }
+      },
+      "partlyOccupied": "A defence radar station and NTS staff are based on the island in season."
     },
     {
       "id": "mingulay",
@@ -1135,6 +1116,274 @@
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Former_Hospital_Administration_Building,_Kingseat_(geograph_2920493).jpg"
       }
+    },
+    {
+      "id": "clune-park",
+      "name": "Clune Park Estate",
+      "region": "Inverclyde",
+      "lat": 55.933,
+      "lng": -4.69,
+      "category": "derelict",
+      "type": "housing",
+      "status": "Ghost estate, demolition from 2025",
+      "year": 1997,
+      "confidence": "approximate",
+      "access": "patrolled",
+      "accessNote": "Council demolition site with contractor security; the tenements are structurally unsafe.",
+      "summary": "Around 430 flats in 45 tenement blocks, built after WWI by the shipbuilders Lithgows to house their workforce. Derelict since 1997 and steadily emptied — under 20 people were left by 2019. The press christened it \"Scotland’s Chernobyl\". A £31m clearance scheme began demolishing it in 2025, starting with the church and school.",
+      "source": "https://en.wikipedia.org/wiki/Clune_Park_Estate",
+      "sourceName": "Wikipedia — Clune Park Estate"
+    },
+    {
+      "id": "govanhill-picture-house",
+      "name": "Govanhill Picture House",
+      "region": "Glasgow",
+      "lat": 55.838,
+      "lng": -4.262,
+      "category": "derelict",
+      "type": "cinema",
+      "status": "Auditorium derelict, shops at street level",
+      "year": 1961,
+      "confidence": "approximate",
+      "access": "secured",
+      "partlyOccupied": "A grocer and a fabric shop trade from the ground floor.",
+      "accessNote": "Occupied at street level; the auditorium above is closed off.",
+      "summary": "Egyptian-themed cinema of 1926 seating 1,200 — one of only a handful of Egyptian-style picture houses left in Britain. Films stopped in 1961 and it went through bingo and warehouse use. B-listed and on the at-risk register; re-roofed in 2012 to stop it collapsing. Shops occupy the frontage while the auditorium sits empty.",
+      "source": "https://en.wikipedia.org/wiki/Govanhill_Picture_House",
+      "sourceName": "Wikipedia",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Govanhill_Picture_House.jpg/500px-Govanhill_Picture_House.jpg",
+        "credit": "Steelgraham",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Govanhill_Picture_House.jpg"
+      }
+    },
+    {
+      "id": "lyceum-cinema-govan",
+      "name": "Lyceum Cinema, Govan",
+      "region": "Glasgow",
+      "lat": 55.864,
+      "lng": -4.308,
+      "category": "derelict",
+      "type": "cinema",
+      "status": "Derelict, B-listed",
+      "year": 2006,
+      "confidence": "approximate",
+      "access": "secured",
+      "summary": "Streamlined 1938 super-cinema on Govan Road by McNair and Elder, seating around 2,600. Split into a bingo hall and cinema in 1974 and eventually closed altogether. B-listed, boarded and slowly rotting on one of Govan’s main streets.",
+      "source": "http://www.derelictglasgow.co.uk/buildingindex.html",
+      "sourceName": "Derelict Glasgow",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Former_Lyceum_Cinema%2C_Govan_Road_%28geograph_7532926%29.jpg/500px-Former_Lyceum_Cinema%2C_Govan_Road_%28geograph_7532926%29.jpg",
+        "credit": "Richard Sutcliffe",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Former_Lyceum_Cinema,_Govan_Road_(geograph_7532926).jpg"
+      }
+    },
+    {
+      "id": "bon-accord-baths",
+      "name": "Bon Accord Baths",
+      "region": "Aberdeen",
+      "lat": 57.144,
+      "lng": -2.105,
+      "category": "derelict",
+      "type": "leisure",
+      "status": "Closed 2008, on at-risk register",
+      "year": 2008,
+      "confidence": "approximate",
+      "access": "secured",
+      "accessNote": "Held by a restoration charity; access is by their arrangement, not by walking in.",
+      "summary": "Art deco swimming baths of 1940 in Justice Mill Lane, where Olympic champion David Wilkie learned to swim. Closed by the council in 2008 during budget cuts and empty since. The pool hall, diving boards and terrazzo are still in place under a leaking roof; a community charity is trying to reopen it.",
+      "source": "https://en.wikipedia.org/wiki/Bon_Accord_Baths",
+      "sourceName": "Wikipedia",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Bon_Accord_Baths_-_September_2023.jpg/500px-Bon_Accord_Baths_-_September_2023.jpg",
+        "credit": "UltrasonicMadness",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Bon_Accord_Baths_-_September_2023.jpg"
+      }
+    },
+    {
+      "id": "whitevale-baths",
+      "name": "Whitevale Street Public Baths",
+      "region": "Glasgow",
+      "lat": 55.856,
+      "lng": -4.22,
+      "category": "derelict",
+      "type": "leisure",
+      "status": "Derelict",
+      "year": 1990,
+      "confidence": "approximate",
+      "access": "secured",
+      "summary": "Victorian public baths and steamie in Dennistoun, opened 1902, with a pair of tall Italianate towers that still dominate Whitevale Street. Closed and boarded for decades, the pool hall open to the sky in places.",
+      "source": "http://www.derelictglasgow.co.uk/buildingindex.html",
+      "sourceName": "Derelict Glasgow",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Former_Whitevale_Baths_-_geograph.org.uk_-_4624796.jpg/500px-Former_Whitevale_Baths_-_geograph.org.uk_-_4624796.jpg",
+        "credit": "Thomas Nugent",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Former_Whitevale_Baths_-_geograph.org.uk_-_4624796.jpg"
+      }
+    },
+    {
+      "id": "church-street-school-pool",
+      "name": "Church Street School swimming pool",
+      "region": "Glasgow",
+      "lat": 55.87,
+      "lng": -4.3,
+      "category": "derelict",
+      "type": "leisure",
+      "status": "Closed 1997, at risk since 1999",
+      "year": 1997,
+      "confidence": "approximate",
+      "access": "secured",
+      "summary": "Listed Victorian school swimming pool in Partick, used as a public facility until it closed in 1997. It has been on the Buildings at Risk Register continuously since 1999 — one of the longest-standing entries on it.",
+      "source": "https://en.wikipedia.org/wiki/Church_Street_School_swimming_pool",
+      "sourceName": "Wikipedia",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Former_Church_Street_School_swimming_pool_-_geograph.org.uk_-_2779866.jpg/500px-Former_Church_Street_School_swimming_pool_-_geograph.org.uk_-_2779866.jpg",
+        "credit": "Thomas Nugent",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Former_Church_Street_School_swimming_pool_-_geograph.org.uk_-_2779866.jpg"
+      }
+    },
+    {
+      "id": "lion-chambers",
+      "name": "Lion Chambers",
+      "region": "Glasgow",
+      "lat": 55.863,
+      "lng": -4.257,
+      "category": "derelict",
+      "type": "civic",
+      "status": "Empty, A-listed, structurally critical",
+      "year": 1995,
+      "confidence": "approximate",
+      "access": "secured",
+      "accessNote": "Netted and hoarded on a busy city-centre street because the concrete is shedding.",
+      "summary": "Eight-storey tower of 1907 on Hope Street, one of the earliest reinforced-concrete buildings in Britain — walls only four inches thick, built that way to fit a tiny plot. Category A-listed and empty since the 1990s. Repeatedly named among the most endangered buildings in Scotland; the cost of fixing the concrete has defeated every scheme so far.",
+      "source": "https://www.derelictglasgow.co.uk/derelict.lionchambers.html",
+      "sourceName": "Derelict Glasgow",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/172_Hope_Street%2C_Lion_Chambers_02.jpg/500px-172_Hope_Street%2C_Lion_Chambers_02.jpg",
+        "credit": "Stinglehammer",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:172_Hope_Street,_Lion_Chambers_02.jpg"
+      }
+    },
+    {
+      "id": "glenwood-centre",
+      "name": "Glenwood Centre, Glenrothes",
+      "region": "Fife",
+      "lat": 56.19,
+      "lng": -3.17,
+      "category": "derelict",
+      "type": "retail",
+      "status": "Derelict precinct, compulsory purchase",
+      "year": 2015,
+      "confidence": "approximate",
+      "access": "secured",
+      "summary": "One of the new town’s neighbourhood shopping precincts — butcher, chemist, newsagent, grocer. The shops emptied as retail moved out of town, and the shell fell into disrepair and became a focus for crime and antisocial behaviour. Fife Council won compulsory purchase powers to clear it.",
+      "source": "https://www.fife.gov.uk/news/2025/major-regeneration-milestone-for-glenrothes-town-centre",
+      "sourceName": "Fife Council"
+    },
+    {
+      "id": "nithsdale-hall",
+      "name": "Nithsdale Hall",
+      "region": "Glasgow",
+      "lat": 55.833,
+      "lng": -4.276,
+      "category": "fire",
+      "type": "civic",
+      "status": "Burnt-out shell",
+      "year": 2006,
+      "confidence": "approximate",
+      "access": "secured",
+      "summary": "Mission hall of 1887–88 on Nithsdale Drive in Pollokshields, burnt out in 2006 and left as a roofless shell behind hoardings ever since.",
+      "source": "http://www.derelictglasgow.co.uk/derelict.nithsdalehall.html",
+      "sourceName": "Derelict Glasgow",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Nithsdale_Hall_%28geograph_7597807%29.jpg/500px-Nithsdale_Hall_%28geograph_7597807%29.jpg",
+        "credit": "Richard Sutcliffe",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Nithsdale_Hall_(geograph_7597807).jpg"
+      }
+    },
+    {
+      "id": "shettleston-hall",
+      "name": "Shettleston Hall",
+      "region": "Glasgow",
+      "lat": 55.848,
+      "lng": -4.155,
+      "category": "derelict",
+      "type": "civic",
+      "status": "Vacant burgh hall",
+      "year": 2000,
+      "confidence": "approximate",
+      "access": "secured",
+      "summary": "The old burgh hall on Wellshot Road, built when Shettleston was still its own place rather than part of Glasgow. Long out of use, boarded and deteriorating.",
+      "source": "http://www.derelictglasgow.co.uk/buildingindex.html",
+      "sourceName": "Derelict Glasgow"
+    },
+    {
+      "id": "possil-station",
+      "name": "Possil Railway Station",
+      "region": "Glasgow",
+      "lat": 55.883,
+      "lng": -4.245,
+      "category": "derelict",
+      "type": "industrial",
+      "status": "Disused station building",
+      "year": 1964,
+      "confidence": "approximate",
+      "access": "secured",
+      "accessNote": "Sits beside a live railway — the line itself is not abandoned and entering it is an offence.",
+      "summary": "Station building on Balmore Road, closed to passengers in the Beeching era. The stone building survives at street level while the line below stayed in use for freight.",
+      "source": "http://www.derelictglasgow.co.uk/buildingindex.html",
+      "sourceName": "Derelict Glasgow",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Former_Possil_Railway_Station_-_geograph.org.uk_-_1127839.jpg/500px-Former_Possil_Railway_Station_-_geograph.org.uk_-_1127839.jpg",
+        "credit": "Stephen Sweeney",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Former_Possil_Railway_Station_-_geograph.org.uk_-_1127839.jpg"
+      }
+    },
+    {
+      "id": "sentinel-works",
+      "name": "Sentinel Works",
+      "region": "Glasgow",
+      "lat": 55.838,
+      "lng": -4.245,
+      "category": "derelict",
+      "type": "industrial",
+      "status": "Derelict works",
+      "year": 1980,
+      "confidence": "approximate",
+      "access": "secured",
+      "summary": "Engineering works off Jessie Street in Polmadie, part of the belt of south-side industry that emptied out from the 1970s. Roofs partly gone, yard overgrown.",
+      "source": "http://www.derelictglasgow.co.uk/buildingindex.html",
+      "sourceName": "Derelict Glasgow",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Glasgow_City_-_Sentinel_Works%2C_61-89_Jessie_Street%2C_Glasgow_-_20150405185329.jpg/500px-Glasgow_City_-_Sentinel_Works%2C_61-89_Jessie_Street%2C_Glasgow_-_20150405185329.jpg",
+        "credit": "Crowsus",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Glasgow_City_-_Sentinel_Works,_61-89_Jessie_Street,_Glasgow_-_20150405185329.jpg"
+      }
+    },
+    {
+      "id": "st-columba-clydebank",
+      "name": "St Columba Episcopal Church, Clydebank",
+      "region": "West Dunbartonshire",
+      "lat": 55.9,
+      "lng": -4.4,
+      "category": "derelict",
+      "type": "religious",
+      "status": "Redundant, derelict",
+      "year": 2000,
+      "confidence": "approximate",
+      "access": "secured",
+      "summary": "Episcopal church and hall in Clydebank, redundant and empty. One of the many Scottish churches emptied by falling congregations and left with no viable second use.",
+      "source": "http://www.derelictglasgow.co.uk/buildingindex.html",
+      "sourceName": "Derelict Glasgow"
     }
   ]
 }
