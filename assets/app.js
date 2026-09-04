@@ -43,6 +43,7 @@
     type: document.getElementById('type'),
     access: document.getElementById('access'),
     accessNote: document.getElementById('access-note'),
+    scopeNote: document.getElementById('scope-note'),
     count: document.getElementById('count'),
     updated: document.getElementById('updated'),
     sidebar: document.getElementById('sidebar'),
@@ -112,7 +113,11 @@
       '<p class="pop-meta"><strong>Status:</strong> ' + esc(s.status) + '</p>' +
       '<p class="pop-access">' + accessBadge(s) +
         (s.accessNote ? '<span class="access-why">' + esc(s.accessNote) + '</span>' : '') +
-      '</p>';
+      '</p>' +
+      (s.partlyOccupied
+        ? '<p class="pop-occupied"><strong>Part of this site is in use.</strong> ' +
+            esc(s.partlyOccupied) + ' The pin covers the whole site, not just the empty part.</p>'
+        : '');
 
     if (s.source) {
       html += '<p class="pop-src">Source: <a href="' + esc(s.source) + '" target="_blank" rel="noopener noreferrer">' +
@@ -186,6 +191,7 @@
           '<span>' + esc(s.region) + '</span>' +
           (s.year ? '<span>' + esc(s.year) + '</span>' : '') +
           accessBadge(s) +
+          (s.partlyOccupied ? '<span class="occupied">Partly in use</span>' : '') +
         '</div>' +
       '</li>';
     }).join('');
@@ -322,7 +328,16 @@
     .then(function (data) {
       state.sites = data.sites || [];
       TYPES = (data.meta && data.meta.types) || {};
+
+      // the dataset decides which categories exist; drop any chip with nothing behind it
+      var cats = (data.meta && data.meta.categories) || {};
+      Object.keys(CAT).forEach(function (k) { if (!cats[k]) delete CAT[k]; });
+      state.active = Object.keys(CAT);
+
       ACCESS_LABEL = (data.meta && data.meta.access) || {};
+      if (data.meta && data.meta.scope) {
+        els.scopeNote.innerHTML = '<strong>What is listed:</strong> ' + esc(data.meta.scope);
+      }
       if (data.meta && data.meta.accessNote) {
         els.accessNote.textContent = data.meta.accessNote;
       }

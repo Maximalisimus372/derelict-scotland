@@ -1,13 +1,11 @@
 {
   "meta": {
-    "version": 3,
+    "version": 4,
     "updated": "2026-09-04",
     "note": "Coordinates marked confidence=approximate are rounded to the site area, not an exact address. Many sites are private property, structurally unsafe or actively patrolled. This dataset documents them; it is not an invitation to enter.",
     "categories": {
       "fire": "Damaged or destroyed by fire",
-      "storm": "Damaged or collapsed in a storm",
       "derelict": "Abandoned / vacant / at risk",
-      "demolished": "No longer standing",
       "ruin": "Long-standing historic ruin",
       "village": "Depopulated village, township or island"
     },
@@ -27,10 +25,10 @@
       "open": "Publicly accessible",
       "private": "Private land, no known security",
       "secured": "Fenced / boarded / CCTV",
-      "patrolled": "Security patrols likely",
-      "gone": "Nothing left standing"
+      "patrolled": "Security patrols likely"
     },
-    "accessNote": "Access ratings are an assessment from each site’s ownership, status and press coverage — they are not verified on the ground and they change. \"No known security\" is not permission: entering private property without it is trespass, and many of these buildings are structurally unsafe regardless of who is watching."
+    "accessNote": "Access ratings are an assessment from each site’s ownership, status and press coverage — they are not verified on the ground and they change. \"No known security\" is not permission: entering private property without it is trespass, and many of these buildings are structurally unsafe regardless of who is watching.",
+    "scope": "Only places that are actually abandoned. Buildings still in everyday use are not listed, even when they have been damaged, and neither are sites that have been demolished away to nothing. Where part of a site has been converted and is lived in, the entry says so."
   },
   "sites": [
     {
@@ -170,36 +168,21 @@
       "accessNote": "The Kilmahew woodland around it is walkable, but the building itself is fenced off."
     },
     {
-      "id": "polphail",
-      "name": "Polphail Village, Portavadie",
-      "region": "Argyll and Bute",
-      "lat": 55.877,
-      "lng": -5.313,
-      "category": "demolished",
-      "status": "Demolished 2016",
-      "year": 1975,
-      "confidence": "approximate",
-      "summary": "Built in the 1970s to house 500 workers for an oil-platform yard that never got a single order. Nobody ever moved in. Stood empty for 40 years as a graffiti-covered ghost village before demolition in 2016.",
-      "source": "https://travelness.com/abandoned-places-in-scotland",
-      "sourceName": "Travelness",
-      "type": "village",
-      "access": "gone"
-    },
-    {
       "id": "gartloch-hospital",
       "name": "Gartloch Hospital",
       "region": "Glasgow",
       "lat": 55.883,
       "lng": -4.115,
       "category": "derelict",
-      "status": "Partly converted, partly derelict",
+      "status": "Hospital core derelict, estate is housing",
       "year": 1996,
       "confidence": "approximate",
-      "summary": "Victorian asylum with a distinctive clock tower, closed 1996. Part of the estate became housing; the hospital core stood gutted and open for years and has suffered fire damage.",
+      "summary": "Victorian asylum with a distinctive clock tower, closed 1996. The land around it was built out as housing and people live there now; the listed hospital core itself stayed empty, was gutted by fire and remains a shell behind hoardings.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
-      "access": "secured"
+      "access": "secured",
+      "partlyOccupied": "The former estate around it is a lived-in housing development."
     },
     {
       "id": "lennox-castle",
@@ -224,14 +207,15 @@
       "lat": 55.944,
       "lng": -4.16,
       "category": "derelict",
-      "status": "Mostly cleared, fragments remain",
+      "status": "Listed fragments derelict, rest is housing",
       "year": 2000,
       "confidence": "approximate",
-      "summary": "Barony Parochial Asylum, opened 1875, closed 2000. Most of the site is now housing but listed fragments remain vacant and deteriorating.",
+      "summary": "Barony Parochial Asylum, opened 1875, closed 2000. Almost all of it has been cleared and replaced by housing that is lived in today — what is left on the map here is the handful of listed buildings that were never converted and are still empty and decaying.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
-      "access": "secured"
+      "access": "secured",
+      "partlyOccupied": "Most of the site is an occupied housing estate."
     },
     {
       "id": "sunnyside-royal",
@@ -256,14 +240,15 @@
       "lat": 57.462,
       "lng": -4.274,
       "category": "fire",
-      "status": "Fire-damaged, part converted",
+      "status": "Fire-ruined wing derelict, rest converted",
       "year": 2000,
       "confidence": "approximate",
-      "summary": "Inverness District Asylum, opened 1864, closed 2000. Suffered serious fires while empty, including a major blaze that destroyed much of the remaining hospital block.",
+      "summary": "Inverness District Asylum, opened 1864, closed 2000. Part of the complex was converted into flats that are lived in; the section wrecked by a major fire while the building stood empty was never rebuilt and is still a burnt-out ruin.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "hospital",
-      "access": "secured"
+      "access": "secured",
+      "partlyOccupied": "The converted blocks are occupied flats."
     },
     {
       "id": "argyll-morningfield",
@@ -413,54 +398,6 @@
       "access": "private"
     },
     {
-      "id": "falkirk-coop-eowyn",
-      "name": "Co-op store, Falkirk",
-      "region": "Falkirk",
-      "lat": 56.0019,
-      "lng": -3.7839,
-      "category": "storm",
-      "status": "Wall collapsed",
-      "year": 2025,
-      "confidence": "approximate",
-      "summary": "An exterior wall of a Co-op store collapsed under 100 mph gusts as Storm Éowyn hit on Friday 24 January 2025 — the most disruptive storm to hit Scotland in a generation.",
-      "source": "https://www.aol.com/news/co-op-building-collapses-falkirk-190140323.html",
-      "sourceName": "AOL / PA Media",
-      "type": "civic",
-      "access": "secured"
-    },
-    {
-      "id": "helensburgh-leisure-eowyn",
-      "name": "Helensburgh leisure centre",
-      "region": "Argyll and Bute",
-      "lat": 56.004,
-      "lng": -4.734,
-      "category": "storm",
-      "status": "Roof torn off",
-      "year": 2025,
-      "confidence": "approximate",
-      "summary": "Storm Éowyn tore roughly 60% of the standing-seam aluminium roof and insulation off the three-year-old coastal leisure centre on 24 January 2025, closing it for months.",
-      "source": "https://claimsmag.co.uk/2025/02/storm-eowyn-the-most-disruptive-storm-to-hit-scotland-in-a-generation/",
-      "sourceName": "Claims Media",
-      "type": "civic",
-      "access": "secured"
-    },
-    {
-      "id": "inverclyde-eowyn-steeple",
-      "name": "Church steeple strike, Inverclyde",
-      "region": "Inverclyde",
-      "lat": 55.945,
-      "lng": -4.75,
-      "category": "storm",
-      "status": "Steeple debris through roof, 24 flats evacuated",
-      "year": 2025,
-      "confidence": "approximate",
-      "summary": "A steel weathervane and stonework were blown off a 40-metre church steeple during Storm Éowyn and crashed through the roof of the converted flats below. Around 24 premises were evacuated over safety fears.",
-      "source": "https://claimsmag.co.uk/2025/02/storm-eowyn-the-most-disruptive-storm-to-hit-scotland-in-a-generation/",
-      "sourceName": "Claims Media",
-      "type": "religious",
-      "access": "private"
-    },
-    {
       "id": "arichonan",
       "name": "Arichonan Township",
       "region": "Argyll and Bute",
@@ -508,54 +445,6 @@
       "type": "castle",
       "access": "open",
       "accessNote": "In state care. Open seasonally — the one site here you can simply walk into."
-    },
-    {
-      "id": "inverkip-power-station",
-      "name": "Inverkip Power Station",
-      "region": "Inverclyde",
-      "lat": 55.907,
-      "lng": -4.872,
-      "category": "demolished",
-      "status": "Chimney demolished 2013, site cleared",
-      "year": 1988,
-      "confidence": "approximate",
-      "summary": "Oil-fired station completed just as the oil crisis made it uneconomic; it barely ran. Its 236 m chimney was Scotland's tallest free-standing structure until demolition in July 2013.",
-      "source": "https://travelness.com/abandoned-places-in-scotland",
-      "sourceName": "Travelness",
-      "type": "industrial",
-      "access": "gone"
-    },
-    {
-      "id": "longannet",
-      "name": "Longannet Power Station",
-      "region": "Fife",
-      "lat": 56.045,
-      "lng": -3.69,
-      "category": "demolished",
-      "status": "Chimney demolished 2021",
-      "year": 2016,
-      "confidence": "approximate",
-      "summary": "Scotland's last coal-fired power station, closed March 2016. Once the largest in Europe. The 183 m chimney came down in December 2021; site clearance continues.",
-      "source": "https://en.wikipedia.org/wiki/Longannet_power_station",
-      "sourceName": "Wikipedia",
-      "type": "industrial",
-      "access": "gone"
-    },
-    {
-      "id": "ravenscraig",
-      "name": "Ravenscraig Steelworks site",
-      "region": "North Lanarkshire",
-      "lat": 55.805,
-      "lng": -3.97,
-      "category": "demolished",
-      "status": "Demolished 1996, brownfield",
-      "year": 1992,
-      "confidence": "approximate",
-      "summary": "Closed in 1992 and demolished by 1996, leaving one of the largest brownfield sites in Europe. Redevelopment has run for three decades and much of the land is still empty.",
-      "source": "https://en.wikipedia.org/wiki/Ravenscraig_steelworks",
-      "sourceName": "Wikipedia",
-      "type": "industrial",
-      "access": "gone"
     },
     {
       "id": "fearn-airfield",
@@ -616,14 +505,15 @@
       "lng": -2.64,
       "category": "derelict",
       "type": "military",
-      "status": "Closed 1997, 170 ha derelict",
+      "status": "Airfield derelict, part is an industrial estate",
       "year": 1997,
       "confidence": "approximate",
-      "summary": "A WWI airfield that became RAF Edzell and then a US Navy Cold War listening station — part of the global signals-intelligence network, complete with a huge circular antenna array. The Americans left in 1997 and 170 hectares have sat empty since.",
+      "summary": "A WWI airfield that became RAF Edzell and then a US Navy Cold War listening station with a huge circular antenna array. The Americans left in 1997. A corner of it now trades as an industrial estate; the runways, bunkers and abandoned base buildings across the remaining 170 hectares do not.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "secured",
-      "accessNote": "Part of the site is now a working industrial estate."
+      "accessNote": "Part of the site is now a working industrial estate.",
+      "partlyOccupied": "Part of the site is a working industrial estate."
     },
     {
       "id": "raf-machrihanish",
@@ -633,14 +523,15 @@
       "lng": -5.686,
       "category": "derelict",
       "type": "military",
-      "status": "Closed 1997, partly reused",
+      "status": "Base buildings derelict, airfield still operational",
       "year": 1997,
       "confidence": "approximate",
-      "summary": "NATO forward base on the Kintyre peninsula with one of the longest runways in Europe, built to take heavy transports and rumoured to have hosted US special forces. Closed in 1997; the runway survives while the base buildings decay.",
+      "summary": "NATO forward base on the Kintyre peninsula with one of the longest runways in Europe, built to take heavy transports and rumoured to have hosted US special forces. The RAF left in 1997. The runway is still flown from and part of the site trades as a business park, but the hardened shelters, bunkers and accommodation blocks are abandoned.",
       "source": "https://en.wikipedia.org/wiki/RAF_Machrihanish",
       "sourceName": "Wikipedia",
       "access": "patrolled",
-      "accessNote": "The airfield is still operational and MOD land adjoins it."
+      "accessNote": "The airfield is still operational and MOD land adjoins it.",
+      "partlyOccupied": "The runway and a business park are in use; MOD land adjoins."
     },
     {
       "id": "raf-gallan-head",
@@ -683,14 +574,15 @@
       "lng": -4.7,
       "category": "derelict",
       "type": "industrial",
-      "status": "Derelict since 2005, 331 ha",
+      "status": "Mostly derelict, part still operational",
       "year": 2005,
       "confidence": "approximate",
-      "summary": "Alfred Nobel opened his dynamite factory on the Ardeer sands in 1871 — at its peak the largest explosives works in the world, with thousands of staff and its own railway. Wound down and derelict since 2005: 331 hectares of blast mounds, blockhouses and dunes.",
+      "summary": "Alfred Nobel opened his dynamite factory on the Ardeer sands in 1871 — at its peak the largest explosives works in the world, with thousands of staff and its own railway. A small operational plant survives at one end; the other 331 hectares of blast mounds, blockhouses and buried magazines have been derelict since 2005.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "patrolled",
-      "accessNote": "Parts of the wider site are still operational chemical works with real security."
+      "accessNote": "Parts of the wider site are still operational chemical works with real security.",
+      "partlyOccupied": "Parts of the wider site are still a working chemical plant."
     },
     {
       "id": "bogside-irvine",
@@ -716,14 +608,15 @@
       "lng": -4.03,
       "category": "derelict",
       "type": "industrial",
-      "status": "Closed 2001, 254 ha",
+      "status": "Yard derelict, port redevelopment under way",
       "year": 2001,
       "confidence": "approximate",
-      "summary": "Oil-platform fabrication yard opened in the early 1970s on the Moray Firth, employing thousands through the North Sea boom. Closed in 2001 and left as 254 hectares of hardstanding, cranes and empty sheds.",
+      "summary": "Oil-platform fabrication yard opened in the early 1970s on the Moray Firth, employing thousands through the North Sea boom. Closed in 2001 and empty for two decades; work has since started on turning it into an operational port, so parts of the 254-hectare site are a live construction project rather than a ruin.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "patrolled",
-      "accessNote": "Being redeveloped as an operational port; manned security."
+      "accessNote": "Being redeveloped as an operational port; manned security.",
+      "partlyOccupied": "An active port redevelopment with staff on site."
     },
     {
       "id": "powharnel",
@@ -911,22 +804,6 @@
       "accessNote": "Boarded and monitored while conversion schemes are considered."
     },
     {
-      "id": "sir-john-stirling-maxwell-school",
-      "name": "Sir John Stirling Maxwell School",
-      "region": "Glasgow",
-      "lat": 55.828,
-      "lng": -4.29,
-      "category": "demolished",
-      "type": "school",
-      "status": "Demolished 2023",
-      "year": 2011,
-      "confidence": "approximate",
-      "summary": "Landmark red sandstone school on Bengal Street, Pollokshaws. Empty and abandoned from 2011, it deteriorated until it was declared structurally unsafe and reduced to rubble in 2023.",
-      "source": "https://secretscotland829724255.wordpress.com/2024/01/07/abandoned-glasgow-school-demolished/",
-      "sourceName": "Secret Scotland",
-      "access": "gone"
-    },
-    {
       "id": "holmlea-primary",
       "name": "Holmlea Primary School",
       "region": "Glasgow",
@@ -976,54 +853,6 @@
       "access": "secured"
     },
     {
-      "id": "castle-wemyss",
-      "name": "Castle Wemyss",
-      "region": "Inverclyde",
-      "lat": 55.876,
-      "lng": -4.885,
-      "category": "demolished",
-      "type": "mansion",
-      "status": "Demolished 1984",
-      "year": 1984,
-      "confidence": "approximate",
-      "summary": "Built around 1850 above Wemyss Bay and grandly extended in Scots Baronial style by Sir John Burns, chairman of Cunard. Anthony Trollope wrote here. Abandoned after the war, it decayed for decades and was demolished in 1984 — only terraces and foundations remain.",
-      "source": "https://www.slch.org.uk/list.html",
-      "sourceName": "Scotland's Lost Country Houses",
-      "access": "gone"
-    },
-    {
-      "id": "wishaw-house",
-      "name": "Wishaw House",
-      "region": "North Lanarkshire",
-      "lat": 55.777,
-      "lng": -3.92,
-      "category": "demolished",
-      "type": "mansion",
-      "status": "Demolished 1957",
-      "year": 1957,
-      "confidence": "approximate",
-      "summary": "Scots Baronial seat of the Belhaven and Hamilton family. Undermined by the coal workings that made the family’s money, it was abandoned and demolished in 1957. Its park is now a public one.",
-      "source": "https://en.wikipedia.org/wiki/Wishaw_House",
-      "sourceName": "Wikipedia",
-      "access": "gone"
-    },
-    {
-      "id": "spiersfield-house",
-      "name": "Spiersfield House",
-      "region": "Renfrewshire",
-      "lat": 55.845,
-      "lng": -4.44,
-      "category": "demolished",
-      "type": "mansion",
-      "status": "Lost",
-      "year": 1950,
-      "confidence": "approximate",
-      "summary": "Paisley country house, one of the 510 Scottish country houses catalogued as vanished by the Scotland’s Lost Country Houses project. Rising taxes, war requisitioning and repair costs finished off houses like this by the dozen.",
-      "source": "https://www.slch.org.uk/list.html",
-      "sourceName": "Scotland's Lost Country Houses",
-      "access": "gone"
-    },
-    {
       "id": "tirfergus-house",
       "name": "Tirfergus House",
       "region": "Argyll and Bute",
@@ -1063,13 +892,14 @@
       "lng": -2.2,
       "category": "derelict",
       "type": "hospital",
-      "status": "Part converted, part derelict",
+      "status": "Admin block and villas derelict, rest converted",
       "year": 1995,
       "confidence": "approximate",
-      "summary": "Aberdeen District Asylum, built on the same villa-colony plan as Bangour and opened in 1904. Closed in the mid-1990s. Some villas became housing; the rest, including the administration block, were left to decay and burn.",
+      "summary": "Aberdeen District Asylum, built on the same villa-colony plan as Bangour and opened in 1904, closed in the mid-1990s. Some villas became private houses and are occupied; the administration block and the villas nobody bought were left to rot and burn.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "access": "secured"
+      "access": "secured",
+      "partlyOccupied": "Several villas are now private homes."
     }
   ]
 }
