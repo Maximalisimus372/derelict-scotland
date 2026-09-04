@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Derelict Scotland — map of abandoned, burned and storm-hit buildings</title>
+<meta name="description" content="An interactive map of Scotland's abandoned buildings, fire-damaged derelicts and storm-hit structures, built from news reports and the Buildings at Risk Register.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <aside id="sidebar">
+    <header id="brand">
+      <h1>Derelict<span>Scotland</span></h1>
+      <p class="tagline">Abandoned, burned and storm-hit buildings across Scotland</p>
+    </header>
+
+    <div id="controls">
+      <input id="search" type="search" placeholder="Search name, region, keyword…" autocomplete="off">
+
+      <div id="filters" role="group" aria-label="Filter by category"></div>
+
+      <div class="row">
+        <label class="sort-label" for="sort">Sort</label>
+        <select id="sort">
+          <option value="recent">Most recent event</option>
+          <option value="name">Name (A–Z)</option>
+          <option value="region">Region</option>
+        </select>
+      </div>
+
+      <p id="count" aria-live="polite"></p>
+    </div>
+
+    <ul id="list"></ul>
+
+    <footer id="foot">
+      <p><strong>Safety &amp; legality:</strong> most of these sites are private property and structurally unsafe. This is a record, not an invitation to enter.</p>
+      <p id="updated"></p>
+    </footer>
+  </aside>
+
+  <main id="map-wrap">
+    <div id="map"></div>
+    <button id="toggle-sidebar" aria-label="Toggle list">☰</button>
+  </main>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
