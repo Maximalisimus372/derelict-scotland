@@ -291,6 +291,85 @@ html, body {
   cursor: pointer;
 }
 
+/* ---------- legend ---------- */
+
+#legend {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 600;
+  width: 210px;
+  background: color-mix(in srgb, var(--panel) 94%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.45);
+  overflow: hidden;
+  backdrop-filter: blur(3px);
+}
+
+#legend-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 11px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.lg-chevron { color: var(--muted); font-size: 14px; line-height: 1; }
+
+#legend.closed #legend-body { display: none; }
+#legend.closed #legend-toggle { border-bottom: 0; }
+
+#legend-body { padding: 8px 6px 9px; }
+
+.lg-head {
+  margin: 4px 5px 5px;
+  font-size: 9.5px;
+  line-height: 1.4;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.lg-head em { font-style: normal; opacity: .75; text-transform: none; letter-spacing: 0; }
+.lg-head + .lg-head, .lg-row + .lg-head { margin-top: 9px; }
+
+.lg-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 5px;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  color: var(--text);
+  font: inherit;
+  font-size: 11.5px;
+  text-align: left;
+}
+
+button.lg-row { cursor: pointer; }
+button.lg-row:hover { background: var(--panel-2); }
+
+.lg-row.off { opacity: .38; }
+.lg-row.off .lg-label { text-decoration: line-through; }
+.lg-row.static { cursor: default; }
+
+.lg-dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+.lg-label { flex: 1 1 auto; }
+.lg-n { color: var(--muted); font-size: 10.5px; font-variant-numeric: tabular-nums; }
+
 .leaflet-container { background: #0d0b0a; }
 
 /* dim OSM tiles to match the dark UI */
@@ -422,6 +501,18 @@ figure.pop-photo figcaption { padding: 5px 16px 0; }
   }
 
   #mobile-bar h2 span { color: var(--accent); font-weight: 300; }
+
+  /* legend folds down to a small tab so it does not eat the map */
+  #legend {
+    width: 168px;
+    top: max(10px, env(safe-area-inset-top));
+    right: 10px;
+  }
+
+  #legend-toggle { padding: 9px 10px; }
+  #legend.closed { width: auto; }
+  #legend.closed #legend-toggle { gap: 8px; }
+  .lg-row { padding: 6px 5px; font-size: 12px; }
 
   /* keep Leaflet's own controls clear of the sheet */
   .leaflet-bottom.leaflet-right { bottom: 78px; }

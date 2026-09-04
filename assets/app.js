@@ -48,6 +48,7 @@
     updated: document.getElementById('updated'),
     sidebar: document.getElementById('sidebar'),
     toggle: document.getElementById('toggle-sidebar'),
+    legend: document.getElementById('legend'),
     handle: document.getElementById('sheet-handle'),
     summary: document.getElementById('sheet-summary')
   };
@@ -275,13 +276,72 @@
 
     els.filters.addEventListener('click', function (e) {
       var btn = e.target.closest('.chip');
-      if (!btn) return;
-      var cat = btn.dataset.cat;
-      var i = state.active.indexOf(cat);
-      if (i === -1) state.active.push(cat); else state.active.splice(i, 1);
-      btn.classList.toggle('on', i === -1);
-      btn.setAttribute('aria-pressed', String(i === -1));
-      render();
+      if (btn) toggleCategory(btn.dataset.cat);
+    });
+  }
+
+  // The panel is closed by default, so the legend has to carry the category
+  // filter as well as explain the colours.
+  function buildLegend() {
+    var counts = {};
+    state.sites.forEach(function (s) { counts[s.category] = (counts[s.category] || 0) + 1; });
+
+    var cats = Object.keys(CAT).map(function (k) {
+      return '<button class="lg-row" data-cat="' + k + '" aria-pressed="true" ' +
+               'title="Show or hide these">' +
+        '<span class="lg-dot" style="background:' + CAT[k].color + '"></span>' +
+        '<span class="lg-label">' + esc(CAT[k].label) + '</span>' +
+        '<span class="lg-n">' + (counts[k] || 0) + '</span>' +
+      '</button>';
+    }).join('');
+
+    var acc = Object.keys(ACCESS_LABEL).map(function (k) {
+      return '<span class="lg-row static">' +
+        '<span class="lg-dot" style="background:' + ((ACCESS[k] || {}).color || '#999') + '"></span>' +
+        '<span class="lg-label">' + esc(ACCESS_LABEL[k]) + '</span>' +
+      '</span>';
+    }).join('');
+
+    els.legend.innerHTML =
+      '<button id="legend-toggle" aria-expanded="true" aria-controls="legend-body">' +
+        '<span>Legend</span><span class="lg-chevron">–</span>' +
+      '</button>' +
+      '<div id="legend-body">' +
+        '<p class="lg-head">Pin colour — what happened <em>(tap to filter)</em></p>' + cats +
+        '<p class="lg-head">Badge colour — access</p>' + acc +
+      '</div>';
+
+    els.legend.addEventListener('click', function (e) {
+      if (e.target.closest('#legend-toggle')) {
+        var open = els.legend.classList.toggle('closed') === false;
+        els.legend.querySelector('#legend-toggle').setAttribute('aria-expanded', String(open));
+        els.legend.querySelector('.lg-chevron').textContent = open ? '–' : '+';
+        return;
+      }
+      var row = e.target.closest('.lg-row[data-cat]');
+      if (row) toggleCategory(row.dataset.cat);
+    });
+  }
+
+  function toggleCategory(cat) {
+    if (!CAT[cat]) return;
+    var i = state.active.indexOf(cat);
+    if (i === -1) state.active.push(cat); else state.active.splice(i, 1);
+    syncCategoryControls();
+    render();
+  }
+
+  // chips in the panel and rows in the legend are two views of one filter
+  function syncCategoryControls() {
+    var mark = function (el, on, cls) {
+      el.classList.toggle(cls, on);
+      el.setAttribute('aria-pressed', String(cls === 'on' ? on : !on));
+    };
+    Array.prototype.forEach.call(els.filters.querySelectorAll('.chip'), function (b) {
+      mark(b, state.active.indexOf(b.dataset.cat) !== -1, 'on');
+    });
+    Array.prototype.forEach.call(els.legend.querySelectorAll('.lg-row[data-cat]'), function (b) {
+      mark(b, state.active.indexOf(b.dataset.cat) === -1, 'off');
     });
   }
 
@@ -381,12 +441,21 @@
       }
       buildMarkers();
       buildFilters();
+      buildLegend();
       fillSelect(els.type, 'type', TYPES, 'All types', true);
       fillSelect(els.access, 'access', ACCESS_LABEL, 'Any access status', false);
       wire();
       render();
-      // phones open on the map, with the list parked at the bottom edge
-      if (isMobile()) els.sidebar.classList.add('collapsed');
+      // the map is the point: it opens full-screen with the panel put away
+      els.sidebar.classList.add('collapsed');
+      els.handle.setAttribute('aria-expanded', 'false');
+      // on a phone the legend would cover half the map, so it starts folded
+      if (isMobile()) {
+        els.legend.classList.add('closed');
+        els.legend.querySelector('#legend-toggle').setAttribute('aria-expanded', 'false');
+        els.legend.querySelector('.lg-chevron').textContent = '+';
+      }
+      setTimeout(function () { map.invalidateSize(); }, 320);
     })
     .catch(function (err) {
       els.list.innerHTML = '<li class="empty">Could not load data/sites.json (' + esc(err.message) +
