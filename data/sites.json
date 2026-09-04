@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 7,
+    "version": 8,
     "updated": "2026-09-04",
     "note": "Coordinates marked confidence=approximate are rounded to the site area, not an exact address. Many sites are private property, structurally unsafe or actively patrolled. This dataset documents them; it is not an invitation to enter.",
     "categories": {
@@ -1517,6 +1517,184 @@
       "summary": "A whole mining village above Carsphairn - two rows of miners cottages, a smelt mill, a school and a manager house - built for the lead workings and abandoned when the mine closed in 1873. The gables and street plan still stand on the moor.",
       "source": "https://www.travelswithakilt.com/abandoned-derelict-places/",
       "sourceName": "Travels with a Kilt"
+    },
+    {
+      "id": "craigendoran-pier",
+      "name": "Craigendoran Pier",
+      "region": "Argyll and Bute",
+      "lat": 56,
+      "lng": -4.705,
+      "category": "derelict",
+      "type": "industrial",
+      "status": "Derelict since 1972",
+      "year": 1972,
+      "confidence": "approximate",
+      "access": "private",
+      "accessNote": "The rotting timbers are the hazard here, not a fence.",
+      "summary": "The North British Railway built this pier in 1882 so trains could hand passengers straight onto the Clyde steamers, and for ninety years it was how Glasgow got to the coast. Steamer services were withdrawn in 1972. The timber piles and decking have been collapsing into the firth ever since, a mile east of Helensburgh.",
+      "source": "https://en.wikipedia.org/wiki/Craigendoran",
+      "sourceName": "Wikipedia — Craigendoran",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Craigendoran_Pier_in_2007.jpg/500px-Craigendoran_Pier_in_2007.jpg",
+        "credit": "Pencefn",
+        "license": "CC BY 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Craigendoran_Pier_in_2007.jpg"
+      }
+    },
+    {
+      "id": "cardross-old-church",
+      "name": "Cardross Old Parish Church",
+      "region": "Argyll and Bute",
+      "lat": 55.956,
+      "lng": -4.654,
+      "category": "ruin",
+      "type": "religious",
+      "status": "Bombed 1941, roofless",
+      "year": 1941,
+      "confidence": "approximate",
+      "access": "open",
+      "accessNote": "Stands openly in the village; the shell itself is fenced off.",
+      "summary": "On the night of 5–6 May 1941 Luftwaffe bombers aiming for the Clyde shipyards hit Cardross village, killing three people and wrecking the parish church. It was never rebuilt. The tower and roofless walls still stand in the middle of the village and serve as its war memorial.",
+      "source": "https://www.stmahew.rcglasgow.org.uk/our-site/",
+      "sourceName": "St Mahew, Cardross"
+    },
+    {
+      "id": "kilmahew-castle",
+      "name": "Kilmahew Castle",
+      "region": "Argyll and Bute",
+      "lat": 55.972,
+      "lng": -4.635,
+      "category": "ruin",
+      "type": "mansion",
+      "status": "Ruined tower house",
+      "year": 1750,
+      "confidence": "approximate",
+      "access": "open",
+      "accessNote": "In the Kilmahew woodland, which is walkable, but the walls are unstable.",
+      "summary": "Tower house of the Napiers in the wooded glen above Cardross. Parts of the south and west walls were rebuilt in the 19th century with the idea of turning it into a modern mansion, but the work was abandoned half-finished. It shares the estate with St Peter’s Seminary and with the site of Kilmahew House, which burned in 1995 and was demolished.",
+      "source": "https://en.wikipedia.org/wiki/Kilmahew_Castle",
+      "sourceName": "Wikipedia — Kilmahew Castle",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Kilmahew_Castle_-_SW_corner_-_geograph.org.uk_-_1594750.jpg",
+        "credit": "Lairich Rig",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Kilmahew_Castle_-_SW_corner_-_geograph.org.uk_-_1594750.jpg"
+      }
+    },
+    {
+      "id": "portkil-battery",
+      "name": "Portkil Battery, Kilcreggan",
+      "region": "Argyll and Bute",
+      "lat": 55.993,
+      "lng": -4.81,
+      "category": "derelict",
+      "type": "military",
+      "status": "Abandoned coastal battery, listed",
+      "year": 1928,
+      "confidence": "approximate",
+      "access": "private",
+      "accessNote": "Caravans and sheds now share the ground; the emplacements are open and unlit.",
+      "summary": "Built between 1900 and 1904 on Fort Road to cover the sea approach to Clydeside, armed with two 6-inch and two 4.7-inch quick-firing guns. The 6-inch guns were taken out in 1916 and the rest in 1928, and the battery never returned to service. Emplacements, magazines and observation posts survive and are listed.",
+      "source": "http://secretscotland.org.uk/index.php/Secrets/CoastalBatteryPortkil",
+      "sourceName": "Secret Scotland",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Portkil_Coast_Batteries_-_geograph.org.uk_-_7897138.jpg/500px-Portkil_Coast_Batteries_-_geograph.org.uk_-_7897138.jpg",
+        "credit": "Pete Marrison",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Portkil_Coast_Batteries_-_geograph.org.uk_-_7897138.jpg"
+      }
+    },
+    {
+      "id": "woodbank-house",
+      "name": "Woodbank House, Balloch",
+      "region": "West Dunbartonshire",
+      "lat": 56.00181,
+      "lng": -4.5969,
+      "category": "derelict",
+      "type": "mansion",
+      "status": "Derelict since 1981",
+      "year": 1981,
+      "confidence": "verified",
+      "access": "secured",
+      "accessNote": "Boarded and fenced, and most of the roof has gone.",
+      "summary": "Georgian mansion on Luss Road at the foot of Loch Lomond, on land settled since 1670 and renamed Woodbank when a Glasgow merchant bought it in 1774. It ran as a hotel from the 1930s until it closed in 1981 and has been rotting ever since, with council and owners each failing to act. It carries a 1981–85 start date on the government derelict register.",
+      "source": "https://www.geograph.org.uk/photo/6198642",
+      "sourceName": "Geograph — Woodbank House",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Woodbank_House_-_Balloch%2C_Loch_Lomond_-_geograph.org.uk_-_6187452.jpg/500px-Woodbank_House_-_Balloch%2C_Loch_Lomond_-_geograph.org.uk_-_6187452.jpg",
+        "credit": "Raibeart MacAoidh",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Woodbank_House_-_Balloch,_Loch_Lomond_-_geograph.org.uk_-_6187452.jpg"
+      }
+    },
+    {
+      "id": "killearn-hospital",
+      "name": "Killearn Hospital",
+      "region": "Stirling",
+      "lat": 56.03266,
+      "lng": -4.39082,
+      "category": "derelict",
+      "type": "hospital",
+      "status": "Abandoned 1972",
+      "year": 1972,
+      "confidence": "verified",
+      "access": "private",
+      "accessNote": "On private ground in Blane Wood; concrete ward blocks and roads survive under the trees.",
+      "summary": "One of five emergency hospitals the government built across Britain in 1940 for the war casualties it expected, put up on requisitioned land beside the ruins of Killearn House. It carried on afterwards as a neurosurgical hospital and was abandoned in 1972. The single-storey ward blocks and their connecting corridors are still in the woods.",
+      "source": "https://www.secretscotland.org.uk/index.php/Secrets/KillearnHospital",
+      "sourceName": "Secret Scotland",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Killearn_Hospital_%28in_ruin%29_%28geograph_4654503%29.jpg/500px-Killearn_Hospital_%28in_ruin%29_%28geograph_4654503%29.jpg",
+        "credit": "Robert Murray",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Killearn_Hospital_(in_ruin)_(geograph_4654503).jpg"
+      }
+    },
+    {
+      "id": "arrochar-torpedo-range",
+      "name": "Arrochar Torpedo Range",
+      "region": "Argyll and Bute",
+      "lat": 56.19766,
+      "lng": -4.76226,
+      "category": "derelict",
+      "type": "military",
+      "status": "Derelict, 3.6 ha",
+      "year": 2003,
+      "confidence": "verified",
+      "access": "private",
+      "summary": "Torpedo testing station at the head of Loch Long, where weapons were fired down the loch and recovered. The deep, straight, sheltered water made it ideal, and it ran for decades before closing in the early 2000s. The pier, workshops and slipway sit on the government derelict register.",
+      "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Remains_of_torpedo_range_at_Arrochar_-_geograph.org.uk_-_2138151.jpg/500px-Remains_of_torpedo_range_at_Arrochar_-_geograph.org.uk_-_2138151.jpg",
+        "credit": "John Ferguson",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Remains_of_torpedo_range_at_Arrochar_-_geograph.org.uk_-_2138151.jpg"
+      }
+    },
+    {
+      "id": "rof-bishopton",
+      "name": "Royal Ordnance Factory, Bishopton",
+      "region": "Renfrewshire",
+      "lat": 55.89856,
+      "lng": -4.51673,
+      "category": "derelict",
+      "type": "military",
+      "status": "Derelict, 43 ha",
+      "year": 1998,
+      "confidence": "verified",
+      "access": "secured",
+      "partlyOccupied": "Part of the wider estate is being built out as housing.",
+      "accessNote": "The derelict blocks are fenced within an active redevelopment.",
+      "summary": "One of the largest explosives factories in Britain, opened in 1937 and spread across square miles of Renfrewshire with its own railway network and hundreds of blast-separated buildings. Production wound down through the 1990s. Forty-three hectares remain on the derelict register — blast mounds, cordite blocks and roads going nowhere.",
+      "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Ex-Royal_Ordnance_Factory%2C_Bishopton_-_geograph.org.uk_-_4600314.jpg/500px-Ex-Royal_Ordnance_Factory%2C_Bishopton_-_geograph.org.uk_-_4600314.jpg",
+        "credit": "M J Richardson",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ex-Royal_Ordnance_Factory,_Bishopton_-_geograph.org.uk_-_4600314.jpg"
+      }
     }
   ]
 }
