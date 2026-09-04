@@ -27,6 +27,7 @@
     active: Object.keys(CAT),   // enabled categories
     type: '',                   // '' = all types
     access: '',                 // '' = any access status
+    near: null,                 // {lat, lng, name, km} once a town is searched
     query: '',
     sort: 'recent',
     selected: null
@@ -37,6 +38,8 @@
 
   // second, uncurated layer: the government's own derelict-site register
   var registerLayer, registerMeta = null, registerCount = 0, registerOn = true;
+  var registerPoints = [];
+  var nearCircle = null;   // the radius drawn on the map
 
   var els = {
     list: document.getElementById('list'),
@@ -54,8 +57,23 @@
     toggle: document.getElementById('toggle-sidebar'),
     legend: document.getElementById('legend'),
     handle: document.getElementById('sheet-handle'),
-    summary: document.getElementById('sheet-summary')
+    summary: document.getElementById('sheet-summary'),
+    nearbar: document.getElementById('nearbar'),
+    nearInput: document.getElementById('near-input'),
+    nearRadius: document.getElementById('near-radius'),
+    nearClear: document.getElementById('near-clear'),
+    nearStatus: document.getElementById('near-status')
   };
+
+  // great-circle distance in km
+  function distKm(aLat, aLng, bLat, bLng) {
+    var R = 6371, rad = Math.PI / 180;
+    var dLat = (bLat - aLat) * rad, dLng = (bLng - aLng) * rad;
+    var s = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(aLat * rad) * Math.cos(bLat * rad) *
+            Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    return 2 * R * Math.asin(Math.min(1, Math.sqrt(s)));
+  }
 
   function isMobile() {
     return window.matchMedia('(max-width: 760px)').matches;
@@ -124,10 +142,23 @@
             '<p class="pop-flag">From the official register — no description or photo, and the pin marks the site area rather than a building. ' +
               '<a href="' + esc(registerMeta.url) + '" target="_blank" rel="noopener noreferrer">Source</a></p>'
           );
+          registerPoints.push({ lat: s.lat, lng: s.lng, m: m });
           registerLayer.addLayer(m);
         });
       })
       .catch(function () { /* the curated map works without it */ });
+  }
+
+  // the register layer follows the town search too
+  function applyRegisterFilter() {
+    registerLayer.clearLayers();
+    var n = state.near, shown = 0;
+    registerPoints.forEach(function (p) {
+      if (n && distKm(n.lat, n.lng, p.lat, p.lng) > n.km) return;
+      registerLayer.addLayer(p.m);
+      shown++;
+    });
+    return shown;
   }
 
   function setRegister(on) {
@@ -232,12 +263,22 @@
       if (state.active.indexOf(s.category) === -1) return false;
       if (state.type && s.type !== state.type) return false;
       if (state.access && s.access !== state.access) return false;
+      if (state.near) {
+        s._km = distKm(state.near.lat, state.near.lng, s.lat, s.lng);
+        if (s._km > state.near.km) return false;
+      }
       if (!q) return true;
       return (s.name + ' ' + s.region + ' ' + s.summary + ' ' + s.status + ' ' +
               s.category + ' ' + s.type + ' ' + (TYPES[s.type] || '') + ' ' +
               s.access + ' ' + (ACCESS_LABEL[s.access] || '') + ' ' + (s.accessNote || ''))
         .toLowerCase().indexOf(q) !== -1;
     });
+
+    // a town search overrides the sort: nearest first is the only useful order
+    if (state.near) {
+      out.sort(function (a, b) { return a._km - b._km; });
+      return out;
+    }
 
     if (state.sort === 'name') {
       out.sort(function (a, b) { return a.name.localeCompare(b.name); });
@@ -255,10 +296,21 @@
     layer.clearLayers();
     items.forEach(function (s) { layer.addLayer(markers[s.id]); });
 
-    els.count.textContent = items.length + ' of ' + state.sites.length + ' sites shown';
-    els.summary.textContent = items.length === state.sites.length
-      ? items.length + ' sites'
-      : items.length + ' of ' + state.sites.length + ' sites';
+    if (state.near) {
+      var reg = applyRegisterFilter();
+      els.count.textContent = items.length + ' site' + (items.length === 1 ? '' : 's') +
+        ' within ' + state.near.km + ' km of ' + state.near.name;
+      els.summary.textContent = items.length + ' near ' + state.near.name;
+      els.nearStatus.textContent = items.length + ' mapped site' + (items.length === 1 ? '' : 's') +
+        (registerCount ? ' · ' + reg + ' on the official register' : '') +
+        ' within ' + state.near.km + ' km';
+      els.nearStatus.classList.remove('err');
+    } else {
+      els.count.textContent = items.length + ' of ' + state.sites.length + ' sites shown';
+      els.summary.textContent = items.length === state.sites.length
+        ? items.length + ' sites'
+        : items.length + ' of ' + state.sites.length + ' sites';
+    }
 
     if (!items.length) {
       els.list.innerHTML = '<li class="empty">Nothing matches those filters.</li>';
@@ -275,6 +327,7 @@
           '</span>' +
           '<span>' + esc(TYPES[s.type] || s.type) + '</span>' +
           '<span>' + esc(s.region) + '</span>' +
+          (state.near ? '<span class="km">' + (s._km < 10 ? s._km.toFixed(1) : Math.round(s._km)) + ' km</span>' : '') +
           (s.year ? '<span>' + esc(s.year) + '</span>' : '') +
           accessBadge(s) +
           (s.partlyOccupied ? '<span class="occupied">Partly in use</span>' : '') +
@@ -385,6 +438,75 @@
     });
   }
 
+  // ---------- search near a town ----------
+
+  // Nominatim, bounded to Scotland. Only fired on submit, never per keystroke:
+  // it is a free service run for everyone and their policy asks for restraint.
+  function geocode(q) {
+    var url = 'https://nominatim.openstreetmap.org/search?' + new URLSearchParams({
+      q: q + ', Scotland', format: 'json', limit: '1',
+      countrycodes: 'gb', bounded: '1', viewbox: '-9,61,0,54.5'
+    });
+    return fetch(url, { headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (j) {
+        if (!j.length) return null;
+        var hit = j[0];
+        return {
+          lat: parseFloat(hit.lat),
+          lng: parseFloat(hit.lon),
+          name: String(hit.display_name).split(',')[0]
+        };
+      });
+  }
+
+  function drawNear() {
+    if (nearCircle) { map.removeLayer(nearCircle); nearCircle = null; }
+    if (!state.near) return;
+    nearCircle = L.circle([state.near.lat, state.near.lng], {
+      radius: state.near.km * 1000,
+      color: '#d9822b', weight: 1, opacity: .55,
+      fillColor: '#d9822b', fillOpacity: .05, interactive: false
+    }).addTo(map);
+    map.fitBounds(nearCircle.getBounds(), { padding: [40, 40] });
+  }
+
+  function setNear(near) {
+    state.near = near;
+    els.nearClear.hidden = !near;
+    drawNear();
+    render();
+    if (!near) {
+      applyRegisterFilter();
+      els.nearStatus.textContent = '';
+      els.nearStatus.classList.remove('err');
+    }
+  }
+
+  function runNearSearch() {
+    var q = els.nearInput.value.trim();
+    if (!q) { setNear(null); return; }
+
+    els.nearStatus.textContent = 'Looking up ' + q + '…';
+    els.nearStatus.classList.remove('err');
+    els.nearbar.classList.add('busy');
+
+    geocode(q).then(function (hit) {
+      els.nearbar.classList.remove('busy');
+      if (!hit) {
+        els.nearStatus.textContent = 'No place in Scotland matched “' + q + '”.';
+        els.nearStatus.classList.add('err');
+        return;
+      }
+      hit.km = parseInt(els.nearRadius.value, 10) || 25;
+      setNear(hit);
+    }).catch(function () {
+      els.nearbar.classList.remove('busy');
+      els.nearStatus.textContent = 'Place lookup is unavailable right now.';
+      els.nearStatus.classList.add('err');
+    });
+  }
+
   function toggleCategory(cat) {
     if (!CAT[cat]) return;
     var i = state.active.indexOf(cat);
@@ -426,6 +548,23 @@
   }
 
   function wire() {
+    els.nearbar.addEventListener('submit', function (e) {
+      e.preventDefault();
+      runNearSearch();
+    });
+
+    els.nearRadius.addEventListener('change', function () {
+      if (!state.near) return;
+      state.near.km = parseInt(els.nearRadius.value, 10) || 25;
+      drawNear();
+      render();
+    });
+
+    els.nearClear.addEventListener('click', function () {
+      els.nearInput.value = '';
+      setNear(null);
+    });
+
     els.type.addEventListener('change', function () {
       state.type = els.type.value;
       render();

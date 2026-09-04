@@ -72,6 +72,20 @@
     </div>
     <div id="map"></div>
     <button id="toggle-sidebar" aria-label="Show list and filters">☰</button>
+
+    <form id="nearbar" autocomplete="off">
+      <input id="near-input" type="search" placeholder="Near a town — e.g. Dundee" aria-label="Find abandoned places near a town">
+      <select id="near-radius" aria-label="Search radius">
+        <option value="5">5 km</option>
+        <option value="10">10 km</option>
+        <option value="25" selected>25 km</option>
+        <option value="50">50 km</option>
+        <option value="100">100 km</option>
+      </select>
+      <button type="submit" id="near-go">Find</button>
+      <button type="button" id="near-clear" hidden aria-label="Clear location search">✕</button>
+      <p id="near-status" role="status"></p>
+    </form>
     <div id="legend" aria-label="Legend"></div>
   </main>
 
