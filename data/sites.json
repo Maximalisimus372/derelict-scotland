@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 8,
+    "version": 9,
     "updated": "2026-09-04",
     "note": "Coordinates marked confidence=approximate are rounded to the site area, not an exact address. Many sites are private property, structurally unsafe or actively patrolled. This dataset documents them; it is not an invitation to enter.",
     "categories": {
@@ -1695,6 +1695,85 @@
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Ex-Royal_Ordnance_Factory,_Bishopton_-_geograph.org.uk_-_4600314.jpg"
       }
+    },
+    {
+      "id": "torryburn-hotel",
+      "name": "Torryburn Hotel, Kintore",
+      "region": "Aberdeenshire",
+      "lat": 57.2312,
+      "lng": -2.34908,
+      "category": "fire",
+      "type": "hotel",
+      "status": "Burnt-out shell since 2015",
+      "year": 2015,
+      "confidence": "verified",
+      "access": "secured",
+      "accessNote": "Fenced off in the middle of a village; the structure is unsound.",
+      "summary": "Georgian coaching hotel on Gauchill Road, gutted by fire in 2015 and never touched since. The burnt shell has stood in the middle of Kintore for a decade while the site sits on the government derelict register.",
+      "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6676643/abandoned-inverurie-derelict-buildings-aberdeenshire/",
+      "sourceName": "The Press and Journal"
+    },
+    {
+      "id": "archaeolink",
+      "name": "Archaeolink Prehistory Park, Oyne",
+      "region": "Aberdeenshire",
+      "lat": 57.326,
+      "lng": -2.524,
+      "category": "derelict",
+      "type": "leisure",
+      "status": "Closed 2011, 13-acre site",
+      "year": 2011,
+      "confidence": "approximate",
+      "access": "private",
+      "accessNote": "Privately marketed land; the turf-roofed buildings are open and unmaintained.",
+      "summary": "A whole museum left to the weather. Archaeolink opened in 1997 as an award-winning prehistory park below Bennachie, with a grass-roofed visitor centre buried into the hillside and full-scale reconstructions of an Iron Age farm and a Roman marching camp. Visitor numbers never covered the running costs and it shut in 2011. Thirteen acres of it have been on the market ever since.",
+      "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6676643/abandoned-inverurie-derelict-buildings-aberdeenshire/",
+      "sourceName": "The Press and Journal",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Archaeolink_Prehistory_Park_-_geograph.org.uk_-_28711.jpg/500px-Archaeolink_Prehistory_Park_-_geograph.org.uk_-_28711.jpg",
+        "credit": "Greg Stringham",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Archaeolink_Prehistory_Park_-_geograph.org.uk_-_28711.jpg"
+      }
+    },
+    {
+      "id": "coutens-farm",
+      "name": "Coutens Farm, Oldmeldrum",
+      "region": "Aberdeenshire",
+      "lat": 57.33,
+      "lng": -2.34,
+      "category": "derelict",
+      "type": "housing",
+      "status": "Derelict for decades",
+      "year": 2001,
+      "confidence": "approximate",
+      "access": "private",
+      "accessNote": "Working farmland surrounds it; the steading roofs have collapsed.",
+      "summary": "Farmhouse and steading abandoned by 2001 and left to fall in. Roofs down, trees through the windows, the yard swallowed by vegetation — the ordinary kind of Scottish dereliction that never makes the listed-building registers.",
+      "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6676643/abandoned-inverurie-derelict-buildings-aberdeenshire/",
+      "sourceName": "The Press and Journal",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Coutens_Farm_-_geograph.org.uk_-_953297.jpg/500px-Coutens_Farm_-_geograph.org.uk_-_953297.jpg",
+        "credit": "Andrew Wood",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Coutens_Farm_-_geograph.org.uk_-_953297.jpg"
+      }
+    },
+    {
+      "id": "mathers-factory",
+      "name": "Mathers Factory, Inverurie",
+      "region": "Aberdeenshire",
+      "lat": 57.283,
+      "lng": -2.39,
+      "category": "derelict",
+      "type": "industrial",
+      "status": "Empty since 2017",
+      "year": 2017,
+      "confidence": "approximate",
+      "access": "secured",
+      "summary": "Meat processing works on Harlaw Road. The company was liquidated in 2016 and the plant stopped in 2017, leaving an empty warehouse and its car park behind the trading estate.",
+      "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6676643/abandoned-inverurie-derelict-buildings-aberdeenshire/",
+      "sourceName": "The Press and Journal"
     }
   ]
 }
