@@ -16,7 +16,7 @@
   <aside id="sidebar">
     <button id="sheet-handle" aria-expanded="true" aria-controls="list">
       <span class="grabber"></span>
-      <span id="sheet-summary">32 sites</span>
+      <span id="sheet-summary">Sites</span>
     </button>
 
     <header id="brand">
@@ -28,6 +28,13 @@
       <input id="search" type="search" placeholder="Search name, region, keyword…" autocomplete="off">
 
       <div id="filters" role="group" aria-label="Filter by category"></div>
+
+      <div class="row">
+        <label class="sort-label" for="type">Type</label>
+        <select id="type">
+          <option value="">All types</option>
+        </select>
+      </div>
 
       <div class="row">
         <label class="sort-label" for="sort">Sort</label>

@@ -2,16 +2,20 @@
   'use strict';
 
   var CAT = {
-    fire:       { label: 'Fire',       color: '#e0562f' },
-    storm:      { label: 'Storm',      color: '#4a9ec9' },
-    derelict:   { label: 'Derelict',   color: '#b8a37e' },
-    demolished: { label: 'Demolished', color: '#8a7f9c' },
-    ruin:       { label: 'Ruin',       color: '#6f9c6a' }
+    fire:       { label: 'Fire',        color: '#e0562f' },
+    storm:      { label: 'Storm',       color: '#4a9ec9' },
+    derelict:   { label: 'Derelict',    color: '#b8a37e' },
+    demolished: { label: 'Demolished',  color: '#8a7f9c' },
+    ruin:       { label: 'Ruin',        color: '#6f9c6a' },
+    village:    { label: 'Depopulated', color: '#57a99a' }
   };
+
+  var TYPES = {};   // filled from data.meta.types
 
   var state = {
     sites: [],
     active: Object.keys(CAT),   // enabled categories
+    type: '',                   // '' = all types
     query: '',
     sort: 'recent',
     selected: null
@@ -25,6 +29,7 @@
     search: document.getElementById('search'),
     filters: document.getElementById('filters'),
     sort: document.getElementById('sort'),
+    type: document.getElementById('type'),
     count: document.getElementById('count'),
     updated: document.getElementById('updated'),
     sidebar: document.getElementById('sidebar'),
@@ -78,6 +83,7 @@
       '<h3 class="pop-title">' + esc(s.name) + '</h3>' +
       '<p class="pop-meta">' +
         '<span class="tag" style="color:' + cat.color + '">' + esc(cat.label) + '</span>' +
+        ' &middot; ' + esc(TYPES[s.type] || s.type) +
         ' &middot; ' + esc(s.region) +
         (s.year ? ' &middot; ' + esc(s.year) : '') +
       '</p>' +
@@ -109,8 +115,10 @@
     var q = state.query.trim().toLowerCase();
     var out = state.sites.filter(function (s) {
       if (state.active.indexOf(s.category) === -1) return false;
+      if (state.type && s.type !== state.type) return false;
       if (!q) return true;
-      return (s.name + ' ' + s.region + ' ' + s.summary + ' ' + s.status + ' ' + s.category)
+      return (s.name + ' ' + s.region + ' ' + s.summary + ' ' + s.status + ' ' +
+              s.category + ' ' + s.type + ' ' + (TYPES[s.type] || ''))
         .toLowerCase().indexOf(q) !== -1;
     });
 
@@ -148,6 +156,7 @@
           '<span class="tag" style="color:' + cat.color + '">' +
             '<span class="dot" style="background:' + cat.color + '"></span>' + esc(cat.label) +
           '</span>' +
+          '<span>' + esc(TYPES[s.type] || s.type) + '</span>' +
           '<span>' + esc(s.region) + '</span>' +
           (s.year ? '<span>' + esc(s.year) + '</span>' : '') +
         '</div>' +
@@ -208,7 +217,27 @@
     });
   }
 
+  // "All types" plus one option per type actually present, with its count
+  function buildTypes() {
+    var counts = {};
+    state.sites.forEach(function (s) { counts[s.type] = (counts[s.type] || 0) + 1; });
+
+    var opts = Object.keys(TYPES)
+      .filter(function (k) { return counts[k]; })
+      .sort(function (a, b) { return counts[b] - counts[a] || TYPES[a].localeCompare(TYPES[b]); })
+      .map(function (k) {
+        return '<option value="' + esc(k) + '">' + esc(TYPES[k]) + ' (' + counts[k] + ')</option>';
+      });
+
+    els.type.innerHTML = '<option value="">All types (' + state.sites.length + ')</option>' + opts.join('');
+  }
+
   function wire() {
+    els.type.addEventListener('change', function () {
+      state.type = els.type.value;
+      render();
+    });
+
     els.search.addEventListener('input', function () {
       state.query = els.search.value;
       render();
@@ -257,11 +286,13 @@
     })
     .then(function (data) {
       state.sites = data.sites || [];
+      TYPES = (data.meta && data.meta.types) || {};
       if (data.meta && data.meta.updated) {
         els.updated.textContent = 'Dataset updated ' + data.meta.updated + ' · ' + state.sites.length + ' entries.';
       }
       buildMarkers();
       buildFilters();
+      buildTypes();
       wire();
       render();
       // phones open on the map, with the list parked at the bottom edge
