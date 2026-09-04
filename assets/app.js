@@ -124,16 +124,21 @@
         registerCount = data.sites.length;
 
         data.sites.forEach(function (s) {
+          // sites the register says still have buildings on them are worth
+          // more than a bare plot, so they read a little stronger
           var m = L.circleMarker([s.lat, s.lng], {
-            radius: 3.5, weight: 1,
-            color: '#8d7f70', fillColor: '#8d7f70',
-            opacity: .65, fillOpacity: .35
+            radius: s.b ? 4.5 : 3.5, weight: 1,
+            color: s.b ? '#b8a37e' : '#8d7f70',
+            fillColor: s.b ? '#b8a37e' : '#8d7f70',
+            opacity: s.b ? .85 : .65,
+            fillOpacity: s.b ? .55 : .35
           });
           m.bindTooltip(esc(s.n), { direction: 'top', offset: [0, -4], className: 'site-tip' });
           m.bindPopup(
             '<h3 class="pop-title">' + esc(s.n) + '</h3>' +
             '<p class="pop-meta">' + esc(s.a || '') + (s.a ? ' &middot; ' : '') + esc(s.r) + '</p>' +
             '<p class="pop-meta">' +
+              (s.b ? '<strong>Buildings still on site.</strong><br>' : '') +
               (s.p ? '<strong>Was:</strong> ' + esc(s.p) + '<br>' : '') +
               (s.t ? '<strong>Derelict since:</strong> ' + esc(s.t) + '<br>' : '') +
               (s.ha ? '<strong>Size:</strong> ' + esc(s.ha) + ' ha<br>' : '') +
