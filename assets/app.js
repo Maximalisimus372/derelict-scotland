@@ -28,8 +28,21 @@
     count: document.getElementById('count'),
     updated: document.getElementById('updated'),
     sidebar: document.getElementById('sidebar'),
-    toggle: document.getElementById('toggle-sidebar')
+    toggle: document.getElementById('toggle-sidebar'),
+    handle: document.getElementById('sheet-handle'),
+    summary: document.getElementById('sheet-summary')
   };
+
+  function isMobile() {
+    return window.matchMedia('(max-width: 760px)').matches;
+  }
+
+  // collapsed on mobile = sheet parked at the bottom; on desktop = sidebar slid out
+  function setCollapsed(on) {
+    els.sidebar.classList.toggle('collapsed', on);
+    els.handle.setAttribute('aria-expanded', String(!on));
+    setTimeout(function () { map.invalidateSize(); }, 300);
+  }
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -118,6 +131,9 @@
     items.forEach(function (s) { layer.addLayer(markers[s.id]); });
 
     els.count.textContent = items.length + ' of ' + state.sites.length + ' sites shown';
+    els.summary.textContent = items.length === state.sites.length
+      ? items.length + ' sites'
+      : items.length + ' of ' + state.sites.length + ' sites';
 
     if (!items.length) {
       els.list.innerHTML = '<li class="empty">Nothing matches those filters.</li>';
@@ -152,8 +168,17 @@
     });
 
     if (fly) {
-      map.flyTo([s.lat, s.lng], Math.max(map.getZoom(), 12), { duration: .7 });
-      markers[id].openPopup();
+      var go = function () {
+        map.flyTo([s.lat, s.lng], Math.max(map.getZoom(), 12), { duration: .7 });
+        markers[id].openPopup();
+      };
+      // on a phone the sheet covers the map, so park it first
+      if (isMobile()) {
+        setCollapsed(true);
+        setTimeout(go, 300);
+      } else {
+        go();
+      }
     }
 
     Array.prototype.forEach.call(els.list.children, function (li) {
@@ -200,8 +225,24 @@
     });
 
     els.toggle.addEventListener('click', function () {
-      els.sidebar.classList.toggle('collapsed');
-      setTimeout(function () { map.invalidateSize(); }, 280);
+      setCollapsed(!els.sidebar.classList.contains('collapsed'));
+    });
+
+    els.handle.addEventListener('click', function () {
+      setCollapsed(!els.sidebar.classList.contains('collapsed'));
+    });
+
+    // keep the sheet from getting stuck in a state that only makes sense
+    // on the other layout when the device is rotated or the window resized
+    var wasMobile = isMobile();
+    window.addEventListener('resize', function () {
+      var now = isMobile();
+      if (now !== wasMobile) {
+        wasMobile = now;
+        setCollapsed(now);
+      } else {
+        map.invalidateSize();
+      }
     });
   }
 
@@ -223,6 +264,8 @@
       buildFilters();
       wire();
       render();
+      // phones open on the map, with the list parked at the bottom edge
+      if (isMobile()) els.sidebar.classList.add('collapsed');
     })
     .catch(function (err) {
       els.list.innerHTML = '<li class="empty">Could not load data/sites.json (' + esc(err.message) +
