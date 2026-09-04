@@ -12,10 +12,21 @@
 
   var TYPES = {};   // filled from data.meta.types
 
+  // how likely you are to run into a fence, a camera or a person
+  var ACCESS = {
+    open:      { color: '#6f9c6a' },
+    private:   { color: '#b8a37e' },
+    secured:   { color: '#d9822b' },
+    patrolled: { color: '#e0562f' },
+    gone:      { color: '#7a7069' }
+  };
+  var ACCESS_LABEL = {};   // filled from data.meta.access
+
   var state = {
     sites: [],
     active: Object.keys(CAT),   // enabled categories
     type: '',                   // '' = all types
+    access: '',                 // '' = any access status
     query: '',
     sort: 'recent',
     selected: null
@@ -30,6 +41,8 @@
     filters: document.getElementById('filters'),
     sort: document.getElementById('sort'),
     type: document.getElementById('type'),
+    access: document.getElementById('access'),
+    accessNote: document.getElementById('access-note'),
     count: document.getElementById('count'),
     updated: document.getElementById('updated'),
     sidebar: document.getElementById('sidebar'),
@@ -47,6 +60,14 @@
     els.sidebar.classList.toggle('collapsed', on);
     els.handle.setAttribute('aria-expanded', String(!on));
     setTimeout(function () { map.invalidateSize(); }, 300);
+  }
+
+  function accessBadge(s) {
+    var a = ACCESS[s.access];
+    if (!a) return '';
+    return '<span class="access" style="--access-color:' + a.color + '">' +
+             esc(ACCESS_LABEL[s.access] || s.access) +
+           '</span>';
   }
 
   function esc(s) {
@@ -88,7 +109,10 @@
         (s.year ? ' &middot; ' + esc(s.year) : '') +
       '</p>' +
       '<p class="pop-body">' + esc(s.summary) + '</p>' +
-      '<p class="pop-meta"><strong>Status:</strong> ' + esc(s.status) + '</p>';
+      '<p class="pop-meta"><strong>Status:</strong> ' + esc(s.status) + '</p>' +
+      '<p class="pop-access">' + accessBadge(s) +
+        (s.accessNote ? '<span class="access-why">' + esc(s.accessNote) + '</span>' : '') +
+      '</p>';
 
     if (s.source) {
       html += '<p class="pop-src">Source: <a href="' + esc(s.source) + '" target="_blank" rel="noopener noreferrer">' +
@@ -116,9 +140,11 @@
     var out = state.sites.filter(function (s) {
       if (state.active.indexOf(s.category) === -1) return false;
       if (state.type && s.type !== state.type) return false;
+      if (state.access && s.access !== state.access) return false;
       if (!q) return true;
       return (s.name + ' ' + s.region + ' ' + s.summary + ' ' + s.status + ' ' +
-              s.category + ' ' + s.type + ' ' + (TYPES[s.type] || ''))
+              s.category + ' ' + s.type + ' ' + (TYPES[s.type] || '') + ' ' +
+              s.access + ' ' + (ACCESS_LABEL[s.access] || '') + ' ' + (s.accessNote || ''))
         .toLowerCase().indexOf(q) !== -1;
     });
 
@@ -159,6 +185,7 @@
           '<span>' + esc(TYPES[s.type] || s.type) + '</span>' +
           '<span>' + esc(s.region) + '</span>' +
           (s.year ? '<span>' + esc(s.year) + '</span>' : '') +
+          accessBadge(s) +
         '</div>' +
       '</li>';
     }).join('');
@@ -217,24 +244,32 @@
     });
   }
 
-  // "All types" plus one option per type actually present, with its count
-  function buildTypes() {
+  // an "all" option plus one per value actually present, with its count.
+  // byCount keeps the type list ordered by size; access keeps its own order,
+  // which runs from freely accessible to actively guarded.
+  function fillSelect(el, field, labels, allLabel, byCount) {
     var counts = {};
-    state.sites.forEach(function (s) { counts[s.type] = (counts[s.type] || 0) + 1; });
+    state.sites.forEach(function (s) { counts[s[field]] = (counts[s[field]] || 0) + 1; });
 
-    var opts = Object.keys(TYPES)
-      .filter(function (k) { return counts[k]; })
-      .sort(function (a, b) { return counts[b] - counts[a] || TYPES[a].localeCompare(TYPES[b]); })
-      .map(function (k) {
-        return '<option value="' + esc(k) + '">' + esc(TYPES[k]) + ' (' + counts[k] + ')</option>';
-      });
+    var keys = Object.keys(labels).filter(function (k) { return counts[k]; });
+    if (byCount) {
+      keys.sort(function (a, b) { return counts[b] - counts[a] || labels[a].localeCompare(labels[b]); });
+    }
 
-    els.type.innerHTML = '<option value="">All types (' + state.sites.length + ')</option>' + opts.join('');
+    el.innerHTML = '<option value="">' + esc(allLabel) + ' (' + state.sites.length + ')</option>' +
+      keys.map(function (k) {
+        return '<option value="' + esc(k) + '">' + esc(labels[k]) + ' (' + counts[k] + ')</option>';
+      }).join('');
   }
 
   function wire() {
     els.type.addEventListener('change', function () {
       state.type = els.type.value;
+      render();
+    });
+
+    els.access.addEventListener('change', function () {
+      state.access = els.access.value;
       render();
     });
 
@@ -287,12 +322,17 @@
     .then(function (data) {
       state.sites = data.sites || [];
       TYPES = (data.meta && data.meta.types) || {};
+      ACCESS_LABEL = (data.meta && data.meta.access) || {};
+      if (data.meta && data.meta.accessNote) {
+        els.accessNote.textContent = data.meta.accessNote;
+      }
       if (data.meta && data.meta.updated) {
         els.updated.textContent = 'Dataset updated ' + data.meta.updated + ' · ' + state.sites.length + ' entries.';
       }
       buildMarkers();
       buildFilters();
-      buildTypes();
+      fillSelect(els.type, 'type', TYPES, 'All types', true);
+      fillSelect(els.access, 'access', ACCESS_LABEL, 'Any access status', false);
       wire();
       render();
       // phones open on the map, with the list parked at the bottom edge

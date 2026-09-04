@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 2,
+    "version": 3,
     "updated": "2026-09-04",
     "note": "Coordinates marked confidence=approximate are rounded to the site area, not an exact address. Many sites are private property, structurally unsafe or actively patrolled. This dataset documents them; it is not an invitation to enter.",
     "categories": {
@@ -22,7 +22,15 @@
       "religious": "Church / religious",
       "civic": "Civic / commercial",
       "castle": "Castle"
-    }
+    },
+    "access": {
+      "open": "Publicly accessible",
+      "private": "Private land, no known security",
+      "secured": "Fenced / boarded / CCTV",
+      "patrolled": "Security patrols likely",
+      "gone": "Nothing left standing"
+    },
+    "accessNote": "Access ratings are an assessment from each site’s ownership, status and press coverage — they are not verified on the ground and they change. \"No known security\" is not permission: entering private property without it is trespass, and many of these buildings are structurally unsafe regardless of who is watching."
   },
   "sites": [
     {
@@ -38,7 +46,9 @@
       "summary": "B-listed 1880s railway hotel, empty for years. Fire in May 2023, then a major blaze on 25 September 2023 that closed Ayr station and the rail line. South Ayrshire Council carried out emergency partial demolition; the owner's attempt to block it failed in 2024. The remaining shell is still unresolved.",
       "source": "https://en.wikipedia.org/wiki/Ayr_Station_Hotel_fire",
       "sourceName": "Wikipedia — Ayr Station Hotel fire",
-      "type": "civic"
+      "type": "civic",
+      "access": "patrolled",
+      "accessNote": "Council-controlled demolition site with a standing cordon around the shell."
     },
     {
       "id": "sauchiehall-street-2026",
@@ -53,7 +63,9 @@
       "summary": "Three-storey derelict building in Glasgow city centre went up around 01:36 on Tuesday 1 September 2026. Nine appliances, one height appliance and three specialist resources attended. Roads closed, no injuries reported.",
       "source": "https://www.firescotland.gov.uk/news/",
       "sourceName": "Scottish Fire and Rescue Service",
-      "type": "civic"
+      "type": "civic",
+      "access": "patrolled",
+      "accessNote": "Recent fire scene: hoardings, cordon and contractor security."
     },
     {
       "id": "princes-street-2026",
@@ -68,7 +80,9 @@
       "summary": "A large fire engulfed a disused building on Princes Street in the early hours of 9 July 2026. The site was earmarked for hotel conversion. Transport across central Edinburgh was disrupted for days.",
       "source": "https://www.bloomberg.com/news/articles/2026-07-09/edinburgh-s-princes-street-hit-by-major-fire-at-planned-hotel",
       "sourceName": "Bloomberg",
-      "type": "civic"
+      "type": "civic",
+      "access": "patrolled",
+      "accessNote": "Recent fire scene on a main city street, cordoned and watched."
     },
     {
       "id": "union-corner-glasgow",
@@ -83,7 +97,9 @@
       "summary": "Major fire on 8 March 2026 in the Union Corner building at Union Street and Gordon Street in central Glasgow, a long-vacant commercial block near Central Station.",
       "source": "https://en.wikipedia.org/wiki/Union_Street_fire",
       "sourceName": "Wikipedia — Union Street fire",
-      "type": "civic"
+      "type": "civic",
+      "access": "patrolled",
+      "accessNote": "Recent fire scene, hoarded and cordoned in the city centre."
     },
     {
       "id": "strathmartine-hospital",
@@ -98,7 +114,9 @@
       "summary": "Former psychiatric hospital closed in 2003. The site has become one of Dundee's worst hotspots for deliberate fire-raising, with repeated blazes across the abandoned wards over two decades.",
       "source": "https://www.firescotland.gov.uk/your-area/",
       "sourceName": "Scottish Fire and Rescue Service",
-      "type": "hospital"
+      "type": "hospital",
+      "access": "patrolled",
+      "accessNote": "Known arson hotspot, so the site is watched and reported on."
     },
     {
       "id": "bangour-village",
@@ -113,7 +131,9 @@
       "summary": "Edwardian 'colony plan' psychiatric hospital opened 1906 — dozens of separate villas, a church and its own railway. Closed 2004 and left to rot; probably Scotland's best-known urbex site. Fire and vandalism have hit several villas.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "hospital"
+      "type": "hospital",
+      "access": "patrolled",
+      "accessNote": "Site security during redevelopment; the best-known urbex target in Scotland, so it is actively watched."
     },
     {
       "id": "hartwood-hospital",
@@ -128,7 +148,9 @@
       "summary": "Once the largest mental asylum in Europe with around 2,500 patients. Closed in the late 1990s, partially burned down and now severely unstable — collapsed floors and open roofs throughout the twin-towered main block.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "hospital"
+      "type": "hospital",
+      "access": "secured",
+      "accessNote": "Fenced. Collapsed floors and open shafts make it one of the most dangerous ruins in the country."
     },
     {
       "id": "st-peters-seminary",
@@ -143,7 +165,9 @@
       "summary": "Brutalist Category A-listed seminary by Gillespie, Kidd & Coia, opened 1966, abandoned by 1987. Repeatedly vandalised and burned. Widely called Scotland's most important modern ruin; multiple restoration schemes have failed.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "religious"
+      "type": "religious",
+      "access": "secured",
+      "accessNote": "The Kilmahew woodland around it is walkable, but the building itself is fenced off."
     },
     {
       "id": "polphail",
@@ -158,7 +182,8 @@
       "summary": "Built in the 1970s to house 500 workers for an oil-platform yard that never got a single order. Nobody ever moved in. Stood empty for 40 years as a graffiti-covered ghost village before demolition in 2016.",
       "source": "https://travelness.com/abandoned-places-in-scotland",
       "sourceName": "Travelness",
-      "type": "village"
+      "type": "village",
+      "access": "gone"
     },
     {
       "id": "gartloch-hospital",
@@ -173,7 +198,8 @@
       "summary": "Victorian asylum with a distinctive clock tower, closed 1996. Part of the estate became housing; the hospital core stood gutted and open for years and has suffered fire damage.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "hospital"
+      "type": "hospital",
+      "access": "secured"
     },
     {
       "id": "lennox-castle",
@@ -188,7 +214,8 @@
       "summary": "1837 castle that became a hospital for people with learning disabilities, closed 2002. Gutted by fire in 2008 and again since. The roofless shell sits behind the Celtic FC training ground.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "hospital"
+      "type": "hospital",
+      "access": "secured"
     },
     {
       "id": "woodilee-hospital",
@@ -203,7 +230,8 @@
       "summary": "Barony Parochial Asylum, opened 1875, closed 2000. Most of the site is now housing but listed fragments remain vacant and deteriorating.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "hospital"
+      "type": "hospital",
+      "access": "secured"
     },
     {
       "id": "sunnyside-royal",
@@ -218,7 +246,8 @@
       "summary": "Scotland's first purpose-built asylum (founded 1781, this site from 1858), closed 2011. Large listed complex near Montrose, vacant and on the at-risk register while conversion plans stall.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "hospital"
+      "type": "hospital",
+      "access": "secured"
     },
     {
       "id": "craig-dunain",
@@ -233,7 +262,8 @@
       "summary": "Inverness District Asylum, opened 1864, closed 2000. Suffered serious fires while empty, including a major blaze that destroyed much of the remaining hospital block.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "hospital"
+      "type": "hospital",
+      "access": "secured"
     },
     {
       "id": "argyll-morningfield",
@@ -248,7 +278,8 @@
       "summary": "The last of Scotland's Victorian psychiatric asylums still in use, finally closed in 2017. Now a listed building awaiting a future.",
       "source": "https://carte-urbex.com/en/blogs/information-1/top-10-urbex-locations-in-scotland",
       "sourceName": "Carte Urbex",
-      "type": "hospital"
+      "type": "hospital",
+      "access": "secured"
     },
     {
       "id": "mavisbank-house",
@@ -263,7 +294,9 @@
       "summary": "Category A-listed 1720s Palladian villa by William Adam, gutted by fire in 1973 and left open to the sky for fifty years. A long-running poster child for the Buildings at Risk Register; a rescue project finally started in the 2020s.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "mansion"
+      "type": "mansion",
+      "access": "secured",
+      "accessNote": "Active conservation project — scaffolded working site."
     },
     {
       "id": "cambusnethan-priory",
@@ -278,7 +311,8 @@
       "summary": "1820 Gothic Revival mansion near Wishaw, a hotel and then a medieval-banquet venue before fires in the 1980s left it roofless. Category B-listed and among the most-photographed derelicts in Lanarkshire.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "mansion"
+      "type": "mansion",
+      "access": "private"
     },
     {
       "id": "crawford-priory",
@@ -293,7 +327,9 @@
       "summary": "Extravagant Gothic country house near Cupar, abandoned since the 1970s. Roof gone, walls progressively collapsing; sections have come down in recent storms.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "mansion"
+      "type": "mansion",
+      "access": "private",
+      "accessNote": "Private estate. Masonry has come down in recent storms."
     },
     {
       "id": "buchanan-castle",
@@ -308,7 +344,8 @@
       "summary": "Seat of the Dukes of Montrose, a WWII military hospital (Rudolf Hess was treated here), then stripped of its roof in 1954 to avoid tax. The shell has stood open ever since.",
       "source": "https://www.travelswithakilt.com/abandoned-derelict-places/",
       "sourceName": "Travels with a Kilt",
-      "type": "mansion"
+      "type": "mansion",
+      "access": "private"
     },
     {
       "id": "dunmore-park",
@@ -323,7 +360,8 @@
       "summary": "1820s Tudor-Gothic mansion near Airth, abandoned and unroofed since the 1960s–70s. Next to the famous Dunmore Pineapple. Steadily losing masonry.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "mansion"
+      "type": "mansion",
+      "access": "private"
     },
     {
       "id": "dunalastair-house",
@@ -338,7 +376,9 @@
       "summary": "Baronial mansion near Kinloch Rannoch, used to billet Polish troops in WWII and derelict ever since. Now a genuinely dangerous ruin with collapsing floors.",
       "source": "https://www.travelswithakilt.com/abandoned-derelict-places/",
       "sourceName": "Travels with a Kilt",
-      "type": "mansion"
+      "type": "mansion",
+      "access": "private",
+      "accessNote": "Private land, and genuinely dangerous — floors have gone."
     },
     {
       "id": "broadford-works",
@@ -353,7 +393,8 @@
       "summary": "Category A-listed linen mill complex, one of the oldest surviving iron-framed mills in Britain. Closed 2004, hit by fire while vacant and repeatedly broken into as redevelopment plans drag on.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "industrial"
+      "type": "industrial",
+      "access": "secured"
     },
     {
       "id": "glenmavis-distillery",
@@ -368,7 +409,8 @@
       "summary": "Bathgate distillery closed in the early 20th century. Surviving listed ranges are roofless and overgrown, long-standing entries on the at-risk register.",
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
-      "type": "industrial"
+      "type": "industrial",
+      "access": "private"
     },
     {
       "id": "falkirk-coop-eowyn",
@@ -383,7 +425,8 @@
       "summary": "An exterior wall of a Co-op store collapsed under 100 mph gusts as Storm Éowyn hit on Friday 24 January 2025 — the most disruptive storm to hit Scotland in a generation.",
       "source": "https://www.aol.com/news/co-op-building-collapses-falkirk-190140323.html",
       "sourceName": "AOL / PA Media",
-      "type": "civic"
+      "type": "civic",
+      "access": "secured"
     },
     {
       "id": "helensburgh-leisure-eowyn",
@@ -398,7 +441,8 @@
       "summary": "Storm Éowyn tore roughly 60% of the standing-seam aluminium roof and insulation off the three-year-old coastal leisure centre on 24 January 2025, closing it for months.",
       "source": "https://claimsmag.co.uk/2025/02/storm-eowyn-the-most-disruptive-storm-to-hit-scotland-in-a-generation/",
       "sourceName": "Claims Media",
-      "type": "civic"
+      "type": "civic",
+      "access": "secured"
     },
     {
       "id": "inverclyde-eowyn-steeple",
@@ -413,7 +457,8 @@
       "summary": "A steel weathervane and stonework were blown off a 40-metre church steeple during Storm Éowyn and crashed through the roof of the converted flats below. Around 24 premises were evacuated over safety fears.",
       "source": "https://claimsmag.co.uk/2025/02/storm-eowyn-the-most-disruptive-storm-to-hit-scotland-in-a-generation/",
       "sourceName": "Claims Media",
-      "type": "religious"
+      "type": "religious",
+      "access": "private"
     },
     {
       "id": "arichonan",
@@ -428,7 +473,8 @@
       "summary": "Abandoned after the 1848 clearance, when residents resisted eviction and were tried in Inveraray. Stone walls and gables still stand on the hillside above Loch Sween.",
       "source": "https://www.travelswithakilt.com/abandoned-derelict-places/",
       "sourceName": "Travels with a Kilt",
-      "type": "village"
+      "type": "village",
+      "access": "open"
     },
     {
       "id": "badbea",
@@ -443,7 +489,8 @@
       "summary": "Cliff-top settlement on the Caithness coast built by families cleared from inland straths. Conditions were so exposed that children and livestock were reportedly tethered. Last resident left in 1911.",
       "source": "https://travelness.com/abandoned-places-in-scotland",
       "sourceName": "Travelness",
-      "type": "village"
+      "type": "village",
+      "access": "open"
     },
     {
       "id": "kilchurn-castle",
@@ -458,7 +505,9 @@
       "summary": "15th-century Campbell stronghold on Loch Awe, damaged by lightning in the 1760s and abandoned. Now in state care — the one entry here you can visit legally and safely.",
       "source": "https://www.historicenvironment.scot/",
       "sourceName": "Historic Environment Scotland",
-      "type": "castle"
+      "type": "castle",
+      "access": "open",
+      "accessNote": "In state care. Open seasonally — the one site here you can simply walk into."
     },
     {
       "id": "inverkip-power-station",
@@ -473,7 +522,8 @@
       "summary": "Oil-fired station completed just as the oil crisis made it uneconomic; it barely ran. Its 236 m chimney was Scotland's tallest free-standing structure until demolition in July 2013.",
       "source": "https://travelness.com/abandoned-places-in-scotland",
       "sourceName": "Travelness",
-      "type": "industrial"
+      "type": "industrial",
+      "access": "gone"
     },
     {
       "id": "longannet",
@@ -488,7 +538,8 @@
       "summary": "Scotland's last coal-fired power station, closed March 2016. Once the largest in Europe. The 183 m chimney came down in December 2021; site clearance continues.",
       "source": "https://en.wikipedia.org/wiki/Longannet_power_station",
       "sourceName": "Wikipedia",
-      "type": "industrial"
+      "type": "industrial",
+      "access": "gone"
     },
     {
       "id": "ravenscraig",
@@ -503,7 +554,8 @@
       "summary": "Closed in 1992 and demolished by 1996, leaving one of the largest brownfield sites in Europe. Redevelopment has run for three decades and much of the land is still empty.",
       "source": "https://en.wikipedia.org/wiki/Ravenscraig_steelworks",
       "sourceName": "Wikipedia",
-      "type": "industrial"
+      "type": "industrial",
+      "access": "gone"
     },
     {
       "id": "fearn-airfield",
@@ -518,7 +570,9 @@
       "confidence": "approximate",
       "summary": "Scotland’s single largest vacant and derelict site at 386 hectares. Built in 1941 as an RAF airfield and later a Royal Navy air station, it has been derelict for at least four decades — runways, dispersals and hangar bases still readable from the air.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "private",
+      "accessNote": "Working farmland over most of the 386 ha."
     },
     {
       "id": "fendom-airfield",
@@ -533,7 +587,9 @@
       "confidence": "approximate",
       "summary": "RAF weapons range and wartime airfield opened in 1941 on the Dornoch Firth. Derelict by 1980 at the latest; 295 hectares of it, making it the third-largest derelict site in the country.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "private",
+      "accessNote": "Farmland and MOD range land adjoin the site."
     },
     {
       "id": "baldoon-airfield",
@@ -548,7 +604,9 @@
       "confidence": "approximate",
       "summary": "RAF Wigtown closed in 1948 and has been left alone ever since. As recently as 2017 the site still held its control towers, hangars, two runways and fourteen abandoned air raid shelters across 184 hectares.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "private",
+      "accessNote": "Farmland; the surviving structures are on private ground."
     },
     {
       "id": "edzell-airbase",
@@ -563,7 +621,9 @@
       "confidence": "approximate",
       "summary": "A WWI airfield that became RAF Edzell and then a US Navy Cold War listening station — part of the global signals-intelligence network, complete with a huge circular antenna array. The Americans left in 1997 and 170 hectares have sat empty since.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "secured",
+      "accessNote": "Part of the site is now a working industrial estate."
     },
     {
       "id": "raf-machrihanish",
@@ -578,7 +638,9 @@
       "confidence": "approximate",
       "summary": "NATO forward base on the Kintyre peninsula with one of the longest runways in Europe, built to take heavy transports and rumoured to have hosted US special forces. Closed in 1997; the runway survives while the base buildings decay.",
       "source": "https://en.wikipedia.org/wiki/RAF_Machrihanish",
-      "sourceName": "Wikipedia"
+      "sourceName": "Wikipedia",
+      "access": "patrolled",
+      "accessNote": "The airfield is still operational and MOD land adjoins it."
     },
     {
       "id": "raf-gallan-head",
@@ -593,7 +655,9 @@
       "confidence": "approximate",
       "summary": "Cold War radar station on the westernmost headland of Lewis, decommissioned in 1958 and progressively abandoned. Empty accommodation blocks and radar platforms sit above the cliffs; the headland has since passed to a community trust.",
       "source": "https://garygough.co.uk/royal-air-force-aird-uig-history-and-facts",
-      "sourceName": "Gary Gough — RAF Aird Uig"
+      "sourceName": "Gary Gough — RAF Aird Uig",
+      "access": "open",
+      "accessNote": "The headland is community-owned with public access; the buildings themselves are not maintained."
     },
     {
       "id": "raf-milltown",
@@ -608,7 +672,8 @@
       "confidence": "approximate",
       "summary": "Airfield north-east of Elgin on the Moray Firth. Flying stopped in 1977 and it carried on as a communications station before winding down; runways, dispersals and antenna bases remain across the flat coastal ground.",
       "source": "https://en.wikipedia.org/wiki/RAF_Milltown",
-      "sourceName": "Wikipedia"
+      "sourceName": "Wikipedia",
+      "access": "private"
     },
     {
       "id": "ardeer",
@@ -623,7 +688,9 @@
       "confidence": "approximate",
       "summary": "Alfred Nobel opened his dynamite factory on the Ardeer sands in 1871 — at its peak the largest explosives works in the world, with thousands of staff and its own railway. Wound down and derelict since 2005: 331 hectares of blast mounds, blockhouses and dunes.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "patrolled",
+      "accessNote": "Parts of the wider site are still operational chemical works with real security."
     },
     {
       "id": "bogside-irvine",
@@ -638,7 +705,8 @@
       "confidence": "approximate",
       "summary": "The other half of the Nobel Industries empire on the Ayrshire coast, plus a former racecourse. Derelict since 2005 and, at 221 hectares, the sixth-largest abandoned site in Scotland.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "secured"
     },
     {
       "id": "ardersier",
@@ -653,7 +721,9 @@
       "confidence": "approximate",
       "summary": "Oil-platform fabrication yard opened in the early 1970s on the Moray Firth, employing thousands through the North Sea boom. Closed in 2001 and left as 254 hectares of hardstanding, cranes and empty sheds.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "patrolled",
+      "accessNote": "Being redeveloped as an operational port; manned security."
     },
     {
       "id": "powharnel",
@@ -668,7 +738,9 @@
       "confidence": "approximate",
       "summary": "Opencast coal mine abandoned in 2013 when Scottish Coal went into liquidation, leaving the restoration bond nowhere near enough to fill the void. 245 hectares of unrestored workings — one of the scandals of the Ayrshire coalfield.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "private",
+      "accessNote": "Open moorland, but unrestored opencast voids and flooded pits."
     },
     {
       "id": "benbain",
@@ -683,7 +755,9 @@
       "confidence": "approximate",
       "summary": "Another East Ayrshire opencast left unfinished by the 2013 collapse of Scottish Coal. 193 hectares of spoil and open void that were supposed to be returned to farmland.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "private",
+      "accessNote": "Open moorland with unrestored opencast voids."
     },
     {
       "id": "strathmore-line",
@@ -698,7 +772,8 @@
       "confidence": "approximate",
       "summary": "The old main line through Strathmore, closed to passengers in 1967 under the Beeching cuts and to freight in the early 1980s. 165 hectares of abandoned trackbed, cuttings, bridges and shuttered station buildings.",
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
-      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland"
+      "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
+      "access": "private"
     },
     {
       "id": "st-kilda",
@@ -713,7 +788,9 @@
       "confidence": "verified",
       "summary": "Britain’s most remote inhabited place until the 36 remaining islanders asked to be taken off. On 29 August 1930 the Harebell carried them to the mainland, ending over 2,000 years of habitation. They left a plate of oats and an open Bible in each cottage. Now a double UNESCO World Heritage Site.",
       "source": "https://en.wikipedia.org/wiki/Hirta",
-      "sourceName": "Wikipedia — Hirta"
+      "sourceName": "Wikipedia — Hirta",
+      "access": "open",
+      "accessNote": "National Trust for Scotland. Landing is possible by boat in summer, subject to their rules."
     },
     {
       "id": "mingulay",
@@ -728,7 +805,9 @@
       "confidence": "approximate",
       "summary": "Island at the southern tip of the Outer Hebrides where around 30 families lived by crofting, fishing and fowling on 200-metre sea cliffs. Conditions and isolation beat them and the last left in 1912. The village street of roofless houses still stands above the bay.",
       "source": "https://en.wikipedia.org/wiki/Mingulay",
-      "sourceName": "Wikipedia — Mingulay"
+      "sourceName": "Wikipedia — Mingulay",
+      "access": "open",
+      "accessNote": "National Trust for Scotland; landing by boat, weather permitting."
     },
     {
       "id": "swona",
@@ -743,7 +822,9 @@
       "confidence": "approximate",
       "summary": "From the early 1930s a single family, the Rosies, were the only people on this Pentland Firth island. In 1974 the last brother and sister sailed off, leaving the house and their cattle behind. The cattle were never collected and their descendants still run wild there — a feral herd studied by scientists.",
       "source": "https://en.wikipedia.org/wiki/Swona",
-      "sourceName": "Wikipedia — Swona"
+      "sourceName": "Wikipedia — Swona",
+      "access": "private",
+      "accessNote": "Privately owned island with a feral cattle herd. No landing without permission."
     },
     {
       "id": "stroma",
@@ -758,7 +839,9 @@
       "confidence": "approximate",
       "summary": "Island in the Pentland Firth whose population peaked at around 375 in the early 1900s. As families left, the school, shop and ferry became unviable and the community collapsed; the last residents went in 1962. A harbour finished just as the island emptied is still there.",
       "source": "https://www.scotsman.com/whats-on/arts-and-entertainment/nine-abandoned-islands-of-scotland-1468227",
-      "sourceName": "The Scotsman — Nine abandoned islands of Scotland"
+      "sourceName": "The Scotsman — Nine abandoned islands of Scotland",
+      "access": "open",
+      "accessNote": "Privately owned but access is not obstructed; boat landing only."
     },
     {
       "id": "inchkeith",
@@ -773,7 +856,9 @@
       "confidence": "approximate",
       "summary": "Fortress island in the middle of the Firth of Forth, fortified from the 16th century and heavily built up with gun batteries and barracks in both World Wars. The garrison left after 1945 and the lighthouse was automated in 1986; the tunnels, emplacements and empty blocks have been derelict ever since.",
       "source": "https://www.sundaypost.com/fp/scotlands-abandoned-islands-the-story-of-st-kildas-evacuation-the-mystery-of-the-flannan-isles-and-the-fortress-in-the-forth/",
-      "sourceName": "The Sunday Post"
+      "sourceName": "The Sunday Post",
+      "access": "private",
+      "accessNote": "Privately owned island. Tunnels and gun emplacements are unlit and unmaintained."
     },
     {
       "id": "hallaig",
@@ -788,7 +873,8 @@
       "confidence": "approximate",
       "summary": "Township on the east side of Raasay cleared in the 1850s, its people shipped to Australia. Immortalised in Sorley MacLean’s poem \"Hallaig\", probably the best-known Gaelic poem of the 20th century. Only stone footings and a memorial cairn remain.",
       "source": "https://travelness.com/abandoned-places-in-scotland",
-      "sourceName": "Travelness"
+      "sourceName": "Travelness",
+      "access": "open"
     },
     {
       "id": "rosal",
@@ -803,7 +889,9 @@
       "confidence": "approximate",
       "summary": "One of the townships burned out in the Sutherland Clearances of 1814 by Patrick Sellar’s men. Excavated in the 1960s and now an interpreted trail in Strathnaver — the clearest surviving plan of a pre-Clearance Highland settlement.",
       "source": "https://www.historicenvironment.scot/",
-      "sourceName": "Historic Environment Scotland"
+      "sourceName": "Historic Environment Scotland",
+      "access": "open",
+      "accessNote": "Interpreted trail on Forestry and Land Scotland ground."
     },
     {
       "id": "tureen-street-school",
@@ -818,7 +906,9 @@
       "confidence": "approximate",
       "summary": "Yellow ashlar board school in Calton, finished in 1875 and one of the oldest surviving school buildings in Glasgow. Long closed, windows boarded, and listed on the Buildings at Risk Register while conversion schemes come and go.",
       "source": "https://buildingsatrisk.org.uk/",
-      "sourceName": "Buildings at Risk Register for Scotland"
+      "sourceName": "Buildings at Risk Register for Scotland",
+      "access": "secured",
+      "accessNote": "Boarded and monitored while conversion schemes are considered."
     },
     {
       "id": "sir-john-stirling-maxwell-school",
@@ -833,7 +923,8 @@
       "confidence": "approximate",
       "summary": "Landmark red sandstone school on Bengal Street, Pollokshaws. Empty and abandoned from 2011, it deteriorated until it was declared structurally unsafe and reduced to rubble in 2023.",
       "source": "https://secretscotland829724255.wordpress.com/2024/01/07/abandoned-glasgow-school-demolished/",
-      "sourceName": "Secret Scotland"
+      "sourceName": "Secret Scotland",
+      "access": "gone"
     },
     {
       "id": "holmlea-primary",
@@ -848,7 +939,8 @@
       "confidence": "approximate",
       "summary": "Edwardian red sandstone board school in Cathcart, closed in the 2000s and left empty. Repeatedly broken into and vandalised while housing conversion plans stalled.",
       "source": "https://en.wikipedia.org/wiki/Holmlea_Primary_School",
-      "sourceName": "Wikipedia"
+      "sourceName": "Wikipedia",
+      "access": "secured"
     },
     {
       "id": "fern-school",
@@ -863,7 +955,9 @@
       "confidence": "approximate",
       "summary": "Late-19th-century rural primary school. Funding cuts in the 1990s cut rolls until it closed in the mid-2000s; it has stood empty ever since, with desks, books and coat pegs still in place — a well-known urbex time capsule.",
       "source": "https://www.obsidianurbexphotography.com/education/abandoned-fern-school-scotland/",
-      "sourceName": "Obsidian Urbex Photography"
+      "sourceName": "Obsidian Urbex Photography",
+      "access": "private",
+      "accessNote": "Private rural property; no known active security, which is why the interior survived."
     },
     {
       "id": "inverkeithing-primary",
@@ -878,7 +972,8 @@
       "confidence": "approximate",
       "summary": "The town’s old primary school stood empty after pupils moved to a new building, and was gutted by a large fire that brought Scottish Fire and Rescue crews out in force — the classic fate of a vacant Scottish school.",
       "source": "https://www.firescotland.gov.uk/news/",
-      "sourceName": "Scottish Fire and Rescue Service"
+      "sourceName": "Scottish Fire and Rescue Service",
+      "access": "secured"
     },
     {
       "id": "castle-wemyss",
@@ -893,7 +988,8 @@
       "confidence": "approximate",
       "summary": "Built around 1850 above Wemyss Bay and grandly extended in Scots Baronial style by Sir John Burns, chairman of Cunard. Anthony Trollope wrote here. Abandoned after the war, it decayed for decades and was demolished in 1984 — only terraces and foundations remain.",
       "source": "https://www.slch.org.uk/list.html",
-      "sourceName": "Scotland's Lost Country Houses"
+      "sourceName": "Scotland's Lost Country Houses",
+      "access": "gone"
     },
     {
       "id": "wishaw-house",
@@ -908,7 +1004,8 @@
       "confidence": "approximate",
       "summary": "Scots Baronial seat of the Belhaven and Hamilton family. Undermined by the coal workings that made the family’s money, it was abandoned and demolished in 1957. Its park is now a public one.",
       "source": "https://en.wikipedia.org/wiki/Wishaw_House",
-      "sourceName": "Wikipedia"
+      "sourceName": "Wikipedia",
+      "access": "gone"
     },
     {
       "id": "spiersfield-house",
@@ -923,7 +1020,8 @@
       "confidence": "approximate",
       "summary": "Paisley country house, one of the 510 Scottish country houses catalogued as vanished by the Scotland’s Lost Country Houses project. Rising taxes, war requisitioning and repair costs finished off houses like this by the dozen.",
       "source": "https://www.slch.org.uk/list.html",
-      "sourceName": "Scotland's Lost Country Houses"
+      "sourceName": "Scotland's Lost Country Houses",
+      "access": "gone"
     },
     {
       "id": "tirfergus-house",
@@ -938,7 +1036,8 @@
       "confidence": "approximate",
       "summary": "Kintyre country house near Campbeltown, abandoned in the second half of the 20th century and now a roofless shell being taken apart by weather and vegetation.",
       "source": "https://en.wikipedia.org/wiki/Tirfergus_House",
-      "sourceName": "Wikipedia"
+      "sourceName": "Wikipedia",
+      "access": "private"
     },
     {
       "id": "rosslynlee-hospital",
@@ -953,7 +1052,8 @@
       "confidence": "approximate",
       "summary": "Midlothian District Asylum of 1874, latterly a psychiatric hospital, closed around 2011. The listed main block with its tower has stood empty and open to the weather since, with periodic vandalism and small fires.",
       "source": "https://buildingsatrisk.org.uk/",
-      "sourceName": "Buildings at Risk Register for Scotland"
+      "sourceName": "Buildings at Risk Register for Scotland",
+      "access": "secured"
     },
     {
       "id": "kingseat-hospital",
@@ -968,7 +1068,8 @@
       "confidence": "approximate",
       "summary": "Aberdeen District Asylum, built on the same villa-colony plan as Bangour and opened in 1904. Closed in the mid-1990s. Some villas became housing; the rest, including the administration block, were left to decay and burn.",
       "source": "https://buildingsatrisk.org.uk/",
-      "sourceName": "Buildings at Risk Register for Scotland"
+      "sourceName": "Buildings at Risk Register for Scotland",
+      "access": "secured"
     }
   ]
 }

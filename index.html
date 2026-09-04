@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#12100e">
-<title>Derelict Scotland — map of abandoned, burned and storm-hit buildings</title>
+<title>Abandoned Scotland — map of abandoned, burned and storm-hit buildings</title>
 <meta name="description" content="An interactive map of Scotland's abandoned buildings, fire-damaged derelicts and storm-hit structures, built from news reports and the Buildings at Risk Register.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="assets/style.css">
@@ -20,7 +20,7 @@
     </button>
 
     <header id="brand">
-      <h1>Derelict<span>Scotland</span></h1>
+      <h1>Abandoned<span>Scotland</span></h1>
       <p class="tagline">Abandoned, burned and storm-hit buildings across Scotland</p>
     </header>
 
@@ -33,6 +33,13 @@
         <label class="sort-label" for="type">Type</label>
         <select id="type">
           <option value="">All types</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label class="sort-label" for="access">Access</label>
+        <select id="access">
+          <option value="">Any access status</option>
         </select>
       </div>
 
@@ -52,13 +59,14 @@
 
     <footer id="foot">
       <p><strong>Safety &amp; legality:</strong> most of these sites are private property and structurally unsafe. This is a record, not an invitation to enter.</p>
+      <p id="access-note"></p>
       <p id="updated"></p>
     </footer>
   </aside>
 
   <main id="map-wrap">
     <div id="mobile-bar">
-      <h2>Derelict<span>Scotland</span></h2>
+      <h2>Abandoned<span>Scotland</span></h2>
     </div>
     <div id="map"></div>
     <button id="toggle-sidebar" aria-label="Toggle list">☰</button>
