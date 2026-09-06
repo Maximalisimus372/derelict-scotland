@@ -33,11 +33,15 @@
     selected: null
   };
 
+  // Data files change often. Revalidate them with the server rather than
+  // letting a stale copy sit in the browser cache showing old counts.
+  var FRESH = { cache: 'no-cache' };
+
   var markers = {};   // id -> L.Marker
   var map, layer;
 
   // second, uncurated layer: the government's own derelict-site register
-  var registerLayer, registerMeta = null, registerCount = 0, registerOn = true;
+  var registerLayer, registerMeta = null, registerCount = 0, registerOn = false;
   var registerPoints = [];
   var nearCircle = null;   // the radius drawn on the map
 
@@ -128,7 +132,7 @@
     canmoreRenderer = { township: bulk, wartime: bulk, register: bulk };
 
     canmoreLayer = { township: L.layerGroup(), wartime: L.layerGroup() };
-    registerLayer = L.layerGroup().addTo(map);
+    registerLayer = L.layerGroup();   // land, not buildings: off until asked for
     layer = L.layerGroup().addTo(map);
 
     // Hand any popup carrying a photo slot its picture once Commons answers.
@@ -151,7 +155,7 @@
   };
 
   function loadCanmore() {
-    return fetch('data/canmore.json')
+    return fetch('data/canmore.json', FRESH)
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         if (!data || !data.sites) return;
@@ -216,7 +220,7 @@
   // Rows straight from the Scottish Vacant and Derelict Land Survey. No
   // write-up and no photo: what the government publishes is all there is.
   function loadRegister() {
-    return fetch('data/register.json')
+    return fetch('data/register.json', FRESH)
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         if (!data || !data.sites) return;
@@ -260,6 +264,7 @@
   // the register layer follows the town search too
   function applyRegisterFilter() {
     registerLayer.clearLayers();
+    if (!registerOn) map.removeLayer(registerLayer);
     var n = state.near, shown = 0;
     registerPoints.forEach(function (p) {
       if (n && distKm(n.lat, n.lng, p.lat, p.lng) > n.km) return;
@@ -376,7 +381,9 @@
     // DOM in place: Leaflet re-renders a popup from its stored content, so an
     // injected node would be wiped the next time it measures itself.
     var publish = function (html) {
-      if (!popup || !popup.isOpen() || !content) return;
+      // the popup may have been closed, or re-rendered out from under us,
+      // while Commons was answering
+      if (!popup || !popup.isOpen() || !content || !slot.parentNode) return;
       slot.outerHTML = html;
       popup.setContent(content.innerHTML);
     };
@@ -632,9 +639,9 @@
         (registerCount || canmoreMeta
           ? '<p class="lg-head">Other layers <em>(tap to toggle)</em></p>' +
             (registerCount
-              ? '<button class="lg-row" data-layer="register" aria-pressed="true">' +
+              ? '<button class="lg-row off" data-layer="register" aria-pressed="false">' +
                   '<span class="lg-dot lg-dot-sm" style="background:#8d7f70"></span>' +
-                  '<span class="lg-label">Official register</span>' +
+                  '<span class="lg-label">Derelict land register</span>' +
                   '<span class="lg-n">' + registerCount + '</span>' +
                 '</button>'
               : '') +
@@ -850,7 +857,7 @@
 
   initMap();
 
-  fetch('data/sites.json')
+  fetch('data/sites.json', FRESH)
     .then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
