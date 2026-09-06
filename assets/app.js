@@ -144,6 +144,7 @@
               (s.ha ? '<strong>Size:</strong> ' + esc(s.ha) + ' ha<br>' : '') +
               (s.o ? '<strong>Owner:</strong> ' + esc(s.o) : '') +
             '</p>' +
+            mapLinks(s.lat, s.lng) +
             '<p class="pop-flag">From the official register — no description or photo, and the pin marks the site area rather than a building. ' +
               '<a href="' + esc(registerMeta.url) + '" target="_blank" rel="noopener noreferrer">Source</a></p>'
           );
@@ -211,6 +212,22 @@
         ' · ' + esc(s.region) + '</p>';
   }
 
+  // Google Maps links built from the coordinates. The satellite link is the
+  // useful one here: from above you can usually see whether a roof is still on.
+  function mapLinks(lat, lng) {
+    var q = lat + ',' + lng;
+    return '<p class="pop-maps">' +
+      '<a href="https://www.google.com/maps/search/?api=1&amp;query=' + q +
+        '" target="_blank" rel="noopener noreferrer">Google Maps</a>' +
+      '<a href="https://www.google.com/maps/@?api=1&amp;map_action=map&amp;center=' + q +
+        '&amp;zoom=18&amp;basemap=satellite" target="_blank" rel="noopener noreferrer">Satellite</a>' +
+      '<a href="https://www.google.com/maps/dir/?api=1&amp;destination=' + q +
+        '" target="_blank" rel="noopener noreferrer">Directions</a>' +
+      '<a href="https://www.openstreetmap.org/?mlat=' + lat + '&amp;mlon=' + lng +
+        '#map=17/' + lat + '/' + lng + '" target="_blank" rel="noopener noreferrer">OSM</a>' +
+    '</p>';
+  }
+
   function popupHtml(s) {
     var cat = CAT[s.category] || { label: s.category, color: '#999' };
     var html =
@@ -230,7 +247,8 @@
       (s.partlyOccupied
         ? '<p class="pop-occupied"><strong>Part of this site is in use.</strong> ' +
             esc(s.partlyOccupied) + ' The pin covers the whole site, not just the empty part.</p>'
-        : '');
+        : '') +
+      mapLinks(s.lat, s.lng);
 
     if (s.source) {
       html += '<p class="pop-src">Source: <a href="' + esc(s.source) + '" target="_blank" rel="noopener noreferrer">' +
