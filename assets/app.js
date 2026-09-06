@@ -47,8 +47,8 @@
 
   // third layer: Canmore, the national record
   var canmoreLayer, canmoreRenderer, canmoreMeta = null;
-  var canmorePoints = { wartime: [], township: [] };
-  var canmoreOn = { wartime: true, township: true };
+  var canmorePoints = { wartime: [], township: [], unverified: [] };
+  var canmoreOn = {};   // seeded from CANMORE_GROUPS once they are defined
 
   var els = {
     list: document.getElementById('list'),
@@ -129,9 +129,13 @@
     // tolerance gives every dot a few pixels of click slack — a 3px dot with a
     // halo looks bigger than its hit area, so without it people miss
     var bulk = L.canvas({ pane: 'bulk', padding: .3, tolerance: 6 });
-    canmoreRenderer = { township: bulk, wartime: bulk, register: bulk };
+    canmoreRenderer = { township: bulk, wartime: bulk, unverified: bulk, register: bulk };
 
-    canmoreLayer = { township: L.layerGroup(), wartime: L.layerGroup() };
+    canmoreLayer = {};
+    Object.keys(CANMORE_GROUPS).forEach(function (g) {
+      canmoreLayer[g] = L.layerGroup();
+      canmoreOn[g] = CANMORE_GROUPS[g].on;
+    });
     registerLayer = L.layerGroup();   // land, not buildings: off until asked for
     layer = L.layerGroup().addTo(map);
 
@@ -149,9 +153,13 @@
 
   // ---------- Canmore: the national record of the historic environment ------
 
+  // The first two are records whose text confirms something survives. The third
+  // is everything Canmore simply does not describe: it may be a bunker, it may
+  // be a field. Off by default, and labelled so nobody is misled.
   var CANMORE_GROUPS = {
-    wartime:  { label: 'Wartime remains', color: '#e8894a' },
-    township: { label: 'Deserted settlements', color: '#5fb0a8' }
+    wartime:    { label: 'Wartime remains', color: '#e8894a', on: true },
+    township:   { label: 'Deserted settlements', color: '#5fb0a8', on: true },
+    unverified: { label: 'Condition unknown', color: '#7c7f86', on: false }
   };
 
   function loadCanmore() {
@@ -162,10 +170,11 @@
         canmoreMeta = data.meta;
 
         data.sites.forEach(function (s) {
-          var g = CANMORE_GROUPS[s.g];
+          var key = s.k ? s.g : 'unverified';
+          var g = CANMORE_GROUPS[key];
           if (!g) return;
           var m = L.circleMarker([s.lat, s.lng], {
-            renderer: canmoreRenderer[s.g],
+            renderer: canmoreRenderer[key],
             radius: 2.8,
             fillColor: g.color, fillOpacity: .95,
             color: g.color, weight: 5, opacity: .28   // the halo
@@ -187,11 +196,13 @@
                 'for the description. Any photograph is one taken near these coordinates, ' +
                 'not necessarily of this site.</p>';
           });
-          canmorePoints[s.g].push({ lat: s.lat, lng: s.lng, m: m });
-          canmoreLayer[s.g].addLayer(m);
+          canmorePoints[key].push({ lat: s.lat, lng: s.lng, m: m });
+          canmoreLayer[key].addLayer(m);
         });
 
-        Object.keys(canmoreLayer).forEach(function (g) { map.addLayer(canmoreLayer[g]); });
+        Object.keys(canmoreLayer).forEach(function (g) {
+          if (canmoreOn[g]) map.addLayer(canmoreLayer[g]);
+        });
       })
       .catch(function () { /* the rest of the map works without it */ });
   }
@@ -650,7 +661,9 @@
               : '') +
             Object.keys(CANMORE_GROUPS).map(function (g) {
               if (!canmorePoints[g].length) return '';
-              return '<button class="lg-row" data-layer="' + g + '" aria-pressed="true">' +
+              var on = canmoreOn[g];
+              return '<button class="lg-row' + (on ? '' : ' off') + '" data-layer="' + g +
+                       '" aria-pressed="' + on + '">' +
                 '<span class="lg-dot lg-dot-sm lg-glow" style="background:' + CANMORE_GROUPS[g].color +
                   ';--glow:' + CANMORE_GROUPS[g].color + '"></span>' +
                 '<span class="lg-label">' + esc(CANMORE_GROUPS[g].label) + '</span>' +
