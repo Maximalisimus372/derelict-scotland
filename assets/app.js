@@ -41,6 +41,11 @@
   var registerPoints = [];
   var nearCircle = null;   // the radius drawn on the map
 
+  // third layer: Canmore, the national record
+  var canmoreLayer, canmoreRenderer, canmoreMeta = null;
+  var canmorePoints = { wartime: [], township: [] };
+  var canmoreOn = { wartime: true, township: true };
+
   var els = {
     list: document.getElementById('list'),
     search: document.getElementById('search'),
@@ -109,8 +114,103 @@
       maxZoom: 18,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    registerLayer = L.layerGroup().addTo(map);   // under the curated pins
+    // Own panes for the bulk layers. Thousands of markers are drawn on canvas
+    // rather than as SVG paths, and the glow is one CSS filter on the whole
+    // pane instead of a shadow per marker.
+    ['township', 'wartime', 'register'].forEach(function (name, i) {
+      map.createPane(name);
+      map.getPane(name).style.zIndex = 392 + i;
+    });
+
+    // tolerance gives every dot a few pixels of click slack — the glow makes
+    // them look larger than they are, so without it people miss
+    canmoreRenderer = {
+      township: L.canvas({ pane: 'township', padding: .3, tolerance: 7 }),
+      wartime:  L.canvas({ pane: 'wartime',  padding: .3, tolerance: 7 }),
+      register: L.canvas({ pane: 'register', padding: .3, tolerance: 7 })
+    };
+
+    canmoreLayer = { township: L.layerGroup(), wartime: L.layerGroup() };
+    registerLayer = L.layerGroup().addTo(map);
     layer = L.layerGroup().addTo(map);
+
+    // Hand any popup carrying a photo slot its picture once Commons answers.
+    // The coordinates come off the popup itself rather than from the marker,
+    // because this fires before the marker's own popupopen listener.
+    map.on('popupopen', function (e) {
+      var ll = e.popup.getLatLng(), el = e.popup.getElement();
+      if (!ll || !el) return;
+      var title = el.querySelector('.pop-title');
+      hydratePhoto(el, +ll.lat.toFixed(5), +ll.lng.toFixed(5),
+                   title ? title.textContent : '', e.popup);
+    });
+  }
+
+  // ---------- Canmore: the national record of the historic environment ------
+
+  var CANMORE_GROUPS = {
+    wartime:  { label: 'Wartime remains', color: '#e8894a' },
+    township: { label: 'Deserted settlements', color: '#5fb0a8' }
+  };
+
+  function loadCanmore() {
+    return fetch('data/canmore.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !data.sites) return;
+        canmoreMeta = data.meta;
+
+        data.sites.forEach(function (s) {
+          var g = CANMORE_GROUPS[s.g];
+          if (!g) return;
+          var m = L.circleMarker([s.lat, s.lng], {
+            renderer: canmoreRenderer[s.g],
+            radius: 3, weight: 0,
+            fillColor: g.color, fillOpacity: .8
+          });
+          m.bindTooltip(esc(s.n), { direction: 'top', offset: [0, -4], className: 'site-tip' });
+          m.bindPopup(function () {
+            return '<div class="photo-slot"></div>' +
+              '<h3 class="pop-title">' + esc(s.n) + '</h3>' +
+              '<p class="pop-meta"><span style="color:' + g.color + '">' + esc(g.label) + '</span>' +
+                ' &middot; ' + esc(s.s) + (s.r ? ' &middot; ' + esc(s.r) : '') + '</p>' +
+              mapLinks(s.lat, s.lng) +
+              '<p class="pop-flag">From Canmore, the national record. No write-up here — ' +
+                (s.u ? '<a href="https://www.trove.scot/place/' + s.u +
+                       '" target="_blank" rel="noopener noreferrer">read the record</a>' : 'see Canmore') +
+                '. Any photograph is one taken near these coordinates, not necessarily of this site.</p>';
+          });
+          canmorePoints[s.g].push({ lat: s.lat, lng: s.lng, m: m });
+          canmoreLayer[s.g].addLayer(m);
+        });
+
+        Object.keys(canmoreLayer).forEach(function (g) { map.addLayer(canmoreLayer[g]); });
+      })
+      .catch(function () { /* the rest of the map works without it */ });
+  }
+
+  function setCanmore(group, on) {
+    canmoreOn[group] = on;
+    if (on) map.addLayer(canmoreLayer[group]); else map.removeLayer(canmoreLayer[group]);
+    var row = els.legend.querySelector('.lg-row[data-layer="' + group + '"]');
+    if (row) {
+      row.classList.toggle('off', !on);
+      row.setAttribute('aria-pressed', String(on));
+    }
+  }
+
+  function applyCanmoreFilter() {
+    var n = state.near, shown = 0;
+    Object.keys(canmorePoints).forEach(function (g) {
+      canmoreLayer[g].clearLayers();
+      canmorePoints[g].forEach(function (p) {
+        if (n && distKm(n.lat, n.lng, p.lat, p.lng) > n.km) return;
+        canmoreLayer[g].addLayer(p.m);
+        shown++;
+      });
+      if (!canmoreOn[g]) map.removeLayer(canmoreLayer[g]);
+    });
+    return shown;
   }
 
   // Rows straight from the Scottish Vacant and Derelict Land Survey. No
@@ -127,6 +227,7 @@
           // sites the register says still have buildings on them are worth
           // more than a bare plot, so they read a little stronger
           var m = L.circleMarker([s.lat, s.lng], {
+            renderer: canmoreRenderer.register,
             radius: s.b ? 4.5 : 3.5, weight: 1,
             color: s.b ? '#b8a37e' : '#8d7f70',
             fillColor: s.b ? '#b8a37e' : '#8d7f70',
@@ -135,6 +236,7 @@
           });
           m.bindTooltip(esc(s.n), { direction: 'top', offset: [0, -4], className: 'site-tip' });
           m.bindPopup(
+            '<div class="photo-slot"></div>' +
             '<h3 class="pop-title">' + esc(s.n) + '</h3>' +
             '<p class="pop-meta">' + esc(s.a || '') + (s.a ? ' &middot; ' : '') + esc(s.r) + '</p>' +
             '<p class="pop-meta">' +
@@ -212,6 +314,97 @@
         ' · ' + esc(s.region) + '</p>';
   }
 
+  // ---------- photos fetched on demand ----------
+  //
+  // Most points have no picture stored. Rather than ship thousands of image
+  // records, ask Wikimedia Commons for freely-licensed photographs taken near
+  // the coordinates, and only at the moment someone opens that popup. Results
+  // are cached for the session so a second look costs nothing.
+
+  var photoCache = {};   // "lat,lng" -> {url, credit, license, page} | null
+
+  function nearbyPhoto(lat, lng) {
+    var key = lat + ',' + lng;
+    if (photoCache[key] !== undefined) return Promise.resolve(photoCache[key]);
+
+    var url = 'https://commons.wikimedia.org/w/api.php?' + new URLSearchParams({
+      action: 'query', format: 'json', origin: '*',
+      generator: 'geosearch', ggscoord: lat + '|' + lng,
+      ggsradius: '250', ggslimit: '8', ggsnamespace: '6',
+      prop: 'imageinfo', iiprop: 'url|extmetadata', iiurlwidth: '480'
+    });
+
+    return fetch(url)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        var pages = (j && j.query && j.query.pages) ? Object.keys(j.query.pages).map(function (k) {
+          return j.query.pages[k];
+        }) : [];
+
+        var hit = null;
+        for (var i = 0; i < pages.length && !hit; i++) {
+          var p = pages[i], ii = (p.imageinfo || [])[0];
+          if (!ii || !ii.thumburl) continue;
+          // maps, plans and diagrams are not photographs of the place
+          if (/\.(svg|pdf|djvu|tif|ogv|webm)$/i.test(p.title)) continue;
+          if (/(map|plan|diagram|chart|coat.of.arms|logo)/i.test(p.title)) continue;
+          var em = ii.extmetadata || {};
+          var txt = function (v) { return v ? String(v.value).replace(/<[^>]*>/g, '').trim() : ''; };
+          hit = {
+            url: ii.thumburl.split('?')[0].replace('https://thumb.wikimedia.org/', 'https://upload.wikimedia.org/'),
+            credit: txt(em.Artist).replace(/\s+/g, ' ').slice(0, 60),
+            license: txt(em.LicenseShortName),
+            page: ii.descriptionurl,
+            nearby: true
+          };
+        }
+        photoCache[key] = hit;
+        return hit;
+      })
+      .catch(function () { photoCache[key] = null; return null; });
+  }
+
+  // Fill the placeholder inside an open popup once the lookup comes back.
+  function hydratePhoto(popupEl, lat, lng, name, popup) {
+    var slot = popupEl.querySelector('.photo-slot');
+    if (!slot || slot.dataset.done) return;
+    slot.dataset.done = '1';
+
+    var content = popupEl.querySelector('.leaflet-popup-content');
+
+    // Hand the finished markup back through setContent rather than editing the
+    // DOM in place: Leaflet re-renders a popup from its stored content, so an
+    // injected node would be wiped the next time it measures itself.
+    var publish = function (html) {
+      if (!popup || !popup.isOpen() || !content) return;
+      slot.outerHTML = html;
+      popup.setContent(content.innerHTML);
+    };
+
+    nearbyPhoto(lat, lng).then(function (img) {
+      if (!img) { publish(''); return; }
+
+      // wait for the picture to decode before showing it, so the popup is
+      // measured and panned once, at its real height
+      var pre = new Image();
+      pre.onerror = function () { publish(''); };
+      pre.onload = function () {
+        var credit = [img.credit, img.license].filter(Boolean).join(' · ');
+        publish(
+          '<figure class="pop-photo">' +
+            '<img src="' + esc(img.url) + '" alt="' + esc(name) + '">' +
+            '<figcaption>' +
+              'Nearby on Commons' + (credit ? ' — ' : '') +
+              (img.page
+                ? '<a href="' + esc(img.page) + '" target="_blank" rel="noopener noreferrer">' + esc(credit) + '</a>'
+                : esc(credit)) +
+            '</figcaption>' +
+          '</figure>');
+      };
+      pre.src = img.url;
+    });
+  }
+
   // Google Maps links built from the coordinates. The satellite link is the
   // useful one here: from above you can usually see whether a roof is still on.
   function mapLinks(lat, lng) {
@@ -231,7 +424,7 @@
   function popupHtml(s) {
     var cat = CAT[s.category] || { label: s.category, color: '#999' };
     var html =
-      figureHtml(s, 'pop-photo') +
+      (s.image ? figureHtml(s, 'pop-photo') : '<div class="photo-slot"></div>') +
       '<h3 class="pop-title">' + esc(s.name) + '</h3>' +
       '<p class="pop-meta">' +
         '<span class="tag" style="color:' + cat.color + '">' + esc(cat.label) + '</span>' +
@@ -321,11 +514,13 @@
 
     if (state.near) {
       var reg = applyRegisterFilter();
+      var can = applyCanmoreFilter();
       els.count.textContent = items.length + ' site' + (items.length === 1 ? '' : 's') +
         ' within ' + state.near.km + ' km of ' + state.near.name;
       els.summary.textContent = items.length + ' near ' + state.near.name;
       els.nearStatus.textContent = items.length + ' mapped site' + (items.length === 1 ? '' : 's') +
-        (registerCount ? ' · ' + reg + ' on the official register' : '') +
+        (registerCount ? ' · ' + reg + ' on the register' : '') +
+        (canmoreMeta ? ' · ' + can + ' on Canmore' : '') +
         ' within ' + state.near.km + ' km';
       els.nearStatus.classList.remove('err');
     } else {
@@ -434,14 +629,24 @@
       '</button>' +
       '<div id="legend-body">' +
         '<p class="lg-head">Pin colour — what happened <em>(tap to filter)</em></p>' + cats +
-        (registerCount
-          ? '<p class="lg-head">Second layer</p>' +
-            '<button class="lg-row" data-layer="register" aria-pressed="true" ' +
-              'title="Show or hide the official register">' +
-              '<span class="lg-dot lg-dot-sm" style="background:#8d7f70"></span>' +
-              '<span class="lg-label">Official register</span>' +
-              '<span class="lg-n">' + registerCount + '</span>' +
-            '</button>'
+        (registerCount || canmoreMeta
+          ? '<p class="lg-head">Other layers <em>(tap to toggle)</em></p>' +
+            (registerCount
+              ? '<button class="lg-row" data-layer="register" aria-pressed="true">' +
+                  '<span class="lg-dot lg-dot-sm" style="background:#8d7f70"></span>' +
+                  '<span class="lg-label">Official register</span>' +
+                  '<span class="lg-n">' + registerCount + '</span>' +
+                '</button>'
+              : '') +
+            Object.keys(CANMORE_GROUPS).map(function (g) {
+              if (!canmorePoints[g].length) return '';
+              return '<button class="lg-row" data-layer="' + g + '" aria-pressed="true">' +
+                '<span class="lg-dot lg-dot-sm lg-glow" style="background:' + CANMORE_GROUPS[g].color +
+                  ';--glow:' + CANMORE_GROUPS[g].color + '"></span>' +
+                '<span class="lg-label">' + esc(CANMORE_GROUPS[g].label) + '</span>' +
+                '<span class="lg-n">' + canmorePoints[g].length + '</span>' +
+              '</button>';
+            }).join('')
           : '') +
         '<p class="lg-head">Badge colour — access</p>' + acc +
       '</div>';
@@ -453,8 +658,13 @@
         els.legend.querySelector('.lg-chevron').textContent = open ? '–' : '+';
         return;
       }
-      var lay = e.target.closest('.lg-row[data-layer="register"]');
-      if (lay) { setRegister(!registerOn); return; }
+      var lay = e.target.closest('.lg-row[data-layer]');
+      if (lay) {
+        var which = lay.dataset.layer;
+        if (which === 'register') setRegister(!registerOn);
+        else setCanmore(which, !canmoreOn[which]);
+        return;
+      }
 
       var row = e.target.closest('.lg-row[data-cat]');
       if (row) toggleCategory(row.dataset.cat);
@@ -501,6 +711,7 @@
     render();
     if (!near) {
       applyRegisterFilter();
+      applyCanmoreFilter();
       els.nearStatus.textContent = '';
       els.nearStatus.classList.remove('err');
     }
@@ -663,8 +874,8 @@
       if (data.meta && data.meta.updated) {
         els.updated.textContent = 'Dataset updated ' + data.meta.updated + ' · ' + state.sites.length + ' entries.';
       }
-      // the legend needs the register count, so wait for it before building
-      return loadRegister();
+      // the legend needs the layer counts, so wait for them before building
+      return Promise.all([loadRegister(), loadCanmore()]);
     })
     .then(function () {
       if (registerMeta) {

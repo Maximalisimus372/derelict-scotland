@@ -392,6 +392,21 @@ html, body {
 
 .km { color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
 
+/* ---------- glow on the bulk layers ----------
+   One filter per pane rather than a shadow per marker: there are thousands
+   of them and they are drawn on canvas. */
+
+.leaflet-wartime-pane  { filter: drop-shadow(0 0 3px rgba(232, 137, 74, .85)); }
+.leaflet-township-pane { filter: drop-shadow(0 0 3px rgba(95, 176, 168, .8)); }
+.leaflet-register-pane { filter: drop-shadow(0 0 2px rgba(184, 163, 126, .5)); }
+
+.lg-glow { box-shadow: 0 0 5px var(--glow, transparent); }
+
+/* photo fetched from Commons after the popup opens */
+.photo-slot { min-height: 0; }
+
+figure.pop-photo figcaption a { color: var(--muted); }
+
 /* ---------- legend ---------- */
 
 #legend {
