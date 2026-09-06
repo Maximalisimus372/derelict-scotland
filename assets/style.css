@@ -393,12 +393,11 @@ html, body {
 .km { color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* ---------- glow on the bulk layers ----------
-   One filter per pane rather than a shadow per marker: there are thousands
-   of them and they are drawn on canvas. */
+   The coloured halo around each dot is drawn inside the canvas, as a wide
+   translucent stroke, so all the bulk layers can share one canvas and stay
+   clickable. This adds a little extra bloom on top of that. */
 
-.leaflet-wartime-pane  { filter: drop-shadow(0 0 3px rgba(232, 137, 74, .85)); }
-.leaflet-township-pane { filter: drop-shadow(0 0 3px rgba(95, 176, 168, .8)); }
-.leaflet-register-pane { filter: drop-shadow(0 0 2px rgba(184, 163, 126, .5)); }
+.leaflet-bulk-pane { filter: drop-shadow(0 0 2px rgba(255, 236, 210, .3)); }
 
 .lg-glow { box-shadow: 0 0 5px var(--glow, transparent); }
 

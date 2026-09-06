@@ -114,21 +114,18 @@
       maxZoom: 18,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    // Own panes for the bulk layers. Thousands of markers are drawn on canvas
-    // rather than as SVG paths, and the glow is one CSS filter on the whole
-    // pane instead of a shadow per marker.
-    ['township', 'wartime', 'register'].forEach(function (name, i) {
-      map.createPane(name);
-      map.getPane(name).style.zIndex = 392 + i;
-    });
+    // All the bulk layers share ONE canvas. They used to have a canvas each so
+    // that a CSS glow filter could be applied per pane, but each canvas covers
+    // the whole map, so the topmost one swallowed every click and the layers
+    // underneath were dead. The glow is drawn into the canvas instead, as a
+    // wide translucent stroke in the dot's own colour.
+    map.createPane('bulk');
+    map.getPane('bulk').style.zIndex = 392;
 
-    // tolerance gives every dot a few pixels of click slack — the glow makes
-    // them look larger than they are, so without it people miss
-    canmoreRenderer = {
-      township: L.canvas({ pane: 'township', padding: .3, tolerance: 7 }),
-      wartime:  L.canvas({ pane: 'wartime',  padding: .3, tolerance: 7 }),
-      register: L.canvas({ pane: 'register', padding: .3, tolerance: 7 })
-    };
+    // tolerance gives every dot a few pixels of click slack — a 3px dot with a
+    // halo looks bigger than its hit area, so without it people miss
+    var bulk = L.canvas({ pane: 'bulk', padding: .3, tolerance: 6 });
+    canmoreRenderer = { township: bulk, wartime: bulk, register: bulk };
 
     canmoreLayer = { township: L.layerGroup(), wartime: L.layerGroup() };
     registerLayer = L.layerGroup().addTo(map);
@@ -165,8 +162,9 @@
           if (!g) return;
           var m = L.circleMarker([s.lat, s.lng], {
             renderer: canmoreRenderer[s.g],
-            radius: 3, weight: 0,
-            fillColor: g.color, fillOpacity: .8
+            radius: 2.8,
+            fillColor: g.color, fillOpacity: .95,
+            color: g.color, weight: 5, opacity: .28   // the halo
           });
           m.bindTooltip(esc(s.n), { direction: 'top', offset: [0, -4], className: 'site-tip' });
           m.bindPopup(function () {
@@ -228,11 +226,11 @@
           // more than a bare plot, so they read a little stronger
           var m = L.circleMarker([s.lat, s.lng], {
             renderer: canmoreRenderer.register,
-            radius: s.b ? 4.5 : 3.5, weight: 1,
-            color: s.b ? '#b8a37e' : '#8d7f70',
-            fillColor: s.b ? '#b8a37e' : '#8d7f70',
-            opacity: s.b ? .85 : .65,
-            fillOpacity: s.b ? .55 : .35
+            radius: s.b ? 3.4 : 2.6,
+            color: s.b ? '#c9b28a' : '#9c8d7c',
+            fillColor: s.b ? '#c9b28a' : '#9c8d7c',
+            weight: 4, opacity: .2,                  // the halo
+            fillOpacity: s.b ? .9 : .7
           });
           m.bindTooltip(esc(s.n), { direction: 'top', offset: [0, -4], className: 'site-tip' });
           m.bindPopup(
