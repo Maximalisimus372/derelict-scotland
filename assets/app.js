@@ -173,10 +173,12 @@
               '<p class="pop-meta"><span style="color:' + g.color + '">' + esc(g.label) + '</span>' +
                 ' &middot; ' + esc(s.s) + (s.r ? ' &middot; ' + esc(s.r) : '') + '</p>' +
               mapLinks(s.lat, s.lng) +
-              '<p class="pop-flag">From Canmore, the national record. No write-up here — ' +
+              '<p class="pop-flag">From Canmore, the national record — a built structure, ' +
+                'positioned to the nearest ' + (s.p === 1 ? '1 metre' : '10 metres') + '. ' +
                 (s.u ? '<a href="https://www.trove.scot/place/' + s.u +
-                       '" target="_blank" rel="noopener noreferrer">read the record</a>' : 'see Canmore') +
-                '. Any photograph is one taken near these coordinates, not necessarily of this site.</p>';
+                       '" target="_blank" rel="noopener noreferrer">Read the record</a> ' : '') +
+                'for the description. Any photograph is one taken near these coordinates, ' +
+                'not necessarily of this site.</p>';
           });
           canmorePoints[s.g].push({ lat: s.lat, lng: s.lng, m: m });
           canmoreLayer[s.g].addLayer(m);
