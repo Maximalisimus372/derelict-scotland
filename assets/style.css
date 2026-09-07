@@ -501,6 +501,12 @@ button.lg-row:hover { background: var(--panel-2); }
 
 .pin.sel { transform: scale(1.5); }
 
+/* a ring instead of a solid dot: position known only to the site area */
+.pin.approx { border-color: rgba(0,0,0,.4); }
+
+.lg-shape { text-transform: none; letter-spacing: 0; font-size: 9.5px; }
+.lg-shape em { font-style: normal; opacity: .8; }
+
 /* popups */
 .leaflet-popup-content-wrapper {
   background: var(--panel);

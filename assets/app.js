@@ -299,11 +299,18 @@
     }
   }
 
-  function pinIcon(cat, selected) {
+  // A solid dot means the position is confirmed. A ring means it is only good
+  // to the site area, so you can tell before clicking whether the pin will
+  // land on the building or somewhere in the field next to it.
+  function pinIcon(cat, selected, approx) {
     var color = (CAT[cat] || {}).color || '#999';
+    var fill = approx
+      ? 'radial-gradient(circle, rgba(0,0,0,0) 34%, ' + color + ' 38%)'
+      : color;
     return L.divIcon({
       className: '',
-      html: '<div class="pin' + (selected ? ' sel' : '') + '" style="background:' + color + '"></div>',
+      html: '<div class="pin' + (selected ? ' sel' : '') + (approx ? ' approx' : '') +
+            '" style="background:' + fill + '"></div>',
       iconSize: [14, 14],
       iconAnchor: [7, 7]
     });
@@ -477,7 +484,9 @@
 
   function buildMarkers() {
     state.sites.forEach(function (s) {
-      var m = L.marker([s.lat, s.lng], { icon: pinIcon(s.category, false) });
+      var m = L.marker([s.lat, s.lng], {
+        icon: pinIcon(s.category, false, s.confidence === 'approximate')
+      });
       m.bindPopup(popupHtml(s));
 
       // hover preview. Leaflet builds tooltip content on open, so the photo is
@@ -582,10 +591,8 @@
     if (!s) return;
 
     Object.keys(markers).forEach(function (k) {
-      markers[k].setIcon(pinIcon(
-        state.sites.find(function (x) { return x.id === k; }).category,
-        k === id
-      ));
+      var site = state.sites.find(function (x) { return x.id === k; });
+      markers[k].setIcon(pinIcon(site.category, k === id, site.confidence === 'approximate'));
     });
 
     if (fly) {
@@ -651,6 +658,8 @@
       '</button>' +
       '<div id="legend-body">' +
         '<p class="lg-head">Pin colour — what happened <em>(tap to filter)</em></p>' + cats +
+        '<p class="lg-head lg-shape">Solid dot = position confirmed. ' +
+          '<em>Ring = only the site area is known.</em></p>' +
         (registerCount || canmoreMeta
           ? '<p class="lg-head">Other layers <em>(tap to toggle)</em></p>' +
             (registerCount
