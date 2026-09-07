@@ -6,6 +6,7 @@
     storm:      { label: 'Storm',       color: '#4a9ec9' },
     derelict:   { label: 'Derelict',    color: '#b8a37e' },
     demolished: { label: 'Demolished',  color: '#8a7f9c' },
+    business:   { label: 'Business closed', color: '#a883e0' },
     ruin:       { label: 'Ruin',        color: '#6f9c6a' },
     village:    { label: 'Depopulated', color: '#57a99a' }
   };
