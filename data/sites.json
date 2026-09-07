@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 18,
+    "version": 19,
     "updated": "2026-09-07",
     "note": "Coordinates marked confidence=approximate are rounded to the site area, not an exact address. Many sites are private property, structurally unsafe or actively patrolled. This dataset documents them; it is not an invitation to enter.",
     "categories": {
@@ -59,6 +59,11 @@
         "credit": "Goodreg3",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Ayr_Station_Hotel_fire,_September_2023.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -76,7 +81,12 @@
       "sourceName": "Scottish Fire and Rescue Service",
       "type": "civic",
       "access": "patrolled",
-      "accessNote": "Recent fire scene: hoardings, cordon and contractor security."
+      "accessNote": "Recent fire scene: hoardings, cordon and contractor security.",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "princes-street-2026",
@@ -93,7 +103,12 @@
       "sourceName": "Bloomberg",
       "type": "civic",
       "access": "patrolled",
-      "accessNote": "Recent fire scene on a main city street, cordoned and watched."
+      "accessNote": "Recent fire scene on a main city street, cordoned and watched.",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "union-corner-glasgow",
@@ -110,7 +125,12 @@
       "sourceName": "Wikipedia — Union Street fire",
       "type": "civic",
       "access": "patrolled",
-      "accessNote": "Recent fire scene, hoarded and cordoned in the city centre."
+      "accessNote": "Recent fire scene, hoarded and cordoned in the city centre.",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "strathmartine-hospital",
@@ -133,6 +153,11 @@
         "credit": "Val Vannet",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Strathmartine_Hospital_-_geograph.org.uk_-_16248.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -156,6 +181,11 @@
         "credit": "kim traynor",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Main_blocks,_former_Bangour_Village_Hospital_-_geograph.org.uk_-_3832227.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -179,6 +209,11 @@
         "credit": "Raymond Okonski",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Hartwood_Asylum_Towers_-_geograph.org.uk_-_372199.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "barr",
+        "b": 0
       }
     },
     {
@@ -202,6 +237,11 @@
         "credit": "GaryReggae",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Seminary,_Kilmahew_-_geograph.org.uk_-_261397.jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -225,6 +265,11 @@
         "credit": "Waldemar Luczak",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Gartloch_Hospital,_Asylum.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "barr",
+        "b": 2
       }
     },
     {
@@ -247,6 +292,11 @@
         "credit": "Ron Shephard",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Lennox_Castle_-_geograph.org.uk_-_1564402.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "barr",
+        "b": 2
       }
     },
     {
@@ -270,6 +320,11 @@
         "credit": "Raymond Okonski",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Woodilee_Asylum_Admin_Building_-_geograph.org.uk_-_441341.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -292,6 +347,11 @@
         "credit": "Alan Morrison",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Hospital_Road_Hillside,_Montrose_at_its_junction_with_the_south_entrance_to_Sunnyside_Royal_Hospital_-_geograph.org.uk_-_1160953.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 0
       }
     },
     {
@@ -315,6 +375,11 @@
         "credit": "Steven Brown",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Craig_Dunain_Hospital_-_geograph.org.uk_-_2016937.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -337,6 +402,11 @@
         "credit": "Patrick Mackie",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Argyll_and_Bute_Hospital_-_geograph.org.uk_-_2062243.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 0
       }
     },
     {
@@ -360,6 +430,11 @@
         "credit": "Tom Parnell",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Mavisbank_House_-_principal_elevation.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -382,6 +457,11 @@
         "credit": "Roy Tait",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Cambusnethan_Priory_-_geograph.org.uk_-_392333.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "barr",
+        "b": 2
       }
     },
     {
@@ -405,6 +485,11 @@
         "credit": "Hilary Green",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Crawford_Priory_-_geograph.org.uk_-_718247.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "barr",
+        "b": 2
       }
     },
     {
@@ -427,6 +512,11 @@
         "credit": "Elliott Simpson",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Buchanan_Castle,_Drymen_-_geograph.org.uk_-_1875831.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -449,6 +539,11 @@
         "credit": "Jane Gospel",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Dunmore_Park_abandoned_house_(19589675931).jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "barr",
+        "b": 2
       }
     },
     {
@@ -472,6 +567,11 @@
         "credit": "Trevor Littlewood",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_Dunalastair_House_-_geograph.org.uk_-_3774495.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -494,6 +594,11 @@
         "credit": "George Wilson",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Broadford_Works,_Chimney_-_geograph.org.uk_-_213795.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -510,7 +615,12 @@
       "source": "https://buildingsatrisk.org.uk/",
       "sourceName": "Buildings at Risk Register for Scotland",
       "type": "industrial",
-      "access": "private"
+      "access": "private",
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 1
+      }
     },
     {
       "id": "arichonan",
@@ -532,6 +642,11 @@
         "credit": "Patrick Mackie",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Arichonan_Township.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -554,6 +669,11 @@
         "credit": "Peter Robertson",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Badbea_Clearance_Village_-_geograph.org.uk_-_1550053.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -577,6 +697,11 @@
         "credit": "Steven Brown",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Abandoned_WW2_tower_at_Fearn_Airfield_-_geograph.org.uk_-_501586.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -594,7 +719,12 @@
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "private",
-      "accessNote": "Farmland and MOD range land adjoin the site."
+      "accessNote": "Farmland and MOD range land adjoin the site.",
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "baldoon-airfield",
@@ -617,6 +747,11 @@
         "credit": "Andy Farrington",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Baldoon_Airfield_-_geograph.org.uk_-_1878375.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -641,6 +776,11 @@
         "credit": "Stanley Howe",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Church_building_on_former_Edzell_Airbase_-_geograph.org.uk_-_1614963.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -665,6 +805,11 @@
         "credit": "Patrick Mackie",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Control_Tower,_Campbeltown_Airport.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -682,7 +827,12 @@
       "source": "https://garygough.co.uk/royal-air-force-aird-uig-history-and-facts",
       "sourceName": "Gary Gough — RAF Aird Uig",
       "access": "open",
-      "accessNote": "The headland is community-owned with public access; the buildings themselves are not maintained."
+      "accessNote": "The headland is community-owned with public access; the buildings themselves are not maintained.",
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "raf-milltown",
@@ -704,6 +854,11 @@
         "credit": "Christopher Gillan",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Hangar_at_RAF_Milltown._-_geograph.org.uk_-_121280.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 0
       }
     },
     {
@@ -722,7 +877,12 @@
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "patrolled",
       "accessNote": "Parts of the wider site are still operational chemical works with real security.",
-      "partlyOccupied": "Parts of the wider site are still a working chemical plant."
+      "partlyOccupied": "Parts of the wider site are still a working chemical plant.",
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "bogside-irvine",
@@ -744,6 +904,11 @@
         "credit": "wfmillar",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Bogside,_Irvine_-_geograph.org.uk_-_621054.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -768,6 +933,11 @@
         "credit": "Douglas Nelson",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Private_road_to_Port_of_Ardersier_-_geograph.org.uk_-_6905225.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -785,7 +955,12 @@
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "private",
-      "accessNote": "Open moorland, but unrestored opencast voids and flooded pits."
+      "accessNote": "Open moorland, but unrestored opencast voids and flooded pits.",
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "benbain",
@@ -802,7 +977,12 @@
       "source": "https://www.theferret.scot/derelict-vacant-sites-largest-scotland/",
       "sourceName": "The Ferret — largest vacant and derelict sites in Scotland",
       "access": "private",
-      "accessNote": "Open moorland with unrestored opencast voids."
+      "accessNote": "Open moorland with unrestored opencast voids.",
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "strathmore-line",
@@ -824,6 +1004,11 @@
         "credit": "A-M-Jervis",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Former_Strathmore_main_line_east_of_Alyth_Junction_-_geograph.org.uk_-_928256.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -848,7 +1033,12 @@
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:St_Kilda_Village_Bay.jpg"
       },
-      "partlyOccupied": "A defence radar station and NTS staff are based on the island in season."
+      "partlyOccupied": "A defence radar station and NTS staff are based on the island in season.",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "mingulay",
@@ -871,6 +1061,11 @@
         "credit": "Paul Store",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Old_School_house_Mingulay.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -894,6 +1089,11 @@
         "credit": "Ian Balcombe",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Beacon_on_The_Tarf,_Swona_-_geograph.org.uk_-_1234096.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -911,7 +1111,12 @@
       "source": "https://www.scotsman.com/whats-on/arts-and-entertainment/nine-abandoned-islands-of-scotland-1468227",
       "sourceName": "The Scotsman — Nine abandoned islands of Scotland",
       "access": "open",
-      "accessNote": "Privately owned but access is not obstructed; boat landing only."
+      "accessNote": "Privately owned but access is not obstructed; boat landing only.",
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "inchkeith",
@@ -934,6 +1139,11 @@
         "credit": "J M Briscoe",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Inchkeith_Island_-_geograph.org.uk_-_14271.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -956,6 +1166,11 @@
         "credit": "Vincent van Zeijst",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Scotland,_Raasay,_Hallaig_and_D%C3%B9n_Caan_(1).jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -973,7 +1188,12 @@
       "source": "https://www.historicenvironment.scot/",
       "sourceName": "Historic Environment Scotland",
       "access": "open",
-      "accessNote": "Interpreted trail on Forestry and Land Scotland ground."
+      "accessNote": "Interpreted trail on Forestry and Land Scotland ground.",
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "tureen-street-school",
@@ -996,6 +1216,11 @@
         "credit": "Colin Kinnear",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Tureen_Street_Public_School_(geograph_7420779).jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -1018,6 +1243,11 @@
         "credit": "Edwardx",
         "license": "CC BY-SA 3.0",
         "page": "https://commons.wikimedia.org/wiki/File:Holmlea_Primary_School_01.JPG"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -1035,7 +1265,12 @@
       "source": "https://www.obsidianurbexphotography.com/education/abandoned-fern-school-scotland/",
       "sourceName": "Obsidian Urbex Photography",
       "access": "private",
-      "accessNote": "Private rural property; no known active security, which is why the interior survived."
+      "accessNote": "Private rural property; no known active security, which is why the interior survived.",
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "inverkeithing-primary",
@@ -1057,6 +1292,11 @@
         "credit": "Simon Johnston",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Former_Inverkeithing_Primary_School_-_geograph.org.uk_-_1002406.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -1073,7 +1313,12 @@
       "summary": "Kintyre country house near Campbeltown, abandoned in the second half of the 20th century and now a roofless shell being taken apart by weather and vegetation.",
       "source": "https://en.wikipedia.org/wiki/Tirfergus_House",
       "sourceName": "Wikipedia",
-      "access": "private"
+      "access": "private",
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "rosslynlee-hospital",
@@ -1095,6 +1340,11 @@
         "credit": "M J Richardson",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Rosslynlee_Hospital_(geograph_5756756).jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -1118,6 +1368,11 @@
         "credit": "Bill Harrison",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Former_Hospital_Administration_Building,_Kingseat_(geograph_2920493).jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -1135,7 +1390,12 @@
       "accessNote": "Council demolition site with contractor security; the tenements are structurally unsafe.",
       "summary": "Around 430 flats in 45 tenement blocks, built after WWI by the shipbuilders Lithgows to house their workforce. Derelict since 1997 and steadily emptied — under 20 people were left by 2019. The press christened it \"Scotland’s Chernobyl\". A £31m clearance scheme began demolishing it in 2025, starting with the church and school.",
       "source": "https://en.wikipedia.org/wiki/Clune_Park_Estate",
-      "sourceName": "Wikipedia — Clune Park Estate"
+      "sourceName": "Wikipedia — Clune Park Estate",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "govanhill-picture-house",
@@ -1159,6 +1419,11 @@
         "credit": "Steelgraham",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Govanhill_Picture_House.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -1181,6 +1446,11 @@
         "credit": "Richard Sutcliffe",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Former_Lyceum_Cinema,_Govan_Road_(geograph_7532926).jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -1204,6 +1474,11 @@
         "credit": "UltrasonicMadness",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Bon_Accord_Baths_-_September_2023.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -1226,6 +1501,11 @@
         "credit": "Thomas Nugent",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Former_Whitevale_Baths_-_geograph.org.uk_-_4624796.jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -1248,6 +1528,11 @@
         "credit": "Thomas Nugent",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Former_Church_Street_School_swimming_pool_-_geograph.org.uk_-_2779866.jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -1271,6 +1556,11 @@
         "credit": "Stinglehammer",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:172_Hope_Street,_Lion_Chambers_02.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "barr",
+        "b": 1
       }
     },
     {
@@ -1287,7 +1577,12 @@
       "access": "secured",
       "summary": "One of the new town’s neighbourhood shopping precincts — butcher, chemist, newsagent, grocer. The shops emptied as retail moved out of town, and the shell fell into disrepair and became a focus for crime and antisocial behaviour. Fife Council won compulsory purchase powers to clear it.",
       "source": "https://www.fife.gov.uk/news/2025/major-regeneration-milestone-for-glenrothes-town-centre",
-      "sourceName": "Fife Council"
+      "sourceName": "Fife Council",
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "nithsdale-hall",
@@ -1309,6 +1604,11 @@
         "credit": "Richard Sutcliffe",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Nithsdale_Hall_(geograph_7597807).jpg"
+      },
+      "chk": {
+        "p": "estimate",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -1325,7 +1625,12 @@
       "access": "secured",
       "summary": "The old burgh hall on Wellshot Road, built when Shettleston was still its own place rather than part of Glasgow. Long out of use, boarded and deteriorating.",
       "source": "http://www.derelictglasgow.co.uk/buildingindex.html",
-      "sourceName": "Derelict Glasgow"
+      "sourceName": "Derelict Glasgow",
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "possil-station",
@@ -1348,6 +1653,11 @@
         "credit": "Stephen Sweeney",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Former_Possil_Railway_Station_-_geograph.org.uk_-_1127839.jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -1370,6 +1680,11 @@
         "credit": "Crowsus",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Glasgow_City_-_Sentinel_Works,_61-89_Jessie_Street,_Glasgow_-_20150405185329.jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -1386,7 +1701,12 @@
       "access": "secured",
       "summary": "Episcopal church and hall in Clydebank, redundant and empty. One of the many Scottish churches emptied by falling congregations and left with no viable second use.",
       "source": "http://www.derelictglasgow.co.uk/buildingindex.html",
-      "sourceName": "Derelict Glasgow"
+      "sourceName": "Derelict Glasgow",
+      "chk": {
+        "p": "canmore1m",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "gates-rubber-factory",
@@ -1403,7 +1723,12 @@
       "accessNote": "Called a death trap by the council; floors and roofs are unsound.",
       "summary": "Built in 1913 as the Arrol-Johnston car factory - an early reinforced-concrete daylight factory - then aircraft work in WWI and rubber production for Gates until it closed. Empty for decades and a magnet for arson, with two fires in 2017 alone. The council has drawn up developer guidance and demolition is on the table.",
       "source": "https://www.theferret.scot/derelict-buildings-dumfries-and-galloway/",
-      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway"
+      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 0
+      }
     },
     {
       "id": "george-hotel-stranraer",
@@ -1419,7 +1744,12 @@
       "access": "secured",
       "summary": "Coaching hotel on the main street since the early 1800s, disused since 2007. Bought by the council in 2017 to deal with it; surveyors found the roof unrepairable, and demolishing a B-listed building needs Historic Environment Scotland to agree. It has sat boarded in the middle of town ever since.",
       "source": "https://www.theferret.scot/derelict-buildings-dumfries-and-galloway/",
-      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway"
+      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway",
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "mercury-inn-moffat",
@@ -1435,7 +1765,12 @@
       "access": "private",
       "summary": "Roadside hotel at the entrance to Moffat, empty for over twenty years. When The Ferret asked readers to nominate the worst eyesore in Dumfries and Galloway, this came top by a distance. A petition to demolish it was raised in 2011; the owner says restoration is coming.",
       "source": "https://www.theferret.scot/derelict-buildings-dumfries-and-galloway/",
-      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway"
+      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "rosefield-mills",
@@ -1452,7 +1787,12 @@
       "accessNote": "Owned by a buildings trust doing stabilisation work.",
       "summary": "Ornate Victorian tweed mill on the Nith, one of the grandest industrial buildings in the south of Scotland. Weaving stopped around the 1930s and the shell has stood ever since. Dumfries Historic Buildings Trust bought it in 2018 and is chasing funding to get a roof back on.",
       "source": "https://www.theferret.scot/derelict-buildings-dumfries-and-galloway/",
-      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway"
+      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway",
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "dumfries-high-street-tenement",
@@ -1468,7 +1808,12 @@
       "access": "secured",
       "summary": "Georgian tenement of the 1820s standing empty on the main shopping street. Named in The Ferret survey as one of the buildings dragging the town centre down - the reporter found it occupied by nothing but dead pigeons. The owner has no plans to sell.",
       "source": "https://www.theferret.scot/derelict-buildings-dumfries-and-galloway/",
-      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway"
+      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway",
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "edingham-munitions",
@@ -1485,7 +1830,12 @@
       "accessNote": "Farmland and light industry now surround the surviving blocks.",
       "summary": "Second World War cordite factory built on farmland outside Dalbeattie, employing thousands. Production stopped at the end of the war and the concrete blast walls, blockhouses and process buildings were simply left. Much of the layout is still readable across the fields.",
       "source": "https://www.theferret.scot/derelict-buildings-dumfries-and-galloway/",
-      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway"
+      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "creca-camp",
@@ -1501,7 +1851,12 @@
       "access": "private",
       "summary": "Wartime camp near Annan, part of the vast munitions complex strung along the Solway coast. The huts and roads outlasted their purpose by eighty years and are now a scattering of concrete in the fields.",
       "source": "https://www.theferret.scot/derelict-buildings-dumfries-and-galloway/",
-      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway"
+      "sourceName": "The Ferret — derelict buildings in Dumfries and Galloway",
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 2
+      }
     },
     {
       "id": "woodhead-lead-mine",
@@ -1518,7 +1873,12 @@
       "accessNote": "Open hill ground above Carsphairn; the shafts are unfenced.",
       "summary": "A whole mining village above Carsphairn - two rows of miners cottages, a smelt mill, a school and a manager house - built for the lead workings and abandoned when the mine closed in 1873. The gables and street plan still stand on the moor.",
       "source": "https://www.travelswithakilt.com/abandoned-derelict-places/",
-      "sourceName": "Travels with a Kilt"
+      "sourceName": "Travels with a Kilt",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 0
+      }
     },
     {
       "id": "craigendoran-pier",
@@ -1541,6 +1901,11 @@
         "credit": "Pencefn",
         "license": "CC BY 3.0",
         "page": "https://commons.wikimedia.org/wiki/File:Craigendoran_Pier_in_2007.jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 2
       }
     },
     {
@@ -1558,7 +1923,12 @@
       "accessNote": "Stands openly in the village; the shell itself is fenced off.",
       "summary": "On the night of 5–6 May 1941 Luftwaffe bombers aiming for the Clyde shipyards hit Cardross village, killing three people and wrecking the parish church. It was never rebuilt. The tower and roofless walls still stand in the middle of the village and serve as its war memorial.",
       "source": "https://www.stmahew.rcglasgow.org.uk/our-site/",
-      "sourceName": "St Mahew, Cardross"
+      "sourceName": "St Mahew, Cardross",
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "kilmahew-castle",
@@ -1581,6 +1951,11 @@
         "credit": "Lairich Rig",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Kilmahew_Castle_-_SW_corner_-_geograph.org.uk_-_1594750.jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -1604,6 +1979,11 @@
         "credit": "Pete Marrison",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Portkil_Coast_Batteries_-_geograph.org.uk_-_7897138.jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 2
       }
     },
     {
@@ -1627,6 +2007,11 @@
         "credit": "Raibeart MacAoidh",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Woodbank_House_-_Balloch,_Loch_Lomond_-_geograph.org.uk_-_6187452.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 0
       }
     },
     {
@@ -1650,6 +2035,11 @@
         "credit": "Robert Murray",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Killearn_Hospital_(in_ruin)_(geograph_4654503).jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -1672,6 +2062,11 @@
         "credit": "John Ferguson",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Remains_of_torpedo_range_at_Arrochar_-_geograph.org.uk_-_2138151.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -1696,6 +2091,11 @@
         "credit": "M J Richardson",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Ex-Royal_Ordnance_Factory,_Bishopton_-_geograph.org.uk_-_4600314.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -1713,7 +2113,12 @@
       "accessNote": "Fenced off in the middle of a village; the structure is unsound.",
       "summary": "Georgian coaching hotel on Gauchill Road, gutted by fire in 2015 and never touched since. The burnt shell has stood in the middle of Kintore for a decade while the site sits on the government derelict register.",
       "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6676643/abandoned-inverurie-derelict-buildings-aberdeenshire/",
-      "sourceName": "The Press and Journal"
+      "sourceName": "The Press and Journal",
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "archaeolink",
@@ -1736,6 +2141,11 @@
         "credit": "Greg Stringham",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Archaeolink_Prehistory_Park_-_geograph.org.uk_-_28711.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 0
       }
     },
     {
@@ -1759,6 +2169,11 @@
         "credit": "Andrew Wood",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Coutens_Farm_-_geograph.org.uk_-_953297.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 0
       }
     },
     {
@@ -1775,7 +2190,12 @@
       "access": "secured",
       "summary": "Meat processing works on Harlaw Road. The company was liquidated in 2016 and the plant stopped in 2017, leaving an empty warehouse and its car park behind the trading estate.",
       "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6676643/abandoned-inverurie-derelict-buildings-aberdeenshire/",
-      "sourceName": "The Press and Journal"
+      "sourceName": "The Press and Journal",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "stoneywood-mill",
@@ -1791,7 +2211,12 @@
       "access": "secured",
       "summary": "Paper has been made on the Don at Stoneywood since 1770, and for two centuries the mill was one of the biggest employers in Aberdeen. It went into administration in September 2022 with the loss of hundreds of jobs, and the site was added to the derelict register soon after.",
       "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6548080/abandoned-aberdeen-sites-revealed/",
-      "sourceName": "The Press and Journal — Abandoned Aberdeen"
+      "sourceName": "The Press and Journal — Abandoned Aberdeen",
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 0
+      }
     },
     {
       "id": "rubislaw-quarry",
@@ -1814,6 +2239,11 @@
         "credit": "Alanatabz",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Rubislaw_Quarry_aerial.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 2
       }
     },
     {
@@ -1831,7 +2261,12 @@
       "accessNote": "Boarded in a busy street in Old Aberdeen; the owners have said nothing about plans.",
       "summary": "Chapel with an attached convent on The Spital, shut for around twenty years and on the Buildings at Risk Register. Aberdeen City Council lists it among its derelict sites; the owners have stayed silent about what happens next.",
       "source": "https://buildingsatrisk.org.uk/",
-      "sourceName": "Buildings at Risk Register for Scotland"
+      "sourceName": "Buildings at Risk Register for Scotland",
+      "chk": {
+        "p": "register",
+        "s": "barr",
+        "b": 1
+      }
     },
     {
       "id": "palmerston-fishworks",
@@ -1847,7 +2282,12 @@
       "access": "secured",
       "summary": "Smokehouses and fish-processing sheds behind the harbour, three of them Category C-listed, empty since the 2000s and on the Buildings at Risk Register. What is left of the trade that made Aberdeen before oil did.",
       "source": "https://buildingsatrisk.org.uk/",
-      "sourceName": "Buildings at Risk Register for Scotland"
+      "sourceName": "Buildings at Risk Register for Scotland",
+      "chk": {
+        "p": "register",
+        "s": "barr",
+        "b": 1
+      }
     },
     {
       "id": "logie-stores",
@@ -1869,6 +2309,11 @@
         "credit": "Bill Harrison",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Derelict_shops,_Logie_Place,_Aberdeen_-_geograph.org.uk_-_3344667.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -1885,7 +2330,12 @@
       "access": "secured",
       "summary": "A campus of Aberdeen College on Corunna Road, closed in 2011 when teaching moved elsewhere. It has stood empty ever since with no use found for it.",
       "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6548080/abandoned-aberdeen-sites-revealed/",
-      "sourceName": "The Press and Journal — Abandoned Aberdeen"
+      "sourceName": "The Press and Journal — Abandoned Aberdeen",
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "victoria-road-school-torry",
@@ -1901,7 +2351,12 @@
       "access": "secured",
       "summary": "Granite board school in Torry, closed in 2011 and empty since. It went to auction in September 2025 after more than a decade on the council derelict list.",
       "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6548080/abandoned-aberdeen-sites-revealed/",
-      "sourceName": "The Press and Journal — Abandoned Aberdeen"
+      "sourceName": "The Press and Journal — Abandoned Aberdeen",
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "dunbar-halls",
@@ -1917,7 +2372,12 @@
       "access": "secured",
       "summary": "University of Aberdeen halls of residence beside St Machar, emptied around twenty years ago and never brought back. The blocks still stand while the university keeps reconsidering what to do with that end of the campus.",
       "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6548080/abandoned-aberdeen-sites-revealed/",
-      "sourceName": "The Press and Journal — Abandoned Aberdeen"
+      "sourceName": "The Press and Journal — Abandoned Aberdeen",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "hilton-sports-centre",
@@ -1934,7 +2394,12 @@
       "accessNote": "Fenced off by the council.",
       "summary": "Sports pavilion at Stewart Park, shut after a fire more than a decade ago and never repaired. The putting green and tennis courts around it have gone back to grass behind the fencing.",
       "source": "https://www.pressandjournal.co.uk/fp/news/aberdeen-aberdeenshire/6548080/abandoned-aberdeen-sites-revealed/",
-      "sourceName": "The Press and Journal — Abandoned Aberdeen"
+      "sourceName": "The Press and Journal — Abandoned Aberdeen",
+      "chk": {
+        "p": "estimate",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "abc-kirkcaldy",
@@ -1950,7 +2415,12 @@
       "access": "secured",
       "summary": "Opened in 1906 and running as a cinema for most of the century, the B-listed ABC closed in December 2000 when ticket sales collapsed. It has stood shut on the High Street ever since, one of the longest-empty landmark buildings in Fife.",
       "source": "https://buildingsatrisk.org.uk/",
-      "sourceName": "Buildings at Risk Register for Scotland"
+      "sourceName": "Buildings at Risk Register for Scotland",
+      "chk": {
+        "p": "estimate",
+        "s": "barr",
+        "b": 1
+      }
     },
     {
       "id": "eastriggs-depot",
@@ -1974,6 +2444,11 @@
         "credit": "Chris Newman",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Ordnance_Depot_Railway,_Eastriggs_-_geograph.org.uk_-_751592.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 2
       }
     },
     {
@@ -1992,7 +2467,12 @@
       "accessNote": "Open ground on Hoy; the surviving structures are unmaintained.",
       "summary": "The shore base for Scapa Flow, the anchorage of the Grand Fleet and then the Home Fleet. Up to 12,000 people were stationed in and around Lyness in the Second World War, and the base had cinemas, a power station and enormous buried oil tanks. Only a fraction of what stood here survives — foundations, roads and concrete across thirty-two hectares of hillside.",
       "source": "https://www.undiscoveredscotland.co.uk/hoy/lyness/index.html",
-      "sourceName": "Undiscovered Scotland"
+      "sourceName": "Undiscovered Scotland",
+      "chk": {
+        "p": "canmore10m",
+        "s": "news",
+        "b": 2
+      }
     },
     {
       "id": "montrose-airfield",
@@ -2010,7 +2490,12 @@
       "accessNote": "Farmland and industrial units cover much of the ground.",
       "summary": "Britain’s first operational military airfield, opened by the Royal Flying Corps in 1913, a year before the war it was built for. It trained pilots through both world wars and closed in 1952. Fifty-two hectares sit on the derelict register — hangar bases, dispersals and the outline of the landing ground still legible from the air.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "raf-dallachy",
@@ -2033,6 +2518,11 @@
         "credit": "Nthep",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Dallachy_control_tower.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -2050,7 +2540,12 @@
       "partlyOccupied": "An industrial estate uses part of the ground.",
       "summary": "Naval armament depot on the Forth at Throsk, built in the First World War to load and store mines and shells, with a jetty on the river and its own rail network. It closed in the 1970s. Rows of blast-walled magazines stand in the fields beside a working industrial estate.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "barony-colliery",
@@ -2074,6 +2569,11 @@
         "credit": "Billy McCrorie",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:The_Barony_A_Frame_(geograph_4625285).jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 2
       }
     },
     {
@@ -2091,7 +2591,12 @@
       "accessNote": "A very deep, partly flooded void on private ground.",
       "summary": "One of the deepest man-made holes in Europe. Westfield was worked for coal from the 1950s and went down over two hundred metres before the machines stopped in the late 1980s. Sixty-eight hectares of void and spoil have been on the derelict register ever since, through a run of failed schemes to fill or reuse it.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "comrie-colliery",
@@ -2107,7 +2612,12 @@
       "access": "private",
       "summary": "Comrie was one of the last deep mines sunk in Scotland, opened in 1936 and closed in 1986. The colliery went, the bing stayed: sixty-one hectares of spoil north of Blairhall, still on the register forty years later.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "lanarkshire-steelworks",
@@ -2123,7 +2633,12 @@
       "access": "private",
       "summary": "One of the Motherwell steelworks that went down in the collapse of the Lanarkshire iron and steel trade in the early 1980s, taking thousands of jobs with it. Thirty-seven hectares on Craigneuk Street have been derelict for forty years — longer than the plant’s last owners ran it.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "glengarnock-steelworks",
@@ -2139,7 +2654,12 @@
       "access": "private",
       "summary": "Iron and then steel was made at Glengarnock from 1841, and the works were the reason the village existed. Steelmaking ended in 1985 and the rolling mill soon after. Thirty hectares at Lochshore have stayed derelict since, the largest hole in the middle of any North Ayrshire town.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "canmore1m",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "crail-airfield",
@@ -2162,6 +2682,11 @@
         "credit": "Philip Halling",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Minor_road_passing_Crail_Airfield_-_geograph.org.uk_-_6252056.jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -2185,6 +2710,11 @@
         "credit": "Victuallers",
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Stobs_Military_Camp_2023.jpg"
+      },
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 2
       }
     },
     {
@@ -2202,7 +2732,12 @@
       "accessNote": "Reached on foot above the cliffs; the emplacements are unlit and unfenced.",
       "summary": "Gun batteries on both headlands at the mouth of the Cromarty Firth, built to close the entrance to the fleet anchorage at Invergordon in the First World War and rebuilt for the Second. The pin is on the North Sutor battery; a second battery faces it from the South Sutor across the firth. Emplacements, magazines, searchlight positions and observation posts are strung along the cliffs, abandoned since 1945.",
       "source": "https://www.secretscotland.org.uk/index.php/Secrets/SutorsOfCromarty",
-      "sourceName": "Secret Scotland"
+      "sourceName": "Secret Scotland",
+      "chk": {
+        "p": "canmore1m",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "turnberry-airfield",
@@ -2225,6 +2760,11 @@
         "credit": "Mary and Angus Hogg",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Turnberry_Airfield_Runway_-_geograph.org.uk_-_5273436.jpg"
+      },
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -2241,7 +2781,12 @@
       "access": "private",
       "summary": "The hospital and accommodation camp for the naval air station at Crimond on the Buchan coast. The airfield went back to farming after the war and the camp was simply left — eight hectares of huts, foundations and roads at Moss Side.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "canmore10m",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "spittal-of-glenshee-hotel",
@@ -2258,7 +2803,12 @@
       "accessNote": "Open ruin beside the A93; structurally unsafe.",
       "summary": "A drovers’ inn on the old road over the Cairnwell, latterly the hotel every skier heading for Glenshee knew. In August 2014 fifty firefighters fought a blaze that gutted it in the early hours. More than a decade on the ruins are virtually untouched and still falling apart beside the main road.",
       "source": "https://www.thecourier.co.uk/fp/past-times/5150941/spittal-of-glenshee-hotel-10-years-after-fire/",
-      "sourceName": "The Courier"
+      "sourceName": "The Courier",
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "belleisle-house-hotel",
@@ -2281,6 +2831,11 @@
         "credit": "Billy McCrorie",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Belleisle_House,_Ayr_-_geograph.org.uk_-_6890632.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -2297,7 +2852,12 @@
       "access": "secured",
       "summary": "Roadside hotel on the Kilmarnock road at Monkton, beside Prestwick airport. It stopped trading and went onto the council derelict register in 2022.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "parkstone-hotel",
@@ -2313,7 +2873,12 @@
       "access": "secured",
       "summary": "Seafront hotel on Esplanade at Prestwick, one of the string of resort hotels built when the Ayrshire coast was where Glasgow went on holiday. Empty and on the derelict register since 2021.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "newton-hotel-dumfries",
@@ -2329,7 +2894,12 @@
       "access": "private",
       "summary": "Hotel on the Glasgow road out of Dumfries, closed and derelict since the early 1990s. Thirty years on the register and counting.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "whitehouse-lamlash",
@@ -2345,7 +2915,12 @@
       "access": "private",
       "summary": "A hotel and grounds above Lamlash Bay on Arran, empty since the early 2000s. At 4.6 hectares it is the largest derelict hospitality site on the register.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "queen-victoria-works",
@@ -2367,6 +2942,11 @@
         "credit": "Chris Allen",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Queen_Victoria_Works,_Dundee_-_geograph.org.uk_-_8039788.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -2383,7 +2963,12 @@
       "access": "secured",
       "summary": "Biscuits were made at Tollcross for the best part of a century. Pladis announced the closure in May 2021 and shut it in 2022, putting around 470 jobs out. A petition against it drew 77,000 signatures, and a rescue package led by the Scottish Government and the council offered to build a replacement factory nearby for just over £50m — Pladis turned it down. Nearly seven hectares sit on the derelict register.",
       "source": "https://www.scotsman.com/business/mcvities-biscuits-glasgow-factory-closure-puts-500-jobs-at-risk-3232813",
-      "sourceName": "The Scotsman"
+      "sourceName": "The Scotsman",
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "torrylinn-creamery",
@@ -2399,7 +2984,12 @@
       "access": "private",
       "summary": "The island creamery at Kilmory, opened by the Scottish Milk Marketing Board in 1945 and famous for Arran Dunlop cheese. First Milk decided it was not core to the business and put it up for sale in 2018; nobody bought it, and it closed on 31 July 2019 after 73 years, taking six island jobs and the local milk contract with it.",
       "source": "https://www.fwi.co.uk/business/markets-and-trends/dairy-markets/first-milk-announces-arran-creamery-closure",
-      "sourceName": "Farmers Weekly"
+      "sourceName": "Farmers Weekly",
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
+      }
     },
     {
       "id": "sanmex-rutherglen",
@@ -2415,7 +3005,12 @@
       "access": "secured",
       "summary": "Aerosol and household products were made on Dalmarnock Road for decades until the business failed. Three and a half hectares beside the Clyde have been on the derelict register since 2019.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "chivas-paisley",
@@ -2431,7 +3026,12 @@
       "access": "secured",
       "summary": "Chivas Brothers bottled whisky on Renfrew Road until the work was consolidated elsewhere. The Paisley plant closed and went onto the derelict register in 2022.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "netherplace-works",
@@ -2447,7 +3047,12 @@
       "access": "secured",
       "summary": "Dyeworks on Netherplace Road that ran for well over a century, latterly under ICI and its successors. Nearly five hectares went onto the derelict register in 2022.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "becogent-airdrie",
@@ -2463,7 +3068,12 @@
       "access": "secured",
       "summary": "Purpose-built call centre on Victoria Place, run by BeCogent and then Teleperformance. When the operation went, the building went with it — two hectares empty since 2022.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "arnold-clark-greenock",
@@ -2479,7 +3089,12 @@
       "access": "secured",
       "summary": "Car showroom and workshop on East Hamilton Street, closed and left empty since 2021.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "leisure-bowl-alloa",
@@ -2495,7 +3110,12 @@
       "access": "secured",
       "summary": "Ten-pin bowling and entertainment complex on Alloa Parkway. It stopped trading and has been sitting empty on the derelict register since 2021.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "old-mill-inn-maryculter",
@@ -2511,7 +3131,12 @@
       "access": "private",
       "summary": "Country inn and restaurant on the South Deeside Road, closed and derelict since 2021 — one of a run of rural Aberdeenshire hospitality businesses that did not come back after the pandemic.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "malcolm-sargent-house",
@@ -2527,7 +3152,12 @@
       "access": "secured",
       "summary": "A seaside holiday home built for children with cancer and their families, run by the charity CLIC Sargent and named after the conductor. The charity gave it up and it has stood empty since 2021.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "law-hospital",
@@ -2543,7 +3173,12 @@
       "access": "secured",
       "summary": "Built in 1939 as an emergency wartime hospital on the hill above Carluke, and the main general hospital for Lanarkshire for half a century until Wishaw General replaced it in 2001. Twenty-eight hectares of ward blocks and corridors — the largest derelict hospital site on the government register.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "ruchill-hospital",
@@ -2567,6 +3202,11 @@
         "credit": "Chris Upson",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Abandoned_Ruchill_Hospital_-_geograph.org.uk_-_49994.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "news",
+        "b": 1
       }
     },
     {
@@ -2589,6 +3229,11 @@
         "credit": "Unknown authorUnknown author",
         "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Haddington_District_Asylum.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
       }
     },
     {
@@ -2605,7 +3250,12 @@
       "access": "secured",
       "summary": "Built as a military hospital in the First World War and run by the Red Cross, later an NHS hospital for the elderly. Closed in the 2000s; five and a half hectares of single-storey blocks have been on the derelict register since 2007.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "noranside-prison",
@@ -2628,6 +3278,11 @@
         "credit": "Kevin Raistrick",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Noranside_Prison_-_geograph.org.uk_-_151111.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -2644,7 +3299,12 @@
       "access": "secured",
       "summary": "The new town’s police station on Napier Road, empty since 2015 when Police Scotland consolidated its estate. Small, but one of very few abandoned police buildings anywhere on the register.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "burntisland-cinema",
@@ -2660,7 +3320,12 @@
       "access": "secured",
       "summary": "A picture house on the High Street of the Fife coastal town, long closed and on the derelict register. The other Fife cinema on the register, at Leslie, has already been cleared to bare ground.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "provan-gasworks",
@@ -2683,6 +3348,11 @@
         "credit": "Chris Upson",
         "license": "CC BY-SA 2.0",
         "page": "https://commons.wikimedia.org/wiki/File:Provan_Gasworks,_Glasgow_-_geograph.org.uk_-_125118.jpg"
+      },
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 2
       }
     },
     {
@@ -2699,7 +3369,12 @@
       "access": "secured",
       "summary": "Oil was refined on the Ayrshire coast at Ardrossan from 1902 until the plant closed in the 1980s. Fourteen hectares of tank bases and pipework foundations beside the harbour, derelict for close to forty years.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "old-strand-factory",
@@ -2715,7 +3390,12 @@
       "access": "secured",
       "summary": "Fifteen hectares on Mitchelston Drive, empty since 2007. Kirkcaldy lost its linoleum trade and then most of what replaced it; this is the biggest single hole left in the town’s industrial estate.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "cruden-bay-brickworks",
@@ -2731,7 +3411,12 @@
       "access": "private",
       "summary": "Clay was dug and fired on the Buchan coast at Cruden Bay until the works shut. Nearly eighteen hectares of pits, kilns and spoil, long enough ago that the register does not record when it stopped.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "greenock-arts-centre",
@@ -2747,7 +3432,12 @@
       "access": "secured",
       "summary": "The arts centre on Union Street, closed in 2015 when Inverclyde moved its cultural provision elsewhere. Six kilometres from Helensburgh across the water and empty ever since.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "tate-lyle-greenock",
@@ -2763,7 +3453,12 @@
       "access": "secured",
       "summary": "Greenock refined the sugar of the British Empire — at its height the town had a dozen refineries and the trade defined it. Tate & Lyle closed the last one in 1997. Several parcels on Drumfrochar Road are still on the derelict register; this is the largest.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 2
+      }
     },
     {
       "id": "cathcart-church-greenock",
@@ -2779,7 +3474,12 @@
       "access": "secured",
       "summary": "Church and hall on Crescent Street, closed in 2010. One of the many Inverclyde churches emptied as the town’s population halved from its shipbuilding peak.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "holy-cross-school-greenock",
@@ -2795,7 +3495,12 @@
       "access": "secured",
       "summary": "Primary school on Lyle Road, closed in 2018. Just over a hectare above the town, empty since.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 0
+      }
     },
     {
       "id": "talisman-pub",
@@ -2811,7 +3516,12 @@
       "access": "secured",
       "summary": "A Springburn pub on Balgrayhill Road that has been on the derelict register since the late 1980s. Nearly forty years shut — the longest-abandoned pub on the whole register.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "corrin-inn-saltcoats",
@@ -2827,7 +3537,12 @@
       "access": "secured",
       "summary": "Seaside pub on Jacks Road, closed and derelict since 2020 — one of the run of Ayrshire coast pubs that did not reopen after the pandemic.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "junction-27-restaurant",
@@ -2843,7 +3558,12 @@
       "access": "secured",
       "summary": "Roadside restaurant on Wallneuk Road named for the motorway junction it fed off. Shut and derelict since 2010.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register",
+        "b": 1
+      }
     },
     {
       "id": "quadrant-coatbridge",
@@ -2859,7 +3579,11 @@
       "access": "secured",
       "summary": "A whole shopping centre on Dunbeth Road, emptied of tenants and on the derelict register since 2019 while redevelopment is argued over. The fate of a lot of Scottish town-centre malls.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register"
+      }
     },
     {
       "id": "kilbirnie-supermarket",
@@ -2875,7 +3599,11 @@
       "access": "secured",
       "summary": "The supermarket at Townhead, closed in 2008 and never replaced. When the only big shop leaves a small town, this is what is left behind.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register"
+      }
     },
     {
       "id": "the-forum-irvine",
@@ -2891,7 +3619,11 @@
       "access": "secured",
       "summary": "Retail block on Bridgegate in Irvine new town, empty since 2010.",
       "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
+      "sourceName": "Scottish Vacant and Derelict Land Survey",
+      "chk": {
+        "p": "register",
+        "s": "register"
+      }
     }
   ]
 }

@@ -461,8 +461,8 @@
   };
   var CHK_BLD = {
     1: [1, 'A building is mapped here on OpenStreetMap'],
-    0: [0, 'No building mapped here — may be cleared ground'],
-    2: [2, 'Open site: an airfield, quarry or township, so no footprint is expected']
+    0: [0, 'No building mapped within 60 m — worth a look at the satellite view first'],
+    2: [2, 'No footprint expected: a large site pinned at its centre, an open site, or a roofless ruin, which OSM does not tag as a building']
   };
   var CHK_SRC = {
     news:     [1, 'Condition from a dated news report'],
