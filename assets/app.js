@@ -450,6 +450,40 @@
     '</p>';
   }
 
+  // What was actually checked on this entry, spelled out rather than implied.
+  // Three separate questions, because they fail independently: is the pin in
+  // the right place, is anything standing there, and how do we know its state.
+  var CHK_POS = {
+    canmore1m:  [1, 'Position from Canmore, to the nearest metre'],
+    canmore10m: [1, 'Position from Canmore, to the nearest 10 m'],
+    register:   [1, 'Position from the government register row'],
+    estimate:   [0, 'Position estimated from the address — may be off by a few hundred metres']
+  };
+  var CHK_BLD = {
+    1: [1, 'A building is mapped here on OpenStreetMap'],
+    0: [0, 'No building mapped here — may be cleared ground'],
+    2: [2, 'Open site: an airfield, quarry or township, so no footprint is expected']
+  };
+  var CHK_SRC = {
+    news:     [1, 'Condition from a dated news report'],
+    canmore:  [1, 'Canmore records remains surviving'],
+    barr:     [1, 'Listed on the Buildings at Risk Register'],
+    register: [0, 'Only the government land register says it is derelict — no description of what stands']
+  };
+
+  function checksHtml(s) {
+    var c = s.chk;
+    if (!c) return '';
+    var mark = { 1: '✓', 0: '!', 2: '–' };
+    var line = function (def) {
+      if (!def) return '';
+      return '<li class="c' + def[0] + '"><span>' + mark[def[0]] + '</span>' + esc(def[1]) + '</li>';
+    };
+    return '<ul class="pop-checks">' +
+      line(CHK_POS[c.p]) + line(CHK_BLD[c.b]) + line(CHK_SRC[c.s]) +
+    '</ul>';
+  }
+
   function popupHtml(s) {
     var cat = CAT[s.category] || { label: s.category, color: '#999' };
     var html =
@@ -470,13 +504,14 @@
         ? '<p class="pop-occupied"><strong>Part of this site is in use.</strong> ' +
             esc(s.partlyOccupied) + ' The pin covers the whole site, not just the empty part.</p>'
         : '') +
+      checksHtml(s) +
       mapLinks(s.lat, s.lng);
 
     if (s.source) {
       html += '<p class="pop-src">Source: <a href="' + esc(s.source) + '" target="_blank" rel="noopener noreferrer">' +
               esc(s.sourceName || s.source) + '</a></p>';
     }
-    if (s.confidence === 'approximate') {
+    if (s.confidence === 'approximate' && !s.chk) {
       html += '<span class="pop-flag">Location approximate — pinned to the site area, not an exact address.</span>';
     }
     return html;

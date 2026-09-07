@@ -2766,22 +2766,6 @@
       "sourceName": "Scottish Vacant and Derelict Land Survey"
     },
     {
-      "id": "st-james-retail-park",
-      "name": "St James Retail Park, Dumbarton",
-      "region": "West Dunbartonshire",
-      "lat": 55.94482,
-      "lng": -4.55749,
-      "category": "business",
-      "type": "retail",
-      "status": "Derelict since the early 1980s, 2 ha",
-      "year": 1983,
-      "confidence": "verified",
-      "access": "secured",
-      "summary": "Two hectares on the Glasgow Road that have been on the derelict register since the early 1980s — longer than most people in Dumbarton have been alive. Thirteen kilometres from Helensburgh.",
-      "source": "https://www.gov.scot/publications/the-scottish-vacant-and-derelict-land-survey-site-register/",
-      "sourceName": "Scottish Vacant and Derelict Land Survey"
-    },
-    {
       "id": "cathcart-church-greenock",
       "name": "Cathcart Parish Church and Hall, Greenock",
       "region": "Inverclyde",
